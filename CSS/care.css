@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #FBF1EA;
+    --color-secondary: #EFEDE6;
+    --color-tertiary: #D7D3C1;
+    --color-wood: #C1A26E;
+    --color-text: #5B4636;
+    --shadow-soft: 0 4px 10px rgba(91, 70, 54, 0.05);
+    --radius-small: 8px;
+    --radius-medium: 16px;
+    --radius-large: 24px;
+}
+
+body{
+    font-family: 'Noto Sans TC', Arial, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-primary);
+    line-height: 1.6;
+    padding-top: 72px;
+}
+
+.top-nav{
+    background-color: var(--color-secondary);
+    box-shadow: var(--shadow-soft);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* 確保導覽列在最上層 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px; /* 固定高度，與 body padding-top 一致 */
+    backdrop-filter: blur(10px);
+    padding: 0 1.5rem;
+}
+
+.site-title {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 1.25rem;
+    color: var(--color-text);
+}
+
+.nav-link {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin-left: auto; 
+    align-items: center;
+}
+
+.nav-link a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 1.1rem;
+    position: relative;
+    padding: 6px 4px;
+    transition: color 0.3s ease;
+}
+
+.nav-link a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-wood);
+    transition: width 0.3s ease;
+}
+
+.nav-link a:hover::after {
+    width: 100%;
+}
+
+.header {
+    height: 70vh;
+    background-color: var(--color-secondary);
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    inset: 0; 
+    background-image: url('../img/care-header.jpeg');
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: left;
+    opacity: 0.5; 
+    z-index: 0;
+}
+
+.header > *{
+    position: relative;
+    z-index: 1; 
+}
+
+.header-title {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.header-subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 2;
+    color: var(--color-text);
+}

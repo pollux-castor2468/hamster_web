@@ -473,6 +473,116 @@ body{
     opacity: 0.8;
 }
 
+.books-section {
+    padding: 6rem 0;
+}
+
+.books-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.book-item {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.book-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.book-media {
+    position: relative;
+    flex: 0 0 300px;
+}
+
+.book-cover {
+    background: linear-gradient(45deg, var(--color-wood), var(--color-tertiary));
+    height: 400px;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.cover-content {
+    text-align: center;
+}
+
+.cover-content h3 {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.book-tag {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.book-shadow {
+    position: absolute;
+    bottom: -20px;
+    left: 10%;
+    right: 10%;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    filter: blur(10px);
+    border-radius: 50%;
+}
+
+.book-info {
+    flex: 1;
+}
+
+.book-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.book-pages, .book-year {
+    color: var(--color-wood);
+    font-size: 0.9rem;
+}
+
+.book-info h4 {
+    font-size: 2rem;
+    font-family: 'Noto Sans TC', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.book-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.book-topics {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.topic-tag {
+    background: var(--color-secondary);
+    color: var(--color-text);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
 
 /* Responsive */
 @media (max-width: 960px){
