@@ -21,9 +21,10 @@ body{
     color: var(--color-text);
     background-color: var(--color-primary);
     line-height: 1.6;
-    padding-top: 72px;
+    padding-top: 80px;
 }
 
+/* 導覽列 - 每一頁的導覽列都要長一樣 */
 .top-nav{
     background-color: var(--color-secondary);
     box-shadow: var(--shadow-soft);
@@ -34,16 +35,25 @@ body{
     z-index: 1000; /* 確保導覽列在最上層 */
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 72px; /* 固定高度，與 body padding-top 一致 */
+    /* justify-content: space-between; */
+    height: 80px; /* 固定高度，與 body padding-top 一致 */
     backdrop-filter: blur(10px);
     padding: 0 1.5rem;
 }
 
 .site-title {
     font-family: 'Noto Sans TC', sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     color: var(--color-text);
+    position: relative;
+    top: 3px;
+    left: 10px;
+}
+
+.site-subtitle {
+    position: relative;
+    bottom: 5px;
+    left: 10px;
 }
 
 .nav-link {
@@ -78,6 +88,7 @@ body{
     width: 100%;
 }
 
+/* 上面的標題區 - 每一頁也都差不多 */
 .header {
     height: 70vh;
     background-color: var(--color-secondary);
@@ -132,7 +143,7 @@ body{
     }
 
     .site-title{
-        font-size: 1.1rem;
+        font-size: 1.7rem;
     }
 
     .nav-link{
@@ -150,35 +161,63 @@ body{
 }
 
 
-.container{
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px;
-}
-
+/* 網頁內容 */
 .main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-.main-info {
+.main-info {  /* 總共有四大區的內容 */
     margin-bottom: 5rem;
     padding: 3rem 2rem;
     background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
     border-radius: var(--radius-large);
 }
 
-.main-info-title {
+/* .main-info-title { 
     font-size: 2rem;
     font-weight: 700;
     color: var(--color-text);
     margin-bottom: 2.5rem;
     text-align: center;
     letter-spacing: 0.05em;
+} */
+
+/* 四大區內容的標題 */
+.main-info-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
 }
 
+.main-info-header-accent {
+    font-family: 'Noto Sans TC', sans-serif;
+    color: var(--color-wood);
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+.main-info-header-title {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 2.5rem;
+    color: var(--color-text);
+    position: relative;
+}
+
+.main-info-header-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-wood);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+/* 第一區-倉鼠飼養前須知 */
 .main-info-content {
     max-width: 960px;
     margin: 0 auto 3rem;
@@ -204,15 +243,24 @@ body{
     pointer-events: none;
 }
 
-.main-info-nav {
+/* 奇怪的排版，在最下面的動物友善團體及機構 */
+/* .main-info-nav {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 1.5rem 1.5rem;
     list-style: none;
     padding: 0;
+} */
+
+.main-info-grid{ /* 包含四個小區塊 */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem 2rem;
+    list-style: none;
+    padding: 0;
 }
 
-.main-info-nav-li {
+.main-info-grid-li {
     grid-column: span 7;
     background-color: #fff;
     padding: 2rem 2rem 2.5rem 2rem;
@@ -221,44 +269,6 @@ body{
     position: relative;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.main-info-nav-li::before {
-    content: attr(data-index);
-    position: absolute;
-    top: 6px;
-    right: 10px;
-    font-family: 'Space Mono', monospace;
-    font-size: 3.5rem;
-    color: rgba(91, 70, 54, 0.06);
-    line-height: 1;
-    pointer-events: none;
-}
-
-.main-info-nav-title {
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    color: var(--color-text);
-    margin-bottom: 0.5rem;
-    position: relative;
-    padding-bottom: 0.4rem;
-}
-
-
-.main-info-nav .content {
-    font-size: 1.05rem;
-    line-height: 2;
-    color: var(--color-text);
-}
-
-.main-info-grid{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1.5rem 2rem;
-    list-style: none;
-    padding: 0;
 }
 
 .mag-card{
@@ -274,6 +284,37 @@ body{
     transform: translateY(-2px);
     box-shadow: 0 12px 30px rgba(91, 70, 54, 0.12);
 }
+
+/* 這什麼東東??? */
+/* .main-info-nav-grid::before {
+    content: attr(data-index);
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    font-family: 'Space Mono', monospace;
+    font-size: 3.5rem;
+    color: rgba(91, 70, 54, 0.06);
+    line-height: 1;
+    pointer-events: none;
+} */
+
+/* 後面有重複的! */
+/* .main-info-grid-title {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-bottom: 0.4rem;
+}
+
+.main-info-grid .content {
+    font-size: 1.05rem;
+    line-height: 2;
+    color: var(--color-text);
+}  */
 
 .mag-head{
     display: flex;
@@ -292,7 +333,7 @@ body{
     white-space: nowrap;
 }
 
-.main-info-nav-title{
+.main-info-grid-title{
     font-family: 'Noto Sans TC', sans-serif;
     font-size: 1.6rem;
     font-weight: 700;
@@ -301,181 +342,25 @@ body{
     color: var(--color-text);
 }
 
-.main-info-nav-content{
+.main-info-grid-content{
     font-size: 1.05rem;
     line-height: 2;
     color: var(--color-text);
     margin-top: 0.25rem;
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-    position: relative;
-}
-
-.header-accent {
-    font-family: 'Noto Sans TC', sans-serif;
-    color: var(--color-wood);
-    font-size: 1.1rem;
-    letter-spacing: 0.2em;
-    margin-bottom: 0.5rem;
-    opacity: 0.8;
-}
-
-.section-title {
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 2.5rem;
-    color: var(--color-text);
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--color-wood);
-    margin: 1rem auto 0;
-    border-radius: 2px;
-}
-
-/* 影片區塊樣式 */
-.video-section {
-    background-color: var(--color-secondary);
-    padding: 6rem 0;
-    position: relative;
+/* 第二區-推薦的倉鼠飼養基本指南書籍 */
+.container{
+    width: 80%;
+    margin: auto;
     overflow: hidden;
+    padding: 20px;
 }
 
-.video-section::before {
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: var(--color-wood);
-    border-radius: 50%;
-    opacity: 0.03;
-    top: -50px;
-    left: -50px;
-}
-
-.video-wrapper {
-    display: grid;
-    grid-template-columns: 2.6fr 1.2fr;
-    gap: 2rem;
-    align-items: start;
-}
-
-.video-main {
-    position: relative;
-}
-
-.placeholder-video {
-    background: linear-gradient(45deg, var(--color-tertiary), var(--color-primary));
-    height: 400px;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text);
-    overflow: hidden;
-    position: relative;
-    text-decoration: none;
-}
-
-.placeholder-thumb{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.placeholder-video .video-icon,
-.placeholder-video p{
-    position: relative;
-    z-index: 1;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
-    color: #fff;
-}
-
-.video-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: var(--color-wood);
-}
-
-.video-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.video-item {
-    display: flex;
-    gap: 1rem;
-    padding: 0.8rem 1rem;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-}
-
-.video-item:hover {
-    transform: translateX(10px);
-    box-shadow: 0 10px 20px rgba(91, 70, 54, 0.12);
-}
-
-.video-thumbnail {
-    width: 135px;
-    height: 80px;
-    background: var(--color-tertiary);
-    border-radius: 10px;
-    position: relative;
-    flex-shrink: 0;
-}
-
-.thumb-img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-}
-
-.duration {
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-family: 'Noto Sans TC', sans-serif;
-}
-
-.video-info {
-    flex: 1;
-}
-
-.video-info h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.video-info p {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-.books-section {
+/* 這個好像也是沒用的東西??? */
+/* .books-section {
     padding: 6rem 0;
-}
+} */
 
 .books-showcase {
     display: flex;
@@ -583,6 +468,173 @@ body{
     font-size: 0.9rem;
 }
 
+/* 第三區-倉鼠的介紹與飼養相關影片 */
+/* 這又是什麼東西??? */
+/* .video-section {
+    background-color: var(--color-secondary);
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-section::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--color-wood);
+    border-radius: 50%;
+    opacity: 0.03;
+    top: -50px;
+    left: -50px;
+} */
+
+.video-wrapper { /* 包裝影片的，總共有四塊影片 */
+    display: grid;
+    grid-template-columns: 2.6fr 1.2fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.video-main { /* 第一區塊大影片 */
+    position: relative;
+}
+
+.placeholder-video {
+    background: linear-gradient(45deg, var(--color-tertiary), var(--color-primary));
+    height: 400px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+}
+
+.placeholder-thumb{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.placeholder-video .video-icon,
+.placeholder-video p{
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    color: #fff;
+}
+
+.video-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--color-wood);
+}
+
+.video-list { /* 二、三、四塊影片清單 */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.video-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.video-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 20px rgba(91, 70, 54, 0.12);
+}
+
+.video-thumbnail {
+    width: 135px;
+    height: 80px;
+    background: var(--color-tertiary);
+    border-radius: 10px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.thumb-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.video-info {
+    flex: 1;
+}
+
+.video-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.video-info p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* 第四區-動物友善團體及機構 */
+.main-info-nav {
+    list-style: none;
+}
+
+.main-info-nav-li {
+    padding: 10px;
+    border: 1px solid var(--color-wood);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.main-info-nav-img {
+    padding: 10px;
+    background-color: #fff;
+    width: 30%;
+    max-height: 100px;
+}
+
+.main-info-nav-div {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.main-info-nav-content {
+    padding-left: 10px;
+    padding-top: 15px;
+    border-left: 2px solid var(--color-wood);
+    margin: 20px;
+}
+
+
 
 /* Responsive */
 @media (max-width: 960px){
@@ -605,7 +657,7 @@ body{
     box-shadow: 0 12px 30px rgba(91, 70, 54, 0.12);
 }
 
-/* 響應式調整 */
+/* 響應式調整：主要內容的部分 */
 @media (max-width: 768px) {
     .main {
         padding: 1rem;
@@ -637,6 +689,7 @@ body{
     .main-info-content::after{ font-size: 52px; right: 8px; }
 }
 
+/* 頁腳 - 每一頁的頁腳都要長一樣 */
 footer{
     background-color: #333;
     color: #fff;
@@ -645,4 +698,20 @@ footer{
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* .footer-source {
+    margin-left: 50px;
+    text-align: left;
+} */
+
+.footer-source-title {
+    color: #c4c4c4;
+    display: inline;
+}
+
+.footer-source-link {
+    color: #c4c4c4;
+    margin: 3px;
+    /* display: block; */
 }
