@@ -26,19 +26,23 @@ body{
 
 /* 導覽列 - 每一頁的導覽列都要長一樣 */
 .top-nav{
-    background-color: var(--color-secondary);
-    box-shadow: var(--shadow-soft);
+    background-color: rgba(239, 237, 230, 0.85); /* var(--color-secondary) 但帶透明度 */
+    box-shadow: 
+        0 4px 6px -1px rgba(91, 70, 54, 0.1),
+        0 2px 4px -1px rgba(91, 70, 54, 0.06);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* 確保導覽列在最上層 */
+    z-index: 1000;
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
-    height: 80px; /* 固定高度，與 body padding-top 一致 */
-    backdrop-filter: blur(10px);
+    justify-content: space-between;
+    height: 72px;
+    backdrop-filter: blur(8px) saturate(180%);
+    -webkit-backdrop-filter: blur(8px) saturate(180%); /* Safari 支援 */
     padding: 0 1.5rem;
+    border-bottom: 1px solid rgba(91, 70, 54, 0.08);
 }
 
 .site-title {
@@ -607,12 +611,36 @@ body{
     list-style: none;
 }
 
+.main-info-nav-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+/*
 .main-info-nav-li {
     padding: 10px;
     border: 1px solid var(--color-wood);
     border-radius: 10px;
     margin: 10px;
+}*/
+
+
+.main-info-nav-li {
+    background-color: var(--color-secondary);
+    border-radius: var(--radius-small);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
+
+.main-info-nav-li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(91, 70, 54, 0.15);
+}
+
 
 .main-info-nav-img {
     padding: 10px;
