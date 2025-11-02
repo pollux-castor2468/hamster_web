@@ -16,7 +16,15 @@
             <p class="site-subtitle">認識可愛的倉鼠世界</p>
         </div>
         <ul class="nav-link">
-            <li><a href="index.html">首頁</a></li>
+            <li class="has-dropdown">
+                <a href="index.html" class="nav-item-toggle" aria-haspopup="true" aria-expanded="false">首頁 ▾</a>
+                <ul class="nav-dropdown" aria-label="首頁選單">
+                    <li><a href="#before-keeping">倉鼠飼養前須知</a></li>
+                    <li><a href="#reading-list">推薦的倉鼠飼養基本指南書籍</a></li>
+                    <li><a href="#video-gallery">倉鼠的介紹與飼養相關影片</a></li>
+                    <li><a href="#organizations">動物友善團體及機構</a></li>
+                </ul>
+            </li>
             <li><a href="care.html">如何照料</a></li>
             <li><a href="encyclopedia.html">鼠鼠百科</a></li>
             <li><a href="setup.html">小窩佈置</a></li>
@@ -30,9 +38,9 @@
 
     <main class="main">
         <!-- 第一區-倉鼠飼養前須知 -->
-        <section class="main-info">
+    <section id="before-keeping" class="main-info">
             <div class="main-info-header">
-                <p class="main-info-header-accent">Before Feeding</p>
+                <p class="main-info-header-accent">Before Keeping</p>
                 <h2 class="main-info-header-title">倉鼠飼養前須知</h2>
             </div>
             <p class="main-info-content">
@@ -81,7 +89,7 @@
             </ul>    
         </section>
         <!-- 第二區-推薦的倉鼠飼養基本指南書籍 -->
-        <section class="main-info">
+    <section id="reading-list" class="main-info">
             <div class="container">
                 <div class="main-info-header">
                     <p class="main-info-header-accent">Reading List</p>
@@ -140,7 +148,7 @@
             </div>
         </section>
         <!-- 第三區-倉鼠的介紹與飼養相關影片 -->
-        <section class="main-info">
+    <section id="video-gallery" class="main-info">
             <div class="main-info-header">
                 <p class="main-info-header-accent">Video Gallery</p>
                 <h2 class="main-info-header-title">倉鼠的介紹與飼養相關影片</h2>
@@ -188,7 +196,7 @@
             </div>
         </section>
         <!-- 第四區-動物友善團體及機構 -->
-        <section class="main-info">
+    <section id="organizations" class="main-info">
             <div class="main-info-header">
                 <p class="main-info-header-accent">Organization</p>
                 <h2 class="main-info-header-title">動物友善團體及機構</h2>  
@@ -253,4 +261,7 @@
             <a href="https://animal-friendly.co/pet/42437/" target="_blank" class="footer-source-link">動物友善網</a>
         </section>
     </footer>
+
+    <script src="js/nav.js"></script>
 </body>
+</html>

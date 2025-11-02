@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/encyclopedia.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
     <!-- 每一頁的導覽列都要長一樣 -->
@@ -16,7 +16,15 @@
             <p class="site-subtitle">認識可愛的倉鼠世界</p>
         </div>
         <ul class="nav-link">
-            <li><a href="index.html">首頁</a></li>
+            <li class="has-dropdown">
+                <a href="index.html" class="nav-item-toggle" aria-haspopup="true" aria-expanded="false">首頁 ▾</a>
+                <ul class="nav-dropdown" aria-label="首頁選單">
+                    <li><a href="index.html#before-keeping">倉鼠飼養前須知</a></li>
+                    <li><a href="index.html#reading-list">推薦的倉鼠飼養基本指南書籍</a></li>
+                    <li><a href="index.html#video-gallery">倉鼠的介紹與飼養相關影片</a></li>
+                    <li><a href="index.html#organizations">動物友善團體及機構</a></li>
+                </ul>
+            </li>
             <li><a href="care.html">如何照料</a></li>
             <li><a href="encyclopedia.html">鼠鼠百科</a></li>
             <li><a href="setup.html">小窩佈置</a></li>
@@ -145,4 +153,5 @@
             <a href="https://animal-friendly.co/pet/42437/" class="footer-source-link">動物友善網</a>
         </section>
     </footer>
+    <script src="js/nav.js"></script>
 </body>
