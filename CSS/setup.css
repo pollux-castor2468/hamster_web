@@ -24,102 +24,8 @@ body {
     padding-top: 72px;
 }
 
-/* 小窩佈置頁面專用樣式 */
-.page-header {
-    background: linear-gradient(135deg, var(--color-secondary) 0%, #FFF 100%);
-    padding: 6rem 0;
-    margin-top: 72px;
-    overflow: hidden;
-    position: relative;
-}
 
-.header-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    position: relative;
-}
-
-.header-text {
-    position: relative;
-    z-index: 2;
-}
-
-.page-title {
-    font-family: 'Sawarabi Mincho', serif;
-    font-size: 3.5rem;
-    color: var(--color-text);
-    margin-bottom: 1rem;
-    position: relative;
-}
-
-.page-description {
-    font-size: 1.2rem;
-    color: var(--color-text);
-    margin-bottom: 2rem;
-}
-
-.header-accent {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.2rem;
-    color: var(--color-wood);
-    letter-spacing: 0.2em;
-    opacity: 0.7;
-}
-
-.header-visual {
-    position: relative;
-    height: 400px;
-}
-
-.visual-stack {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.visual-image {
-    position: absolute;
-    width: 300px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(193, 162, 110, 0.2);
-    transition: transform 0.5s ease;
-}
-
-.visual-image.top {
-    right: 0;
-    top: 0;
-    transform: rotate(5deg);
-    z-index: 2;
-}
-
-.visual-image.bottom {
-    right: 60px;
-    top: 60px;
-    transform: rotate(-5deg);
-    z-index: 1;
-}
-
-.visual-dots {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background-image: radial-gradient(var(--color-wood) 2px, transparent 2px);
-    background-size: 20px 20px;
-    opacity: 0.2;
-    top: -30px;
-    right: -30px;
-    z-index: 0;
-}
-
-.setup-content {
-    padding: 6rem 0;
-    background-color: var(--color-secondary);
-    position: relative;
-}
-
+/* main的內容 */
 .setup-section {
     margin-bottom: 6rem;
     position: relative;
@@ -166,6 +72,7 @@ body {
     opacity: 0.2;
 }
 
+/* 每一個用品介紹區塊 */
 .item-block {
     display: flex;
     align-items: center;
@@ -179,6 +86,7 @@ body {
     margin-left: auto;
 }
 
+/* 內容前面的圖片 */
 .item-media {
     flex: 0 0 300px;
     position: relative;
@@ -187,6 +95,7 @@ body {
 .media-circle {
     width: 300px;
     height: 300px;
+    border: 2px solid var(--color-text);
     border-radius: 50%;
     overflow: hidden;
     position: relative;
@@ -194,6 +103,18 @@ body {
     transition: transform 0.5s ease;
 }
 
+.image-placeholder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+/* 圖片下的框框? */
 .media-accent {
     position: absolute;
     width: 100%;
@@ -215,18 +136,7 @@ body {
     transform: translate(5px, -5px);
 }
 
-.image-placeholder {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text);
-    font-size: 1.1rem;
-    opacity: 0.7;
-}
-
+/* 資訊內容 */
 .item-info {
     flex: 1;
     position: relative;
@@ -275,56 +185,6 @@ body {
     opacity: 0.3;
 }
 
-.item-content h4 {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.3rem;
-    color: var(--color-text);
-    margin-bottom: 1rem;
-}
-
-.item-content p {
-    color: var(--color-text);
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.features-list {
-    list-style: none;
-    margin-left: 0.5rem;
-}
-
-.features-list li {
-    position: relative;
-    padding-left: 1.2rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
-    color: var(--color-text);
-}
-
-.features-list li::before {
-    content: "•";
-    color: var(--color-wood);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-}
-
-/* 響應式 */
-@media (max-width: 1024px) {
-    .header-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .visual-image {
-        width: 240px;
-    }
-
-    .media-circle {
-        width: 260px;
-        height: 260px;
-    }
-}
 
 @media (max-width: 768px) {
     .items-flow {
@@ -374,116 +234,3 @@ body {
     }
 }
 
-/* 導覽列 - 每一頁的導覽列都要長一樣 */
-.top-nav {
-    background-color: rgba(239, 237, 230, 0.85);
-    /* var(--color-secondary) 但帶透明度 */
-    box-shadow:
-        0 4px 6px -1px rgba(91, 70, 54, 0.1),
-        0 2px 4px -1px rgba(91, 70, 54, 0.06);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 72px;
-    backdrop-filter: blur(8px) saturate(180%);
-    -webkit-backdrop-filter: blur(8px) saturate(180%);
-    /* Safari 支援 */
-    padding: 0 1.5rem;
-    border-bottom: 1px solid rgba(91, 70, 54, 0.08);
-}
-
-.site-title {
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 1.75rem;
-    color: var(--color-text);
-    position: relative;
-    top: 3px;
-    left: 10px;
-}
-
-.site-subtitle {
-    position: relative;
-    bottom: 5px;
-    left: 10px;
-}
-
-.nav-link {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    margin-left: auto;
-    align-items: center;
-}
-
-.nav-link a {
-    text-decoration: none;
-    color: var(--color-text);
-    font-size: 1.1rem;
-    position: relative;
-    padding: 6px 4px;
-    transition: color 0.3s ease;
-}
-
-.nav-link a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-wood);
-    transition: width 0.3s ease;
-}
-
-.nav-link a:hover::after {
-    width: 100%;
-}
-
-.header {
-    height: 70vh;
-    background-color: var(--color-secondary);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url('../img/setup-header.jpeg');
-    background-repeat: no-repeat;
-    background-size: 120%;
-    background-position: left;
-    opacity: 0.5;
-    z-index: 0;
-}
-
-.header>* {
-    position: relative;
-    z-index: 1;
-}
-
-.header-title {
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--color-text);
-}
-
-.header-subtitle {
-    font-size: 1.2rem;
-    font-weight: 500;
-    line-height: 2;
-    color: var(--color-text);
-}
