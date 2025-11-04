@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,144 +16,21 @@
     --radius-large: 24px;
 }
 
-body{
+body {
     font-family: 'Noto Sans TC', Arial, sans-serif;
     color: var(--color-text);
     background-color: var(--color-primary);
     line-height: 1.6;
+    /* 如果沒有固定導覽列，可移除 padding-top 或視情況調整 */
     padding-top: 72px;
 }
 
-/* 導覽列 - 每一頁的導覽列都要長一樣 */
-.top-nav{
-    background-color: rgba(239, 237, 230, 0.85); /* var(--color-secondary) 但帶透明度 */
-    box-shadow: 
-        0 4px 6px -1px rgba(91, 70, 54, 0.1),
-        0 2px 4px -1px rgba(91, 70, 54, 0.06);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 72px;
-    backdrop-filter: blur(8px) saturate(180%);
-    -webkit-backdrop-filter: blur(8px) saturate(180%); /* Safari 支援 */
-    padding: 0 1.5rem;
-    border-bottom: 1px solid rgba(91, 70, 54, 0.08);
-}
-
-.site-title {
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 1.75rem;
-    color: var(--color-text);
-    position: relative;
-    top: 3px;
-    left: 10px;
-}
-
-.site-subtitle {
-    position: relative;
-    bottom: 5px;
-    left: 10px;
-}
-
-.nav-link {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    margin-left: auto; 
-    align-items: center;
-}
-
-.nav-link a {
-    text-decoration: none;
-    color: var(--color-text);
-    font-size: 1.1rem;
-    position: relative;
-    padding: 6px 4px;
-    transition: color 0.3s ease;
-}
-
-.nav-link a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-wood);
-    transition: width 0.3s ease;
-}
-
-.nav-link a:hover::after {
-    width: 100%;
-}
-
-/* 下拉選單樣式 */
-.nav-link li { position: relative; }
-
-.nav-item-toggle {
-    cursor: pointer;
-}
-
-.nav-dropdown {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-    background: rgba(255,255,255,0.98);
-    border-radius: 8px;
-    min-width: 220px;
-    box-shadow: 0 12px 30px rgba(91,70,54,0.12);
-    display: none;
-    padding: 0.25rem 0;
-    z-index: 1100;
-    list-style: none;
-}
-
-.nav-dropdown li {
-    list-style: none;
-}
-
-.nav-dropdown li a {
-    display: block;
-    padding: 0.6rem 1rem;
-    color: var(--color-text);
-    text-decoration: none;
-    font-size: 0.98rem;
-}
-
-.nav-dropdown li a:hover {
-    background: rgba(193,162,110,0.06);
-}
-
-.has-dropdown.open .nav-dropdown,
-.has-dropdown:hover .nav-dropdown {
-    display: block;
-}
-
-@media (max-width: 720px) {
-    .nav-dropdown {
-        position: static;
-        box-shadow: none;
-        background: transparent;
-        padding: 0;
-        min-width: 0;
-    }
-
-    .nav-dropdown li a {
-        padding: 0.5rem 0.75rem;
-    }
-}
-
-
+/* 頁首區塊 */
 .header {
-    height: 70vh;
+    min-height: 70vh;
     background-color: var(--color-secondary);
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -165,18 +42,18 @@ body{
 .header::before {
     content: '';
     position: absolute;
-    inset: 0; 
+    inset: 0;
     background-image: url('../img/care-header.jpeg');
     background-repeat: no-repeat;
-    background-size: 120%;
-    background-position: left;
-    opacity: 0.5; 
+    background-size: cover; /* 改為 cover 讓圖片填滿 */
+    background-position: center left;
+    opacity: 0.5;
     z-index: 0;
 }
 
-.header > *{
+.header > * {
     position: relative;
-    z-index: 1; 
+    z-index: 1;
 }
 
 .header-title {
@@ -192,3 +69,5 @@ body{
     line-height: 2;
     color: var(--color-text);
 }
+
+

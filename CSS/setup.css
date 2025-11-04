@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,7 +16,7 @@
     --radius-large: 24px;
 }
 
-body{
+body {
     font-family: 'Noto Sans TC', Arial, sans-serif;
     color: var(--color-text);
     background-color: var(--color-primary);
@@ -24,10 +24,361 @@ body{
     padding-top: 72px;
 }
 
+/* 小窩佈置頁面專用樣式 */
+.page-header {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #FFF 100%);
+    padding: 6rem 0;
+    margin-top: 72px;
+    overflow: hidden;
+    position: relative;
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+}
+
+.header-text {
+    position: relative;
+    z-index: 2;
+}
+
+.page-title {
+    font-family: 'Sawarabi Mincho', serif;
+    font-size: 3.5rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.page-description {
+    font-size: 1.2rem;
+    color: var(--color-text);
+    margin-bottom: 2rem;
+}
+
+.header-accent {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2rem;
+    color: var(--color-wood);
+    letter-spacing: 0.2em;
+    opacity: 0.7;
+}
+
+.header-visual {
+    position: relative;
+    height: 400px;
+}
+
+.visual-stack {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.visual-image {
+    position: absolute;
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(193, 162, 110, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.visual-image.top {
+    right: 0;
+    top: 0;
+    transform: rotate(5deg);
+    z-index: 2;
+}
+
+.visual-image.bottom {
+    right: 60px;
+    top: 60px;
+    transform: rotate(-5deg);
+    z-index: 1;
+}
+
+.visual-dots {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(var(--color-wood) 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.2;
+    top: -30px;
+    right: -30px;
+    z-index: 0;
+}
+
+.setup-content {
+    padding: 6rem 0;
+    background-color: var(--color-secondary);
+    position: relative;
+}
+
+.setup-section {
+    margin-bottom: 6rem;
+    position: relative;
+}
+
+.section-title {
+    font-family: 'Sawarabi Mincho', serif;
+    font-size: 2.5rem;
+    color: var(--color-text);
+    text-align: left;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-wood);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+.items-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.items-flow::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent 0%, var(--color-wood) 10%, var(--color-wood) 90%, transparent 100%);
+    opacity: 0.2;
+}
+
+.item-block {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    position: relative;
+    padding: 2rem;
+}
+
+.item-block:nth-child(even) {
+    flex-direction: row-reverse;
+    margin-left: auto;
+}
+
+.item-media {
+    flex: 0 0 300px;
+    position: relative;
+}
+
+.media-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background: var(--color-primary);
+    transition: transform 0.5s ease;
+}
+
+.media-accent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    border: 2px dashed var(--color-wood);
+    opacity: 0.3;
+    z-index: -1;
+    transition: transform 0.5s ease;
+}
+
+.item-block:hover .media-circle {
+    transform: translateY(-10px);
+}
+
+.item-block:hover .media-accent {
+    transform: translate(5px, -5px);
+}
+
+.image-placeholder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+
+.item-info {
+    flex: 1;
+    position: relative;
+}
+
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-header h4 {
+    font-family: 'Sawarabi Mincho', serif;
+    font-size: 2rem;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.item-number {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 3.5rem;
+    color: var(--color-wood);
+    opacity: 0.2;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.item-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.item-info p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background-color: var(--color-wood);
+    opacity: 0.3;
+}
+
+.item-content h4 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.3rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.item-content p {
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.features-list {
+    list-style: none;
+    margin-left: 0.5rem;
+}
+
+.features-list li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+.features-list li::before {
+    content: "•";
+    color: var(--color-wood);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* 響應式 */
+@media (max-width: 1024px) {
+    .header-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .visual-image {
+        width: 240px;
+    }
+
+    .media-circle {
+        width: 260px;
+        height: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .items-flow {
+        padding: 1rem;
+        gap: 4rem;
+    }
+
+    .item-block {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+
+    .item-block:nth-child(even) {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .item-media {
+        flex: 0 0 auto;
+    }
+
+    .media-circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .info-header {
+        gap: 1rem;
+    }
+
+    .item-number {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+        padding-left: 1rem;
+    }
+
+    .media-circle {
+        width: 180px;
+        height: 180px;
+    }
+}
+
 /* 導覽列 - 每一頁的導覽列都要長一樣 */
-.top-nav{
-    background-color: rgba(239, 237, 230, 0.85); /* var(--color-secondary) 但帶透明度 */
-    box-shadow: 
+.top-nav {
+    background-color: rgba(239, 237, 230, 0.85);
+    /* var(--color-secondary) 但帶透明度 */
+    box-shadow:
         0 4px 6px -1px rgba(91, 70, 54, 0.1),
         0 2px 4px -1px rgba(91, 70, 54, 0.06);
     position: fixed;
@@ -40,7 +391,8 @@ body{
     justify-content: space-between;
     height: 72px;
     backdrop-filter: blur(8px) saturate(180%);
-    -webkit-backdrop-filter: blur(8px) saturate(180%); /* Safari 支援 */
+    -webkit-backdrop-filter: blur(8px) saturate(180%);
+    /* Safari 支援 */
     padding: 0 1.5rem;
     border-bottom: 1px solid rgba(91, 70, 54, 0.08);
 }
@@ -64,7 +416,7 @@ body{
     display: flex;
     gap: 1.5rem;
     list-style: none;
-    margin-left: auto; 
+    margin-left: auto;
     align-items: center;
 }
 
@@ -96,7 +448,7 @@ body{
     height: 70vh;
     background-color: var(--color-secondary);
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -108,18 +460,18 @@ body{
 .header::before {
     content: '';
     position: absolute;
-    inset: 0; 
+    inset: 0;
     background-image: url('../img/setup-header.jpeg');
     background-repeat: no-repeat;
     background-size: 120%;
     background-position: left;
-    opacity: 0.5; 
+    opacity: 0.5;
     z-index: 0;
 }
 
-.header > *{
+.header>* {
     position: relative;
-    z-index: 1; 
+    z-index: 1;
 }
 
 .header-title {
