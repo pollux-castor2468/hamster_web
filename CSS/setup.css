@@ -25,6 +25,52 @@ body {
 }
 
 
+/* 上面的標題區 - 每一頁也都差不多 */
+.header {
+    height: 70vh;
+    background-color: var(--color-secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../img/hamster9.jpg');
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: left;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.header>* {
+    position: relative;
+    z-index: 1;
+}
+
+.header-title {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.header-subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 2;
+    color: var(--color-text);
+}
+
+
 /* main的內容 */
 .setup-section {
     margin-bottom: 6rem;
@@ -105,14 +151,14 @@ body {
 
 .image-placeholder {
     position: absolute;
-    width: 100%;
+    width: auto;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-text);
     font-size: 1.1rem;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 /* 圖片下的框框? */
 .media-accent {
