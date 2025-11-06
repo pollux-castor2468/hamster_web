@@ -107,15 +107,11 @@ body{
     align-items: center;
     justify-content: center;
     box-shadow: var(--shadow-soft);
-    /* overflow: scroll; */  /*會有滾輪耶*/
     overflow: hidden;        /*會把多的部分隱藏*/
 }
 
 .section-media-frame .image-placeholder {
-    /* color: rgba(91,70,54,0.85);
-    font-weight: 700; */
     width: 80%;
-    /* height: auto; */
     opacity: 80%;
 }
 
