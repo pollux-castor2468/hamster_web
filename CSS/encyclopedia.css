@@ -22,6 +22,7 @@ body {
     background-color: var(--color-primary);
     line-height: 1.6;
     padding-top: 72px;
+    font-size: 1em;
 }
 
 

@@ -23,11 +23,13 @@ body {
   background-color: var(--color-primary);
   line-height: 1.6;
   padding-top: 80px;
+  font-size: 1em;
 }
 
 /* 平滑滾動 */
 html {
   scroll-behavior: smooth;
+  font-size: 100%;
 }
 
 /* 當使用錨點跳轉時，確保內容不被固定導覽列遮蓋 */
