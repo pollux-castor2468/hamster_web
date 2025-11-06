@@ -60,7 +60,7 @@ section[id] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 6em;
   backdrop-filter: blur(8px) saturate(180%);
   -webkit-backdrop-filter: blur(8px) saturate(180%); /* Safari 支援 */
   padding: 0 1.5rem;
@@ -93,7 +93,7 @@ section[id] {
 .nav-link a {
   text-decoration: none;
   color: var(--color-text);
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   position: relative;
   padding: 6px 4px;
   transition: color 0.3s ease;
