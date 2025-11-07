@@ -290,7 +290,7 @@ section[id] {
     var(--color-tertiary),
     var(--color-primary)
   );
-  height: 400px;
+  aspect-ratio: 16 / 9;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -349,7 +349,7 @@ section[id] {
 
 .video-thumbnail {
   width: 135px;
-  height: 80px;
+  height: 75px;
   background: var(--color-tertiary);
   border-radius: 10px;
   position: relative;
@@ -443,12 +443,14 @@ section[id] {
 
 
 
-
-
 @media screen and (max-width: 768px) {
   .main-info {
     padding: 2rem 1rem;
     margin-bottom: 3rem;
+  }
+
+  .main-info-header-title {
+    font-size: 2rem;
   }
 
   .main-info-title {
@@ -491,7 +493,7 @@ section[id] {
   /* 📚 書籍區 - 改成直向排列 */
   .book-item {
     flex-direction: column !important;
-    text-align: center;
+    text-align: left;
   }
 
   .book-media {
@@ -509,8 +511,21 @@ section[id] {
     height: auto;
     margin: 0 auto;
   }
+  .book-info h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .book-info p {
+    font-size: 1rem;
+  }
+
 
   /* 🎬 影片區 - 改成直向排列 */
+  /* .placeholder-video {
+    padding-top: 40%; 
+  } */
+
   .video-wrapper {
     grid-template-columns: 1fr !important;
     gap: 1rem;

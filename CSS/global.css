@@ -34,6 +34,7 @@ html {
   font-size: 100%;
 }
 
+
 /* 上面的標題區 - 每一頁也都差不多 */
 .header {
   height: 70vh;
@@ -78,6 +79,7 @@ html {
   color: var(--color-text);
 }
 
+
 /* 網頁內容 */
 .main {
   max-width: 1200px;
@@ -96,8 +98,6 @@ html {
   );
   border-radius: var(--radius-large);
 }
-
-
 
 
 /* 導覽列 - 每一頁的導覽列都要長一樣 */
@@ -127,7 +127,6 @@ html {
 
 .top-nav-favicon {
   height: 50%;
-  margin-left: 50px;
   margin-right: 5px;
 }
 
@@ -138,12 +137,20 @@ html {
   position: relative;
   top: 3px;
   left: 10px;
+  
 }
 
 .site-subtitle {
+  color: var(--color-text);
   position: relative;
   bottom: 5px;
   left: 10px;
+  
+}
+
+a.top-nav-site {
+  text-decoration: none;
+  color: inherit; 
 }
 
 .nav-link {
@@ -222,6 +229,44 @@ html {
   display: block;
 }
 
+/* 漢堡按鈕樣式 */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.8rem;
+  z-index: 1500;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* 開啟狀態動畫 */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+
 /* 頁腳 - 每一頁的頁腳都要長一樣 */
 footer {
   background-color: var(--color-tertiary);
@@ -260,23 +305,56 @@ footer {
 
 @media screen and (max-width: 768px) {
   .top-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
+    flex-direction: row;
+    justify-content: left; /* 左邊logo+title 右邊漢堡 */
     padding: 0.5rem 1rem;
+    height: auto;
+  }
+  .top-nav-favicon {
+    height: 32px;      
+    margin-left: 0;
+    margin-right: 8px; 
+  }
+  .top-nav-site {
+    flex-direction: column;
   }
 
   .site-title {
-    font-size: 1.7rem;
+    font-size: 1.4em;
+  }
+
+  .site-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .hamburger {
+    display: flex;
   }
 
   .nav-link {
+    display: none;
+    flex-direction: column;
     width: 100%;
-    justify-content: flex-start;
-    gap: 1rem;
-    padding: 0.5rem 0;
-    flex-wrap: wrap;
+    background: rgba(239, 237, 230, 0.95);
+    padding: 1rem 0;
+    position: absolute;
+    top: 72px;
+    left: 0;
   }
+
+  .nav-link.show {
+    display: flex;
+  }
+
+  .nav-link a {
+    padding: 0.75rem 1.25rem;
+    font-size: 1.2rem;
+  }
+
+  .header {
+    height: 40vh;
+  }
+
 
   body {
     padding-top: 56px;
@@ -315,7 +393,6 @@ footer {
     min-width: 0; /* 防止超出容器 */
     box-sizing: border-box;
   }
-
 
   .nav-dropdown {
     position: static;
