@@ -482,9 +482,7 @@ section[id] {
 .video-main {
   /* 第一區塊大影片 */
   position: relative;
-  /* border: 2px solid var(--color-text); */
   border-radius: 30px;
-  /* overflow: hidden; */
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.8);;
 }
@@ -496,7 +494,6 @@ section[id] {
     var(--color-primary)
   );
   height: 400px;
-  /* border-radius: 30px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -566,7 +563,6 @@ section[id] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* border-radius: 10px; */
   display: block;
 }
 
@@ -650,7 +646,43 @@ section[id] {
 
 
 
-@media (max-width: 768px) {
+/* 頁腳 - 每一頁的頁腳都要長一樣 */
+footer {
+  background-color: var(--color-tertiary);
+  color: var(--color-text);
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 30px 0;
+}
+
+.footer-p {
+  margin: 0 100px 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--color-text);
+}
+
+.footer-source-title {
+  color: var(--color-text);
+  display: inline;
+}
+
+.footer-source-link {
+  color: #c4c4c4;
+  height: 20px;
+  display: inline-block;
+  height: 35px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.footer-source-link img {
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
   .top-nav {
     flex-direction: column;
     align-items: flex-start;
@@ -697,8 +729,16 @@ section[id] {
   }
   .main-info-nav {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr !important;
     gap: 1rem;
+    width: 100%;
+  }
+
+  .main-info-nav-li {
+    grid-column: 1 / -1 !important;
+    width: 100%;
+    min-width: 0; /* 防止超出容器 */
+    box-sizing: border-box;
   }
 
   .mag-card {
@@ -708,9 +748,6 @@ section[id] {
     grid-template-columns: 1fr;
   }
 
-  .main-info-nav-li {
-    grid-column: span 1;
-  }
   .nav-dropdown {
     position: static;
     box-shadow: none;
@@ -721,43 +758,47 @@ section[id] {
   .nav-dropdown li a {
     padding: 0.5rem 0.75rem;
   }
+  /* 📚 書籍區 - 改成直向排列 */
+  .book-item {
+    flex-direction: column !important;
+    text-align: center;
+  }
 
-}
+  .book-media {
+    flex: none;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
 
-/* 頁腳 - 每一頁的頁腳都要長一樣 */
-footer {
-  background-color: var(--color-tertiary);
-  color: var(--color-text);
-  text-align: center;
-  padding: 10px 0;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  padding: 30px 0;
-}
+  .book-info {
+    width: 100%;
+  }
 
-.footer-p {
-  margin: 0 100px 10px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid var(--color-text);
-}
+  .book-image {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
 
-.footer-source-title {
-  color: var(--color-text);
-  display: inline;
-}
+  /* 🎬 影片區 - 改成直向排列 */
+  .video-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
 
-.footer-source-link {
-  color: #c4c4c4;
-  /* margin: 3px; */
-  height: 20px;
-  display: inline-block;
-  height: 35px;
-  padding: 5px;
-  margin-left: 10px;
-  /* background-color: var(--color-primary); */
-}
+  .video-main {
+    order: -1; /* 讓主影片在最上面 */
+  }
 
-.footer-source-link img {
-  height: 100%;
+  .video-item {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .video-thumbnail {
+    width: 120px;
+    height: 70px;
+  }
+
+
 }
