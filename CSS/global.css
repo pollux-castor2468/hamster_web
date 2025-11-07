@@ -1,0 +1,330 @@
+/* 全域樣式設定 包括 header, nav, footer */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #fbf1ea;
+  --color-secondary: #efede6;
+  --color-tertiary: #d7d3c1;
+  --color-wood: #c1a26e;
+  --color-text: #5b4636;
+  --shadow-soft: 0 4px 10px rgba(91, 70, 54, 0.05);
+  --radius-small: 8px;
+  --radius-medium: 16px;
+  --radius-large: 24px;
+  --nav-height: 72px;
+}
+
+body {
+  font-family: "Noto Sans TC", Arial, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-primary);
+  line-height: 1.6;
+  padding-top: 80px;
+  font-size: 1em;
+}
+
+/* 平滑滾動 */
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+/* 上面的標題區 - 每一頁也都差不多 */
+.header {
+  height: 70vh;
+  background-color: var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: 120%;
+  background-position: left;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.header-title {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 2;
+  color: var(--color-text);
+}
+
+/* 網頁內容 */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.main-info {
+  /* 總共有四大區的內容 */
+  margin-bottom: 5rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  border-radius: var(--radius-large);
+}
+
+
+
+
+/* 導覽列 - 每一頁的導覽列都要長一樣 */
+.top-nav {
+  background-color: rgba(
+    239,
+    237,
+    230,
+    0.85
+  ); /* var(--color-secondary) 但帶透明度 */
+  box-shadow: 0 4px 6px -1px rgba(91, 70, 54, 0.1),
+    0 2px 4px -1px rgba(91, 70, 54, 0.06);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6em;
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%); /* Safari 支援 */
+  padding: 0 1.5rem;
+  border-bottom: 1px solid rgba(91, 70, 54, 0.08);
+}
+
+.top-nav-favicon {
+  height: 50%;
+  margin-left: 50px;
+  margin-right: 5px;
+}
+
+.site-title {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 1.75rem;
+  color: var(--color-text);
+  position: relative;
+  top: 3px;
+  left: 10px;
+}
+
+.site-subtitle {
+  position: relative;
+  bottom: 5px;
+  left: 10px;
+}
+
+.nav-link {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin-left: auto;
+  align-items: center;
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 1.25rem;
+  position: relative;
+  padding: 6px 4px;
+  transition: color 0.3s ease;
+}
+
+.nav-link a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-wood);
+  transition: width 0.3s ease;
+}
+
+.nav-link a:hover::after {
+  width: 100%;
+}
+
+/* 下拉選單樣式 */
+.nav-link li {
+  position: relative;
+}
+
+.nav-item-toggle {
+  cursor: pointer;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100%);
+  left: 0;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 8px;
+  min-width: 220px;
+  box-shadow: 0 12px 30px rgba(91, 70, 54, 0.12);
+  display: none;
+  padding: 0.25rem 0;
+  z-index: 1100;
+  list-style: none;
+}
+
+.nav-dropdown li {
+  list-style: none;
+}
+
+.nav-dropdown li a {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.98rem;
+}
+
+.nav-dropdown li a:hover {
+  background: rgba(193, 162, 110, 0.06);
+}
+
+.has-dropdown.open .nav-dropdown,
+.has-dropdown:hover .nav-dropdown {
+  display: block;
+}
+
+/* 頁腳 - 每一頁的頁腳都要長一樣 */
+footer {
+  background-color: var(--color-tertiary);
+  color: var(--color-text);
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 30px 0;
+}
+
+.footer-p {
+  margin: 0 100px 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--color-text);
+}
+
+.footer-source-title {
+  color: var(--color-text);
+  display: inline;
+}
+
+.footer-source-link {
+  color: #c4c4c4;
+  height: 20px;
+  display: inline-block;
+  height: 35px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.footer-source-link img {
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 0.5rem 1rem;
+  }
+
+  .site-title {
+    font-size: 1.7rem;
+  }
+
+  .nav-link {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    flex-wrap: wrap;
+  }
+
+  body {
+    padding-top: 56px;
+  }
+  .main {
+    padding: 1rem;
+  }
+
+  .main-info {
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .main-info-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .main-info-content {
+    padding: 1.5rem;
+  }
+  .main-info-content::after {
+    font-size: 52px;
+    right: 8px;
+  }
+  .main-info-nav {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .main-info-nav-li {
+    grid-column: 1 / -1 !important;
+    width: 100%;
+    min-width: 0; /* 防止超出容器 */
+    box-sizing: border-box;
+  }
+
+
+  .nav-dropdown {
+    position: static;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    min-width: 0;
+  }
+  .nav-dropdown li a {
+    padding: 0.5rem 0.75rem;
+  }
+}

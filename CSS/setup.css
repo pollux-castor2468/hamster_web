@@ -1,74 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --color-primary: #FBF1EA;
-    --color-secondary: #EFEDE6;
-    --color-tertiary: #D7D3C1;
-    --color-wood: #C1A26E;
-    --color-text: #5B4636;
-    --shadow-soft: 0 4px 10px rgba(91, 70, 54, 0.05);
-    --radius-small: 8px;
-    --radius-medium: 16px;
-    --radius-large: 24px;
-}
-
-body {
-    font-family: 'Noto Sans TC', Arial, sans-serif;
-    color: var(--color-text);
-    background-color: var(--color-primary);
-    line-height: 1.6;
-    padding-top: 72px;
-    font-size: 1em;
-}
-
-
-/* 上面的標題區 - 每一頁也都差不多 */
-.header {
-    height: 70vh;
-    background-color: var(--color-secondary);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-    position: relative;
-    overflow: hidden;
-}
-
+/* header圖片 */
 .header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
     background-image: url('../img/hamster9.jpg');
-    background-repeat: no-repeat;
-    background-size: 120%;
-    background-position: left;
-    opacity: 0.5;
-    z-index: 0;
-}
-
-.header>* {
-    position: relative;
-    z-index: 1;
-}
-
-.header-title {
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--color-text);
-}
-
-.header-subtitle {
-    font-size: 1.2rem;
-    font-weight: 500;
-    line-height: 2;
-    color: var(--color-text);
 }
 
 
@@ -260,3 +192,4 @@ body {
     }
 }
 
+/* 導覽列與頁腳樣式統一於 CSS/global.css，避免頁面覆寫 */
