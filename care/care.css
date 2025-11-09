@@ -1,0 +1,80 @@
+/* Header 樣式 */
+.header::before {
+    background-image: url('../img/hamster6.jpg');
+}
+
+.main{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 3rem;
+  padding: 2rem 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.surrounding-image, .food-image, .illness-image, .funeral-image {
+  position: relative;
+  flex: 1 1 45%; /* ✅ 每個佔一半寬，可自動縮放換行 */
+  border-radius: 12px;
+  max-width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 5px dashed var(--color-text);
+  cursor: pointer;
+}
+
+/* 背景圖片層 */
+.surrounding-image::before, .food-image::before, .illness-image::before, .funeral-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://rodentscare.org/wp-content/uploads/2024/06/basic_hamster_240626_08-1024x576.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  transition: opacity 0.5s ease; /* 平滑變化 */
+  z-index: 0;
+}
+
+/* 文字層 - 初始隱藏 */
+.main-title {
+  position: relative;
+  z-index: 1;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 4.5rem;
+  color: var(--color-text);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* hover 效果 */
+.surrounding-image:hover::before, .food-image:hover::before, .illness-image:hover::before, .funeral-image:hover::before {
+  opacity: 0.3; /* 背景變淡 */
+}
+
+.surrounding-image:hover .main-title,
+.food-image:hover .main-title,
+.illness-image:hover .main-title,
+.funeral-image:hover .main-title {
+  opacity: 1; /* 顯示文字 */
+}
+
+
+.food-image::before {
+  background-image: url("https://resize-image.vocus.cc/resize?norotation=true&quality=80&url=https%3A%2F%2Fimages.vocus.cc%2F9c5616a1-1a2b-4eab-93de-fc253fcb3050.jpg&width=800&sign=RjGrE5JkS0PI9lqLgKN-42Afe5LYSLNTRPRzX9kY6CA");
+}
+
+.illness-image::before {
+  background-image: url("https://megapx-assets.dcard.tw/images/a601eb59-45d3-4c36-bb25-4ca583c7e690/full.jpeg");
+}
+.funeral-image::before {
+  background-image: url("https://www.lkah.com.tw/uploads/wiki_article/thumbnail/37/1686971297-thumbnail.jpeg");
+}
+
+
