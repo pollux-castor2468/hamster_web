@@ -3,116 +3,84 @@
     background-image: url('../img/hamster6.jpg');
 }
 
-
-/* main - 總共有四個主要區塊 */
-/* 區塊容器與標題美化 */
-.main-surrounding {
-    margin: 3rem 0;
-    padding: 2.5rem 2rem;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(239,237,230,0.5));
-    border-radius: var(--radius-large);
-    box-shadow: var(--shadow-soft);
+.main{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 3rem;
+  padding: 2rem 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
+.surrounding-image, .food-image, .illness-image, .funeral-image {
+  position: relative;
+  flex: 1 1 45%; /* ✅ 每個佔一半寬，可自動縮放換行 */
+  border-radius: 12px;
+  max-width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 5px dashed var(--color-text);
+  cursor: pointer;
+}
+
+/* 背景圖片層 */
+.surrounding-image::before, .food-image::before, .illness-image::before, .funeral-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://rodentscare.org/wp-content/uploads/2024/06/basic_hamster_240626_08-1024x576.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  transition: opacity 0.5s ease; /* 平滑變化 */
+  z-index: 0;
+}
+
+.food-image::before {
+  background-image: url("https://resize-image.vocus.cc/resize?norotation=true&quality=80&url=https%3A%2F%2Fimages.vocus.cc%2F9c5616a1-1a2b-4eab-93de-fc253fcb3050.jpg&width=800&sign=RjGrE5JkS0PI9lqLgKN-42Afe5LYSLNTRPRzX9kY6CA");
+}
+
+.illness-image::before {
+  background-image: url("https://megapx-assets.dcard.tw/images/a601eb59-45d3-4c36-bb25-4ca583c7e690/full.jpeg");
+}
+.funeral-image::before {
+  background-image: url("https://www.lkah.com.tw/uploads/wiki_article/thumbnail/37/1686971297-thumbnail.jpeg");
+}
+
+/* 文字層 - 初始隱藏 */
 .main-title {
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 1.25rem;
-    color: var(--color-text);
-    position: relative;
+  position: relative;
+  z-index: 1;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-.main-title::after {
-    content: '';
-    display: block;
-    height: 3px;
-    background-color: var(--color-wood);
-    margin-top: 0.5rem;
-    border-radius: 2px;
+/* hover 效果 */
+.surrounding-image:hover::before, .food-image:hover::before, .illness-image:hover::before, .funeral-image:hover::before {
+  opacity: 0.3; /* 背景變淡 */
 }
 
-/* 圖片放置區 */
-.section-media-frame {
-    height: 220px;
-    border-radius: 20px;
-    background: linear-gradient(45deg, var(--color-tertiary), var(--color-primary));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow-soft);
-    overflow: hidden;        /*會把多的部分隱藏*/
+.surrounding-image:hover, .food-image:hover, .illness-image:hover, .funeral-image:hover {
+  background-color: rgba(91, 70, 54, 0.7); /* 增加背景遮罩 */ 
 }
 
-.section-media-frame .image-placeholder {
-    width: 80%;
-    opacity: 80%;
+.surrounding-image:hover .main-title,
+.food-image:hover .main-title,
+.illness-image:hover .main-title,
+.funeral-image:hover .main-title {
+  opacity: 1; /* 顯示文字 */
 }
 
-
-/* 文章卡片雙欄排版 */
-.main-article {
-    background: #fff;
-    border-radius: var(--radius-medium);
-    padding: 1.5rem 1rem 1.25rem;
-    box-shadow: var(--shadow-soft);
-    margin-bottom: 1.25rem;
+a {
+    text-decoration: none;
+    color: inherit;
 }
-
-/* 文章標題與副標題排版：標題在上、字體更大 */
-.article-title {
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 1.7rem;
-    font-weight: 800;
-    line-height: 1.3;
-    margin: 0 0 0.25rem 0;
-    color: var(--color-text);
-}
-
-.article-subtitle {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    opacity: 0.9;
-    margin: 0 0 1rem 0;
-    color: var(--color-text);
-}
-
-/* 讓清單左右分欄 */
-.article-nav {
-    list-style: none;
-    display: grid;
-    gap: 1rem;
-    padding: 0;
-}
-
-/* 每個項目卡片 */
-.article-nav-li {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: var(--radius-small);
-    padding: 1rem;
-    box-shadow: var(--shadow-soft);
-    display: flex;
-    flex-direction: column;
-}
-
-/* 標題樣式 */
-.article-nav-title {
-    font-weight: 800;
-    color: var(--color-text);
-    margin: 0 0 0.5rem 0;
-}
-
-.article-nav .content {
-    line-height: 1.9;
-    margin: 0;
-    padding-left: 0.5rem;
-}
-
-/* 響應式調整：手機改單欄 */
-@media (max-width: 768px) {
-    .article-nav {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* 導覽列與頁腳樣式統一於 CSS/global.css，避免頁面覆寫 */
