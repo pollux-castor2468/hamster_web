@@ -1,168 +1,193 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/global.css">
-    <link rel="stylesheet" href="../CSS/care.css">
-    <title>倉鼠調查中 - 如何照料</title>
-    <!-- favicon -->
-    <link rel="shortcut icon" href="./img/favicon.ico" />
-    <link rel="bookmark" href="./img/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <!-- 每一頁的導覽列都要長一樣 -->
-    <nav class="top-nav">
-        <img src="./img/favicon.ico" alt="favicon" class="top-nav-favicon">
-        <a href="index.html" class="top-nav-site">
-            <h1 class="site-title">倉鼠調查中</h1>
-            <p class="site-subtitle">認識可愛的倉鼠世界</p>
-        </a>
-        <ul class="nav-link">
-            <li class="has-dropdown">
-                <a href="index.html" class="nav-item-toggle" aria-haspopup="true" aria-expanded="false">首頁 ▾</a>
-                <ul class="nav-dropdown" aria-label="首頁選單">
-                    <li><a href="index.html#before-keeping">倉鼠飼養前須知</a></li>
-                    <li><a href="index.html#reading-list">推薦的倉鼠飼養基本指南書籍</a></li>
-                    <li><a href="index.html#video-gallery">倉鼠的介紹與飼養相關影片</a></li>
-                    <li><a href="index.html#organizations">動物友善團體及機構</a></li>
-                </ul>
-            </li>
-            <li><a href="care.html">如何照料</a></li>
-            <li><a href="encyclopedia.html">鼠鼠百科</a></li>
-            <li><a href="setup.html">小窩佈置</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-            <span></span> <!-- 三條線漢堡選單 -->
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="../CSS/global.css">
+        <title>倉鼠調查中 - 如何照料</title>
+        <!-- favicon -->
+        <link rel="shortcut icon" href="./img/favicon.ico" />
+        <link rel="bookmark" href="./img/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- 每一頁的導覽列都要長一樣 -->
+        <nav class="top-nav">
+            <img src="../img/favicon.ico" alt="favicon" class="top-nav-favicon">
+            <a href="../index.html" class="top-nav-site">
+                <h1 class="site-title">倉鼠調查中</h1>
+                <p class="site-subtitle">認識可愛的倉鼠世界</p>
+            </a>
+            <ul class="nav-link">
+                <li class="has-dropdown">
+                    <a href="../index.html" class="nav-item-toggle"
+                        aria-haspopup="true" aria-expanded="false">首頁 ▾</a>
+                    <ul class="nav-dropdown" aria-label="首頁選單">
+                        <li><a
+                                href="../index.html#before-keeping">飼養前須知</a></li>
+                        <li><a href="../index.html#reading-list">推薦書籍</a></li>
+                        <li><a
+                                href="../index.html#video-gallery">飼養相關影片</a></li>
+                        <li><a
+                                href="../index.html#organizations">動物友善團體及機構</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="../care.html" class="nav-item-toggle"
+                        aria-haspopup="true" aria-expanded="false">如何照料 ▾</a>
+                    <ul class="nav-dropdown" aria-label="如何照料選單">
+                        <li><a href="environment.html">關於環境</a></li>
+                        <li><a href="food.html">關於飲食</a></li>
+                        <li><a href="illness.html">關於疾病</a></li>
+                        <li><a href="funeral.html">最後時光</a></li>
+                    </ul>
+                </li>
+                <li><a href="../encyclopedia.html">鼠鼠百科</a></li>
+                <li><a href="../setup.html">小窩佈置</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span> <!-- 三條線漢堡選單 -->
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
 
-
+        <!-- 
     <header class="header">
         <h1 class="header-title">倉鼠飼養與照顧手冊</h1>
         <p class="header-subtitle">要好好愛護倉鼠哦！ 每天都要觀察倉鼠的健康狀態，讓倉鼠生活得更健康快樂</p>
-    </header>
+    </header> -->
 
-    <main class="main">
-        <!-- 第三區-關於疾病 -->
-        <section class="main-surrounding">
-            <h2 class="main-title">關於疾病</h2>
-            <div class="section-media">
-                <div class="section-media-frame">
-                    <img src="https://megapx-assets.dcard.tw/images/a601eb59-45d3-4c36-bb25-4ca583c7e690/full.jpeg" alt="健康示意圖片" class="image-placeholder">
+        <main class="main">
+            <!-- 第三區-關於疾病 -->
+            <section class="main-surrounding">
+                <h2 class="main-title">關於疾病</h2>
+                <div class="section-media">
+                    <div class="section-media-frame">
+                        <img
+                            src="https://megapx-assets.dcard.tw/images/a601eb59-45d3-4c36-bb25-4ca583c7e690/full.jpeg"
+                            alt="健康示意圖片" class="image-placeholder">
+                    </div>
                 </div>
-            </div>
-            <!-- 關於疾病-日常行為 -->
-            <article class="main-article">
-                <h3 class="article-title">日常行為：</h3>
-                <p class="article-subtitle">無憂無慮的倉鼠應該展現活潑的一面</p>
-                <ul class="article-nav">
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">活動</p>
-                        <p class="article-nav content">
-                            倉鼠的活動時間為傍晚至夜晚<br>
-                            在晚上應提供倉鼠玩耍的環境與設施，白天則須提供安穩睡眠的環境
-                        </p>
-                    </li>
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">挖洞</p>
-                        <p class="article-nav content">
-                            提供厚度足夠的墊料，滿足倉鼠挖洞的習性
-                        </p>
-                    </li>
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">探索</p>
-                        <p class="article-nav content">
-                            倉鼠鼠喜好探索，鬍鬚是他們探索的重要工具，切勿修剪牠們的鬍鬚
-                        </p>
-                    </li>
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">覓食</p>
-                        <p class="article-nav content">
-                            野生的鼠類會花費大多數的時間在熟悉的餵食點尋覓食物<br>
-                            餵食時以丟撒的方式餵食倉鼠，可以滿足牠們的習性
-                        </p>
-                    </li>
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">食糞</p>
-                        <p class="article-nav content">
-                            鼠類會食入自己的糞便，以完整吸收需要的營養素，例如維他命B12與葉酸
-                        </p>
-                    </li>
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">理毛</p>
-                        <p class="article-nav content">
-                            鼠類喜歡理毛、清潔自己，若無法展現這項自然習性牠們會感到挫折
-                        </p>
-                    </li>
-                </ul>
-            </article>
-            <!-- 關於疾病-異常行為 -->
-            <article class="main-article">
-                <h3 class="article-title">異常行為：</h3>
-                <p class="article-subtitle">每天都要好好的觀察倉鼠是否健康</p>
-                <ul class="article-nav">
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">精神</p>
-                        <p class="article-nav content">
-                            每天都要觀察倉鼠是否有起床活動，記錄鼠大概跑多久滾輪<br>
-                            觀察倉鼠是否動作敏捷、耳朵、眼睛都張開，四處探險<br>
-                            倉鼠是夜行性動物，主要活動時間在晚上，夜間活動力正常就不需要太擔心
-                        </p>
-                    </li>
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">食慾</p>
-                        <p class="article-nav content">
-                            每天都要觀察鼠前一天的食量大概幾克<br>
-	                        若連續數日食量明顯減少，可能身體不適須就醫
-                        </p>
-                    </li>
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">體重</p>
-                        <p class="article-nav content">
-                            每天給倉鼠秤重，如果突然體重持續下降，可能身體不適須就醫
-                        </p>
-                    </li>
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">其他</p>
-                        <p class="article-nav content">
-                            如果出現啃咬鐵籠欄杆、過度理毛、反覆在籠舍中繞圈等，皆為常見鼠類因壓力或
-                            痛苦而展現的異常行為，若觀察到上述現象，請尋求動物行為師、獸醫師協助
-                        </p>
-                    </li>
-                </ul>
-            </article>
-            <!-- 關於疾病-就醫資訊 -->
-            <article class="main-article">
-                <h3 class="article-title">就醫資訊：</h3>
-                <p class="article-subtitle">當倉鼠出現持續多天的異常行為時請立即帶去獸醫院檢查</p>
-                <ul class="article-nav">
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">平時就做好準備</p>
-                        <p class="article-nav content">
-                            平時應調查與記錄鼠類專門獸醫院名單，預防突發狀況發生
-                        </p>
-                    </li>
-                </ul>
-            </article>
-        </section>
-    </main>
+                <!-- 關於疾病-日常行為 -->
+                <article class="main-article">
+                    <h3 class="article-title">日常行為：</h3>
+                    <p class="article-subtitle">無憂無慮的倉鼠應該展現活潑的一面</p>
+                    <ul class="article-nav">
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">活動</p>
+                            <p class="article-nav content">
+                                倉鼠的活動時間為傍晚至夜晚<br>
+                                在晚上應提供倉鼠玩耍的環境與設施，白天則須提供安穩睡眠的環境
+                            </p>
+                        </li>
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">挖洞</p>
+                            <p class="article-nav content">
+                                提供厚度足夠的墊料，滿足倉鼠挖洞的習性
+                            </p>
+                        </li>
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">探索</p>
+                            <p class="article-nav content">
+                                倉鼠鼠喜好探索，鬍鬚是他們探索的重要工具，切勿修剪牠們的鬍鬚
+                            </p>
+                        </li>
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">覓食</p>
+                            <p class="article-nav content">
+                                野生的鼠類會花費大多數的時間在熟悉的餵食點尋覓食物<br>
+                                餵食時以丟撒的方式餵食倉鼠，可以滿足牠們的習性
+                            </p>
+                        </li>
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">食糞</p>
+                            <p class="article-nav content">
+                                鼠類會食入自己的糞便，以完整吸收需要的營養素，例如維他命B12與葉酸
+                            </p>
+                        </li>
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">理毛</p>
+                            <p class="article-nav content">
+                                鼠類喜歡理毛、清潔自己，若無法展現這項自然習性牠們會感到挫折
+                            </p>
+                        </li>
+                    </ul>
+                </article>
+                <!-- 關於疾病-異常行為 -->
+                <article class="main-article">
+                    <h3 class="article-title">異常行為：</h3>
+                    <p class="article-subtitle">每天都要好好的觀察倉鼠是否健康</p>
+                    <ul class="article-nav">
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">精神</p>
+                            <p class="article-nav content">
+                                每天都要觀察倉鼠是否有起床活動，記錄鼠大概跑多久滾輪<br>
+                                觀察倉鼠是否動作敏捷、耳朵、眼睛都張開，四處探險<br>
+                                倉鼠是夜行性動物，主要活動時間在晚上，夜間活動力正常就不需要太擔心
+                            </p>
+                        </li>
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">食慾</p>
+                            <p class="article-nav content">
+                                每天都要觀察鼠前一天的食量大概幾克<br>
+                                若連續數日食量明顯減少，可能身體不適須就醫
+                            </p>
+                        </li>
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">體重</p>
+                            <p class="article-nav content">
+                                每天給倉鼠秤重，如果突然體重持續下降，可能身體不適須就醫
+                            </p>
+                        </li>
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">其他</p>
+                            <p class="article-nav content">
+                                如果出現啃咬鐵籠欄杆、過度理毛、反覆在籠舍中繞圈等，皆為常見鼠類因壓力或
+                                痛苦而展現的異常行為，若觀察到上述現象，請尋求動物行為師、獸醫師協助
+                            </p>
+                        </li>
+                    </ul>
+                </article>
+                <!-- 關於疾病-就醫資訊 -->
+                <article class="main-article">
+                    <h3 class="article-title">就醫資訊：</h3>
+                    <p class="article-subtitle">當倉鼠出現持續多天的異常行為時請立即帶去獸醫院檢查</p>
+                    <ul class="article-nav">
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">平時就做好準備</p>
+                            <p class="article-nav content">
+                                平時應調查與記錄鼠類專門獸醫院名單，預防突發狀況發生
+                            </p>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+        </main>
 
-    <!-- 每一頁的頁腳都要長一樣 -->
-    <footer class="footer">
-        <p class="footer-p">用愛與關懷，打造倉鼠的美好生活</p>
-        <section class="footer-source">
-            <p class="footer-source-title">資料來源：</p>
-            <a href="https://rodentscare.org/" target="_blank" class="footer-source-link"><img src="./img/RodentsCare-logo.png" alt="愛鼠協會"></a>
-            <a href="https://animal.moa.gov.tw/Frontend/Know/Detail/LT00000829?parentID=Tab0000126" target="_blank" class="footer-source-link"><img src="./img/AnimalProtectInfo-logo.png" alt="動物保護資訊網"></a>
-            <a href="https://www.spca.org.tw/post/shu-lei-si-yang-xu-zhi" target="_blank" class="footer-source-link"><img src="./img/TaiwanSPCA-logo.png" alt="台灣防止虐待動物協會"></a>
-            <a href="https://animal-friendly.co/pet/42437/" target="_blank" class="footer-source-link"><img src="./img/AnimalFriendly-logo.png" alt="動物友善網"></a>
-        </section>
-    </footer>
-    <script src="js/nav.js"></script>
-</body>
+        <!-- 每一頁的頁腳都要長一樣 -->
+        <footer class="footer">
+            <p class="footer-p">用愛與關懷，打造倉鼠的美好生活</p>
+            <section class="footer-source">
+                <p class="footer-source-title">資料來源：</p>
+                <a href="https://rodentscare.org/" target="_blank"
+                    class="footer-source-link"><img
+                        src="../img/RodentsCare-logo.png" alt="愛鼠協會"></a>
+                <a href="https://animal.moa.gov.tw/Frontend/Know/Detail/LT00000829?parentID=Tab0000126"
+                    target="_blank" class="footer-source-link"><img
+                        src="../img/AnimalProtectInfo-logo.png"
+                        alt="動物保護資訊網"></a>
+                <a href="https://www.spca.org.tw/post/shu-lei-si-yang-xu-zhi"
+                    target="_blank" class="footer-source-link"><img
+                        src="../img/TaiwanSPCA-logo.png" alt="台灣防止虐待動物協會"></a>
+                <a href="https://animal-friendly.co/pet/42437/" target="_blank"
+                    class="footer-source-link"><img
+                        src="../img/AnimalFriendly-logo.png" alt="動物友善網"></a>
+            </section>
+        </footer>
+        <script src="js/nav.js"></script>
+    </body>

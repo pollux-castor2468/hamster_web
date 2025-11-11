@@ -1,286 +1,352 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <title>倉鼠調查中 - 認識可愛的倉鼠世界</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/global.css">
-    <link rel="stylesheet" href="CSS/style.css">
-    <!-- favicon -->
-    <link rel="shortcut icon" href="./img/favicon.ico" />
-    <link rel="bookmark" href="./img/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <!-- 每一頁的導覽列都要長一樣 -->
-    <nav class="top-nav">
-        <img src="./img/favicon.ico" alt="favicon" class="top-nav-favicon">
-        <a href="index.html" class="top-nav-site">
-            <h1 class="site-title">倉鼠調查中</h1>
-            <p class="site-subtitle">認識可愛的倉鼠世界</p>
-        </a>
-        <ul class="nav-link">
-            <li class="has-dropdown">
-                <a href="index.html" class="nav-item-toggle" aria-haspopup="true" aria-expanded="false">首頁 ▾</a>
-                <ul class="nav-dropdown" aria-label="首頁選單">
-                    <li><a href="#before-keeping">倉鼠飼養前須知</a></li>
-                    <li><a href="#reading-list">推薦的倉鼠飼養基本指南書籍</a></li>
-                    <li><a href="#video-gallery">倉鼠的介紹與飼養相關影片</a></li>
-                    <li><a href="#organizations">動物友善團體及機構</a></li>
-                </ul>
-            </li>
-            <li><a href="care.html">如何照料</a></li>
-            <li><a href="encyclopedia.html">鼠鼠百科</a></li>
-            <li><a href="setup.html">小窩佈置</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-            <span></span> <!-- 三條線漢堡選單 -->
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-
-    <header class="header">
-        <h1 class="header-title">小小身影，大大世界</h1>
-        <p class="header-subtitle">這裡是一座為倉鼠而生的溫暖小屋，<br>收藏牠們的模樣、習性與故事，<br>也希望讓更多人看見「陪伴」的溫度。</p>
-    </header>
-
-    <main class="main">
-        <!-- 第一區-倉鼠飼養前須知 -->
-    <section id="before-keeping" class="main-info">
-            <div class="main-info-header">
-                <p class="main-info-header-accent">Before Keeping</p>
-                <h2 class="main-info-header-title">倉鼠飼養前須知</h2>
-            </div>
-            <p class="main-info-content">
-                相較其他類型的哺乳類寵物，鼠類的飼養門檻較低，但也更容易發生不當飼養的狀況<br>
-                黃金鼠和三線鼠是最受歡迎的鼠類，因為親人、便宜、所需空間相對較小等原因<br>
-                但「養的人多，棄養就多」，因此在開始養倉鼠前，應該評估自己是否有能力與耐心去好好的愛護他們
-            </p>
-            <ul class="main-info-grid">
-                <li class="mag-card">
-                    <div class="mag-head">
-                        <span class="mag-kicker">飼養守則</span>
-                        <h3 class="main-info-grid-title">一籠一鼠</h3>
-                    </div>
-                    <p class="main-info-grid-content">
-                        倉鼠領域性強，關在一起容易與其他鼠類打架殘殺<br>
-                        倉鼠繁殖力也強，一公一母關在一起不只會打架，還會繁殖好幾窩小倉鼠
-                    </p>
+    <head>
+        <meta charset="UTF-8">
+        <title>倉鼠調查中 - 認識可愛的倉鼠世界</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="CSS/global.css">
+        <link rel="stylesheet" href="CSS/style.css">
+        <!-- favicon -->
+        <link rel="shortcut icon" href="./img/favicon.ico" />
+        <link rel="bookmark" href="./img/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- 每一頁的導覽列都要長一樣 -->
+        <nav class="top-nav">
+            <img src="./img/favicon.ico" alt="favicon" class="top-nav-favicon">
+            <a href="index.html" class="top-nav-site">
+                <h1 class="site-title">倉鼠調查中</h1>
+                <p class="site-subtitle">認識可愛的倉鼠世界</p>
+            </a>
+            <ul class="nav-link">
+                <li class="has-dropdown">
+                    <a href="index.html" class="nav-item-toggle"
+                        aria-haspopup="true" aria-expanded="false">首頁 ▾</a>
+                    <ul class="nav-dropdown" aria-label="首頁選單">
+                        <li><a href="#before-keeping">飼養前須知</a></li>
+                        <li><a href="#reading-list">推薦書籍</a></li>
+                        <li><a href="#video-gallery">飼養相關影片</a></li>
+                        <li><a href="#organizations">動物友善團體及機構</a></li>
+                    </ul>
                 </li>
-                <li class="mag-card">
-                    <div class="mag-head">
-                        <span class="mag-kicker">生活作息</span>
-                        <h3 class="main-info-grid-title">晚上蹦蹦</h3>
-                    </div>
-                    <p class="main-info-grid-content">
-                        倉鼠是夜行性動物，白天會休息，晚上則會爬起來製造噪音
-                    </p>
+                <li class="has-dropdown">
+                    <a href="care.html" class="nav-item-toggle"
+                        aria-haspopup="true" aria-expanded="false">如何照料 ▾</a>
+                    <ul class="nav-dropdown" aria-label="如何照料選單">
+                        <li><a href="care/environment.html">關於環境</a></li>
+                        <li><a href="care/food.html">關於飲食</a></li>
+                        <li><a href="care/illness.html">關於疾病</a></li>
+                        <li><a href="care/funeral.html">最後時光</a></li>
+                    </ul>
                 </li>
-                <li class="mag-card">
-                    <div class="mag-head">
-                        <span class="mag-kicker">日常照護</span>
-                        <h3 class="main-info-grid-title">每天觀察</h3>
-                    </div>
-                    <p class="main-info-grid-content">
-                        每天都仔細觀察倉鼠的身體和心理健康才是好飼主
-                    </p>
-                </li>
-                <li class="mag-card">
-                    <div class="mag-head">
-                        <span class="mag-kicker">環境管理</span>
-                        <h3 class="main-info-grid-title">經常清掃</h3>
-                    </div>
-                    <p class="main-info-grid-content">
-                        大約3~5天就要清掃一次籠子，給倉鼠一個整潔的環境
-                    </p>
-                </li>
-            </ul>    
-        </section>
-        <!-- 第二區-推薦的倉鼠飼養基本指南書籍 -->
-    <section id="reading-list" class="main-info">
-            <div class="container">
-                <div class="main-info-header">
-                    <p class="main-info-header-accent">Reading List</p>
-                    <h2 class="main-info-header-title">推薦的倉鼠飼養基本指南書籍</h2>
-                </div>
-                <div class="books-showcase">
-                    <article class="book-item">
-                        <div class="book-media">
-                            <div class="book-cover">
-                                <div class="cover-content">
-                                    <a href="https://www.eslite.com/product/1001118832817743?attr=hAHwgwoLCNnosMgGENTSwkgQARokNjkyNDRmYjEtMDAwMC0yZDMyLTllMTgtZmM0MTE2OTE4NWE5KgExMjCOkckwm9a3LY6-nRXUsp0VwvCeFajlqi2Y1rctt7eMLceW8DCNwI83yZbwMJD3sjA6DmRlZmF1bHRfc2VhcmNoSAFYAWgBegJ0aw" target="_blank">
-                                        <img src="https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681845457006/20200116054654596043.jpg" alt="倉鼠飼養入門" class="book-image" >
-                                    </a>                        
-                                </div>
-                            </div>
-                            <div class="book-shadow"></div>
-                        </div>
-                        <div class="book-info">
-                            <div class="book-meta">
-                                <span class="book-pages">112頁</span>
-                                <span class="book-year">2020</span>
-                            </div>
-                            <h4>倉鼠完全照護手冊：小動物獸醫師專業監修！</h4>
-                            <p>
-                                全方位！專為倉鼠設計的生活照護指南書<br>
-                                超完整！仔細解說常見疾病的預防＆治療方法<br>
-                                最易懂！詳盡的知識解說＋全彩插畫、照片
-                            </p>
-                            <div class="book-topics">
-                                <span class="topic-tag">照護指南</span>
-                                <span class="topic-tag">知識解說</span>
-                                <span class="topic-tag">疾病治療</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="book-item">
-                        <div class="book-media">
-                            <div class="book-cover">
-                                <div class="cover-content">
-                                    <a href="https://www.eslite.com/product/1001118832706868?attr=mQHwmAoMCKHpsMgGEI-8mYgDEAEaJDY5MGY0NjcxLTAwMDAtMmJmNC05ZmIzLTM0YzdlOTA2N2JmYioVMTU2NzM5MzExOC4xNzYyNDA3NDk1MjCb1rctwvCeFdSynRWOvp0VqOWqLZjWty21t4wtyZbwMI7AjzeOkckwx5bwMJD3sjA6DmRlZmF1bHRfc2VhcmNoSAFYAWgBegJ0aw" target="_blank">
-                                        <img src="https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/Upload/Product/201809/o/636730295223546250.jpg" alt="倉鼠行為學" class="book-image"></a>
-                                </div>
-                            </div>
-                            <div class="book-shadow"></div>
-                        </div>
-                        <div class="book-info">
-                            <div class="book-meta">
-                                <span class="book-pages">144頁</span>
-                                <span class="book-year">2018</span>
-                            </div>
-                            <h4>倉鼠完全飼養手冊：快來認識你的小夥伴！</h4>
-                            <p>從日常打理起步，學習幸福飼養倉鼠的祕訣！<br>
-                            詳盡的文字解說，搭配可愛彩圖，帶領你認識倉鼠的魅力！<br>
-                            從品種圖鑑、特性介紹，到飼養前的準備、主食和副食品的餵食方式、照顧重點，以及培養感情的方法、健康管理，一本就能全方位了解倉鼠！
-                            </p>
-                            <div class="book-topics">
-                                <span class="topic-tag">飼養準備</span>
-                                <span class="topic-tag">培養感情</span>
-                                <span class="topic-tag">健康管理</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-        <!-- 第三區-倉鼠的介紹與飼養相關影片 -->
-    <section id="video-gallery" class="main-info">
-            <div class="main-info-header">
-                <p class="main-info-header-accent">Video Gallery</p>
-                <h2 class="main-info-header-title">倉鼠的介紹與飼養相關影片</h2>
-            </div>
-            <div class="video-wrapper">
-                <div class="video-main">
-                    <a class="placeholder-video" href="https://youtu.be/_npV55fNIqQ?si=CCl-GMLt2O2rl5iD" target="_blank" rel="noopener noreferrer">
-                        <img class="placeholder-thumb" src="https://i.ytimg.com/vi/_npV55fNIqQ/hqdefault.jpg" alt="每週精選影片縮圖">
-                        <span class="video-icon">▶</span>
-                        <p>精選影片</p>
-                    </a>
-                </div>
-                <div class="video-list">
-                    <a class="video-item" href="https://youtu.be/74KH6d_ZIq8?si=6NNYC53_IfGqJNHe" target="_blank" rel="noopener noreferrer">
-                        <div class="video-thumbnail">
-                            <img class="thumb-img" src="https://i.ytimg.com/vi/74KH6d_ZIq8/hqdefault.jpg" alt="倉鼠用品注意事項縮圖">
-                            <span class="duration">09:26</span>
-                        </div>
-                        <div class="video-info">
-                            <h4>倉鼠用品注意事項</h4>
-                            <p>好心幹壞事？你正在「暗殺」你的倉鼠嗎？盤點那些害鼠不淺的地雷用品！</p>
-                        </div>
-                    </a>
-                    <a class="video-item" href="https://youtu.be/TS9zw3SNWnc?si=uwFvv9sTZHRAKoIC" target="_blank" rel="noopener noreferrer">
-                        <div class="video-thumbnail">
-                            <img class="thumb-img" src="https://i.ytimg.com/vi/TS9zw3SNWnc/hqdefault.jpg" alt="倉鼠環境溫度須知縮圖">
-                            <span class="duration">09:00</span>
-                        </div>
-                        <div class="video-info">
-                            <h4>倉鼠環境溫度須知</h4>
-                            <p>倉鼠會冬眠嗎？幾度會熱死？台灣的氣候是地雷：倉鼠季節照護倉鼠的致死溫濕度大公開</p>
-                        </div>
-                    </a>
-                    <a class="video-item" href="https://youtu.be/FVXnDXSwyS8?si=xVFcYzoJQZyLYNbK" target="_blank" rel="noopener noreferrer">
-                        <div class="video-thumbnail">
-                            <img class="thumb-img" src="https://i.ytimg.com/vi/FVXnDXSwyS8/hqdefault.jpg" alt="倉鼠餵食注意事項縮圖">
-                            <span class="duration">09:10</span>
-                        </div>
-                        <div class="video-info">
-                            <h4>倉鼠餵食注意事項</h4>
-                            <p>這樣餵倉鼠會短命？揭開倉鼠餵食的致命誤區！</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!-- 第四區-動物友善團體及機構 -->
-    <section id="organizations" class="main-info">
-            <div class="main-info-header">
-                <p class="main-info-header-accent">Organization</p>
-                <h2 class="main-info-header-title">動物友善團體及機構</h2>  
-            </div>
-            <ul class="main-info-nav">
-                <li class="main-info-nav-li">
-                    <a href="https://rodentscare.org/" target="_blank" class="main-info-nav-link">
-                        <div class="main-info-nav-div">
-                            <img src="./img/RodentsCare-logo.png" alt="愛鼠協會logo" class="main-info-nav-img">
-                            <div class="main-info-nav-content">
-                                <h3 class="main-info-nav-div-title">愛鼠協會</h3>
-                                <p class="main-info-nav-div-content">除了倉鼠之外，還有各種鼠的相關資料</p> 
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="main-info-nav-li">
-                    <a href="https://animal.moa.gov.tw/Frontend/Know/Detail/LT00000829?parentID=Tab0000126" target="_blank" class="main-info-nav-link">
-                        <div class="main-info-nav-div">
-                            <img src="./img/AnimalProtectInfo-logo.png" alt="動物保護資訊網logo" class="main-info-nav-img">
-                            <div class="main-info-nav-content">
-                                <h3 class="main-info-nav-div-title">動物保護資訊網</h3>
-                                <p class="main-info-nav-div-content">有很多與保護動物相關的活動與資訊</p>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="main-info-nav-li">
-                    <a href="https://www.spca.org.tw/post/shu-lei-si-yang-xu-zhi" target="_blank" class="main-info-nav-link">
-                        <div class="main-info-nav-div">
-                            <img src="./img/TaiwanSPCA-logo.png" alt="台灣防止虐待動物協會logo" class="main-info-nav-img">
-                            <div class="main-info-nav-content">
-                                <h3 class="main-info-nav-div-title">台灣防止虐待動物協會</h3>
-                                <p class="main-info-nav-div-content">提供動物幫助以及相關活動</p>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="main-info-nav-li">
-                    <a href="https://animal-friendly.co/pet/42437/" target="_blank" class="main-info-nav-link">
-                        <div class="main-info-nav-div">
-                            <img src="./img/AnimalFriendly-logo.png" alt="動物友善網logo" class="main-info-nav-img">
-                            <div class="main-info-nav-content">
-                                <h3 class="main-info-nav-div-title">動物友善網</h3>
-                                <p class="main-info-nav-div-content">包含各種與動物相關的報導</p>
-                            </div>
-                        </div>
-                    </a>
-                </li>
+                <li><a href="encyclopedia.html">鼠鼠百科</a></li>
+                <li><a href="setup.html">小窩佈置</a></li>
             </ul>
-        </section>
-    </main>
+            <div class="hamburger" id="hamburger">
+                <span></span> <!-- 三條線漢堡選單 -->
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
 
-    <!-- 每一頁的頁腳都要長一樣 -->
-    <footer class="footer">
-        <p class="footer-p">用愛與關懷，打造倉鼠的美好生活</p>
-        <section class="footer-source">
-            <p class="footer-source-title">資料來源：</p>
-            <a href="https://rodentscare.org/" target="_blank" class="footer-source-link"><img src="./img/RodentsCare-logo.png" alt="愛鼠協會"></a>
-            <a href="https://animal.moa.gov.tw/Frontend/Know/Detail/LT00000829?parentID=Tab0000126" target="_blank" class="footer-source-link"><img src="./img/AnimalProtectInfo-logo.png" alt="動物保護資訊網"></a>
-            <a href="https://www.spca.org.tw/post/shu-lei-si-yang-xu-zhi" target="_blank" class="footer-source-link"><img src="./img/TaiwanSPCA-logo.png" alt="台灣防止虐待動物協會"></a>
-            <a href="https://animal-friendly.co/pet/42437/" target="_blank" class="footer-source-link"><img src="./img/AnimalFriendly-logo.png" alt="動物友善網"></a>
-        </section>
-    </footer>
+        <header class="header">
+            <h1 class="header-title">小小身影，大大世界</h1>
+            <p
+                class="header-subtitle">這裡是一座為倉鼠而生的溫暖小屋，<br>收藏牠們的模樣、習性與故事，<br>也希望讓更多人看見「陪伴」的溫度。</p>
+        </header>
 
-    <script src="js/nav.js"></script>
-</body>
+        <main class="main">
+            <!-- 第一區-倉鼠飼養前須知 -->
+            <section id="before-keeping" class="main-info">
+                <div class="main-info-header">
+                    <p class="main-info-header-accent">Before Keeping</p>
+                    <h2 class="main-info-header-title">倉鼠飼養前須知</h2>
+                </div>
+                <p class="main-info-content">
+                    相較其他類型的哺乳類寵物，鼠類的飼養門檻較低，但也更容易發生不當飼養的狀況<br>
+                    黃金鼠和三線鼠是最受歡迎的鼠類，因為親人、便宜、所需空間相對較小等原因<br>
+                    但「養的人多，棄養就多」，因此在開始養倉鼠前，應該評估自己是否有能力與耐心去好好的愛護他們
+                </p>
+                <ul class="main-info-grid">
+                    <li class="mag-card">
+                        <div class="mag-head">
+                            <span class="mag-kicker">飼養守則</span>
+                            <h3 class="main-info-grid-title">一籠一鼠</h3>
+                        </div>
+                        <p class="main-info-grid-content">
+                            倉鼠領域性強，關在一起容易與其他鼠類打架殘殺<br>
+                            倉鼠繁殖力也強，一公一母關在一起不只會打架，還會繁殖好幾窩小倉鼠
+                        </p>
+                    </li>
+                    <li class="mag-card">
+                        <div class="mag-head">
+                            <span class="mag-kicker">生活作息</span>
+                            <h3 class="main-info-grid-title">晚上蹦蹦</h3>
+                        </div>
+                        <p class="main-info-grid-content">
+                            倉鼠是夜行性動物，白天會休息，晚上則會爬起來製造噪音
+                        </p>
+                    </li>
+                    <li class="mag-card">
+                        <div class="mag-head">
+                            <span class="mag-kicker">日常照護</span>
+                            <h3 class="main-info-grid-title">每天觀察</h3>
+                        </div>
+                        <p class="main-info-grid-content">
+                            每天都仔細觀察倉鼠的身體和心理健康才是好飼主
+                        </p>
+                    </li>
+                    <li class="mag-card">
+                        <div class="mag-head">
+                            <span class="mag-kicker">環境管理</span>
+                            <h3 class="main-info-grid-title">經常清掃</h3>
+                        </div>
+                        <p class="main-info-grid-content">
+                            大約3~5天就要清掃一次籠子，給倉鼠一個整潔的環境
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <!-- 第二區-推薦的倉鼠飼養基本指南書籍 -->
+            <section id="reading-list" class="main-info">
+                <div class="container">
+                    <div class="main-info-header">
+                        <p class="main-info-header-accent">Reading List</p>
+                        <h2 class="main-info-header-title">推薦的倉鼠飼養基本指南書籍</h2>
+                    </div>
+                    <div class="books-showcase">
+                        <article class="book-item">
+                            <div class="book-media">
+                                <div class="book-cover">
+                                    <div class="cover-content">
+                                        <a
+                                            href="https://www.eslite.com/product/1001118832817743?attr=hAHwgwoLCNnosMgGENTSwkgQARokNjkyNDRmYjEtMDAwMC0yZDMyLTllMTgtZmM0MTE2OTE4NWE5KgExMjCOkckwm9a3LY6-nRXUsp0VwvCeFajlqi2Y1rctt7eMLceW8DCNwI83yZbwMJD3sjA6DmRlZmF1bHRfc2VhcmNoSAFYAWgBegJ0aw"
+                                            target="_blank">
+                                            <img
+                                                src="https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/upload/product/o/2681845457006/20200116054654596043.jpg"
+                                                alt="倉鼠飼養入門" class="book-image">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="book-shadow"></div>
+                            </div>
+                            <div class="book-info">
+                                <div class="book-meta">
+                                    <span class="book-pages">112頁</span>
+                                    <span class="book-year">2020</span>
+                                </div>
+                                <h4>倉鼠完全照護手冊：小動物獸醫師專業監修！</h4>
+                                <p>
+                                    全方位！專為倉鼠設計的生活照護指南書<br>
+                                    超完整！仔細解說常見疾病的預防＆治療方法<br>
+                                    最易懂！詳盡的知識解說＋全彩插畫、照片
+                                </p>
+                                <div class="book-topics">
+                                    <span class="topic-tag">照護指南</span>
+                                    <span class="topic-tag">知識解說</span>
+                                    <span class="topic-tag">疾病治療</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="book-item">
+                            <div class="book-media">
+                                <div class="book-cover">
+                                    <div class="cover-content">
+                                        <a
+                                            href="https://www.eslite.com/product/1001118832706868?attr=mQHwmAoMCKHpsMgGEI-8mYgDEAEaJDY5MGY0NjcxLTAwMDAtMmJmNC05ZmIzLTM0YzdlOTA2N2JmYioVMTU2NzM5MzExOC4xNzYyNDA3NDk1MjCb1rctwvCeFdSynRWOvp0VqOWqLZjWty21t4wtyZbwMI7AjzeOkckwx5bwMJD3sjA6DmRlZmF1bHRfc2VhcmNoSAFYAWgBegJ0aw"
+                                            target="_blank">
+                                            <img
+                                                src="https://s2.eslite.com/unsafe/fit-in/x900/s.eslite.com/Upload/Product/201809/o/636730295223546250.jpg"
+                                                alt="倉鼠行為學"
+                                                class="book-image"></a>
+                                    </div>
+                                </div>
+                                <div class="book-shadow"></div>
+                            </div>
+                            <div class="book-info">
+                                <div class="book-meta">
+                                    <span class="book-pages">144頁</span>
+                                    <span class="book-year">2018</span>
+                                </div>
+                                <h4>倉鼠完全飼養手冊：快來認識你的小夥伴！</h4>
+                                <p>從日常打理起步，學習幸福飼養倉鼠的祕訣！<br>
+                                    詳盡的文字解說，搭配可愛彩圖，帶領你認識倉鼠的魅力！<br>
+                                    從品種圖鑑、特性介紹，到飼養前的準備、主食和副食品的餵食方式、照顧重點，以及培養感情的方法、健康管理，一本就能全方位了解倉鼠！
+                                </p>
+                                <div class="book-topics">
+                                    <span class="topic-tag">飼養準備</span>
+                                    <span class="topic-tag">培養感情</span>
+                                    <span class="topic-tag">健康管理</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <!-- 第三區-倉鼠的介紹與飼養相關影片 -->
+            <section id="video-gallery" class="main-info">
+                <div class="main-info-header">
+                    <p class="main-info-header-accent">Video Gallery</p>
+                    <h2 class="main-info-header-title">倉鼠的介紹與飼養相關影片</h2>
+                </div>
+                <div class="video-wrapper">
+                    <div class="video-main">
+                        <a class="placeholder-video"
+                            href="https://youtu.be/_npV55fNIqQ?si=CCl-GMLt2O2rl5iD"
+                            target="_blank" rel="noopener noreferrer">
+                            <img class="placeholder-thumb"
+                                src="https://i.ytimg.com/vi/_npV55fNIqQ/hqdefault.jpg"
+                                alt="每週精選影片縮圖">
+                            <span class="video-icon">▶</span>
+                            <p>精選影片</p>
+                        </a>
+                    </div>
+                    <div class="video-list">
+                        <a class="video-item"
+                            href="https://youtu.be/74KH6d_ZIq8?si=6NNYC53_IfGqJNHe"
+                            target="_blank" rel="noopener noreferrer">
+                            <div class="video-thumbnail">
+                                <img class="thumb-img"
+                                    src="https://i.ytimg.com/vi/74KH6d_ZIq8/hqdefault.jpg"
+                                    alt="倉鼠用品注意事項縮圖">
+                                <span class="duration">09:26</span>
+                            </div>
+                            <div class="video-info">
+                                <h4>倉鼠用品注意事項</h4>
+                                <p>好心幹壞事？你正在「暗殺」你的倉鼠嗎？盤點那些害鼠不淺的地雷用品！</p>
+                            </div>
+                        </a>
+                        <a class="video-item"
+                            href="https://youtu.be/TS9zw3SNWnc?si=uwFvv9sTZHRAKoIC"
+                            target="_blank" rel="noopener noreferrer">
+                            <div class="video-thumbnail">
+                                <img class="thumb-img"
+                                    src="https://i.ytimg.com/vi/TS9zw3SNWnc/hqdefault.jpg"
+                                    alt="倉鼠環境溫度須知縮圖">
+                                <span class="duration">09:00</span>
+                            </div>
+                            <div class="video-info">
+                                <h4>倉鼠環境溫度須知</h4>
+                                <p>倉鼠會冬眠嗎？幾度會熱死？台灣的氣候是地雷：倉鼠季節照護倉鼠的致死溫濕度大公開</p>
+                            </div>
+                        </a>
+                        <a class="video-item"
+                            href="https://youtu.be/FVXnDXSwyS8?si=xVFcYzoJQZyLYNbK"
+                            target="_blank" rel="noopener noreferrer">
+                            <div class="video-thumbnail">
+                                <img class="thumb-img"
+                                    src="https://i.ytimg.com/vi/FVXnDXSwyS8/hqdefault.jpg"
+                                    alt="倉鼠餵食注意事項縮圖">
+                                <span class="duration">09:10</span>
+                            </div>
+                            <div class="video-info">
+                                <h4>倉鼠餵食注意事項</h4>
+                                <p>這樣餵倉鼠會短命？揭開倉鼠餵食的致命誤區！</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- 第四區-動物友善團體及機構 -->
+            <section id="organizations" class="main-info">
+                <div class="main-info-header">
+                    <p class="main-info-header-accent">Organization</p>
+                    <h2 class="main-info-header-title">動物友善團體及機構</h2>
+                </div>
+                <ul class="main-info-nav">
+                    <li class="main-info-nav-li">
+                        <a href="https://rodentscare.org/" target="_blank"
+                            class="main-info-nav-link">
+                            <div class="main-info-nav-div">
+                                <img src="./img/RodentsCare-logo.png"
+                                    alt="愛鼠協會logo" class="main-info-nav-img">
+                                <div class="main-info-nav-content">
+                                    <h3
+                                        class="main-info-nav-div-title">愛鼠協會</h3>
+                                    <p
+                                        class="main-info-nav-div-content">除了倉鼠之外，還有各種鼠的相關資料</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="main-info-nav-li">
+                        <a
+                            href="https://animal.moa.gov.tw/Frontend/Know/Detail/LT00000829?parentID=Tab0000126"
+                            target="_blank" class="main-info-nav-link">
+                            <div class="main-info-nav-div">
+                                <img src="./img/AnimalProtectInfo-logo.png"
+                                    alt="動物保護資訊網logo" class="main-info-nav-img">
+                                <div class="main-info-nav-content">
+                                    <h3
+                                        class="main-info-nav-div-title">動物保護資訊網</h3>
+                                    <p
+                                        class="main-info-nav-div-content">有很多與保護動物相關的活動與資訊</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="main-info-nav-li">
+                        <a
+                            href="https://www.spca.org.tw/post/shu-lei-si-yang-xu-zhi"
+                            target="_blank" class="main-info-nav-link">
+                            <div class="main-info-nav-div">
+                                <img src="./img/TaiwanSPCA-logo.png"
+                                    alt="台灣防止虐待動物協會logo"
+                                    class="main-info-nav-img">
+                                <div class="main-info-nav-content">
+                                    <h3
+                                        class="main-info-nav-div-title">台灣防止虐待動物協會</h3>
+                                    <p
+                                        class="main-info-nav-div-content">提供動物幫助以及相關活動</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="main-info-nav-li">
+                        <a href="https://animal-friendly.co/pet/42437/"
+                            target="_blank" class="main-info-nav-link">
+                            <div class="main-info-nav-div">
+                                <img src="./img/AnimalFriendly-logo.png"
+                                    alt="動物友善網logo" class="main-info-nav-img">
+                                <div class="main-info-nav-content">
+                                    <h3
+                                        class="main-info-nav-div-title">動物友善網</h3>
+                                    <p
+                                        class="main-info-nav-div-content">包含各種與動物相關的報導</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <!-- 每一頁的頁腳都要長一樣 -->
+        <footer class="footer">
+            <p class="footer-p">用愛與關懷，打造倉鼠的美好生活</p>
+            <section class="footer-source">
+                <p class="footer-source-title">資料來源：</p>
+                <a href="https://rodentscare.org/" target="_blank"
+                    class="footer-source-link"><img
+                        src="./img/RodentsCare-logo.png" alt="愛鼠協會"></a>
+                <a href="https://animal.moa.gov.tw/Frontend/Know/Detail/LT00000829?parentID=Tab0000126"
+                    target="_blank" class="footer-source-link"><img
+                        src="./img/AnimalProtectInfo-logo.png"
+                        alt="動物保護資訊網"></a>
+                <a href="https://www.spca.org.tw/post/shu-lei-si-yang-xu-zhi"
+                    target="_blank" class="footer-source-link"><img
+                        src="./img/TaiwanSPCA-logo.png" alt="台灣防止虐待動物協會"></a>
+                <a href="https://animal-friendly.co/pet/42437/" target="_blank"
+                    class="footer-source-link"><img
+                        src="./img/AnimalFriendly-logo.png" alt="動物友善網"></a>
+            </section>
+        </footer>
+
+        <script src="js/nav.js"></script>
+    </body>
 </html>

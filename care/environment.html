@@ -1,175 +1,200 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/global.css">
-    <link rel="stylesheet" href="../CSS/care.css">
-    <title>倉鼠調查中 - 如何照料</title>
-    <!-- favicon -->
-    <link rel="shortcut icon" href="./img/favicon.ico" />
-    <link rel="bookmark" href="./img/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <!-- 每一頁的導覽列都要長一樣 -->
-    <nav class="top-nav">
-        <img src="./img/favicon.ico" alt="favicon" class="top-nav-favicon">
-        <a href="index.html" class="top-nav-site">
-            <h1 class="site-title">倉鼠調查中</h1>
-            <p class="site-subtitle">認識可愛的倉鼠世界</p>
-        </a>
-        <ul class="nav-link">
-            <li class="has-dropdown">
-                <a href="index.html" class="nav-item-toggle" aria-haspopup="true" aria-expanded="false">首頁 ▾</a>
-                <ul class="nav-dropdown" aria-label="首頁選單">
-                    <li><a href="index.html#before-keeping">倉鼠飼養前須知</a></li>
-                    <li><a href="index.html#reading-list">推薦的倉鼠飼養基本指南書籍</a></li>
-                    <li><a href="index.html#video-gallery">倉鼠的介紹與飼養相關影片</a></li>
-                    <li><a href="index.html#organizations">動物友善團體及機構</a></li>
-                </ul>
-            </li>
-            <li><a href="care.html">如何照料</a></li>
-            <li><a href="encyclopedia.html">鼠鼠百科</a></li>
-            <li><a href="setup.html">小窩佈置</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-            <span></span> <!-- 三條線漢堡選單 -->
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="../CSS/global.css">
+        <title>倉鼠調查中 - 如何照料</title>
+        <!-- favicon -->
+        <link rel="shortcut icon" href="./img/favicon.ico" />
+        <link rel="bookmark" href="./img/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- 每一頁的導覽列都要長一樣 -->
+        <nav class="top-nav">
+            <img src="../img/favicon.ico" alt="favicon" class="top-nav-favicon">
+            <a href="../index.html" class="top-nav-site">
+                <h1 class="site-title">倉鼠調查中</h1>
+                <p class="site-subtitle">認識可愛的倉鼠世界</p>
+            </a>
+            <ul class="nav-link">
+                <li class="has-dropdown">
+                    <a href="../index.html" class="nav-item-toggle"
+                        aria-haspopup="true" aria-expanded="false">首頁 ▾</a>
+                    <ul class="nav-dropdown" aria-label="首頁選單">
+                        <li><a
+                                href="../index.html#before-keeping">飼養前須知</a></li>
+                        <li><a href="../index.html#reading-list">推薦書籍</a></li>
+                        <li><a
+                                href="../index.html#video-gallery">飼養相關影片</a></li>
+                        <li><a
+                                href="../index.html#organizations">動物友善團體及機構</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="../care.html" class="nav-item-toggle"
+                        aria-haspopup="true" aria-expanded="false">如何照料 ▾</a>
+                    <ul class="nav-dropdown" aria-label="如何照料選單">
+                        <li><a href="environment.html">關於環境</a></li>
+                        <li><a href="food.html">關於飲食</a></li>
+                        <li><a href="illness.html">關於疾病</a></li>
+                        <li><a href="funeral.html">最後時光</a></li>
+                    </ul>
+                </li>
+                <li><a href="../encyclopedia.html">鼠鼠百科</a></li>
+                <li><a href="../setup.html">小窩佈置</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span> <!-- 三條線漢堡選單 -->
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
 
-
-    <header class="header">
+        <!-- <header class="header">
         <h1 class="header-title">倉鼠飼養與照顧手冊</h1>
         <p class="header-subtitle">要好好愛護倉鼠哦！ 每天都要觀察倉鼠的健康狀態，讓倉鼠生活得更健康快樂</p>
-    </header>
+    </header> -->
 
-    <main class="main">
-        <!-- 第一區-關於環境 -->
-        <section class="main-surrounding">
-            <h2 class="main-title">關於環境</h2>
-            <div class="section-media">
-                <div class="section-media-frame">
-                    <img src="https://rodentscare.org/wp-content/uploads/2024/06/basic_hamster_240626_08-1024x576.jpg" alt="環境示意圖片" class="image-placeholder">
+        <main class="main">
+            <!-- 第一區-關於環境 -->
+            <section class="main-surrounding">
+                <h2 class="main-title">關於環境</h2>
+                <div class="section-media">
+                    <div class="section-media-frame">
+                        <img
+                            src="https://rodentscare.org/wp-content/uploads/2024/06/basic_hamster_240626_08-1024x576.jpg"
+                            alt="環境示意圖片" class="image-placeholder">
+                    </div>
                 </div>
-            </div>
-            <!-- 關於環境-溫度 -->
-            <article class="main-article">
-                <h3 class="article-title">溫度：</h3>
-                <p class="article-subtitle">倉鼠只能藉由耳朵及尾部散熱，屬於穴居動物，對於高溫的耐受能力有限</p>
-                <ul class="article-nav">
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">適宜的環境溫度</p>
-                        <p class="article-nav content">
-                            攝氏20-28度，濕度：50-75%<br>
-                            通風、安靜、無陽光直接照射（直曬太陽易造成中暑!）
-                        </p>
-                    </li>
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">降溫與保暖</p>
-                        <p class="article-nav content">
-                            天氣炎熱時可用電扇、冷氣，降低飼養環境的溫度<br>
-                            天冷時可提供保暖設備，如保暖燈或暖暖包
-                        </p>
-                    </li>
-                </ul>
-            </article>
-            <!-- 關於環境-生活空間 -->
-            <article class="main-article">
-                <h3 class="article-title">生活空間：</h3>
-                <p class="article-subtitle">請給它一個安全又舒適的家</p>
-                <ul class="article-nav">
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">合適的籠子</p>
-                        <p class="article-nav content">
-                            倉鼠會透過啃咬物品磨牙，為了確保倉鼠的安全，建議關籠飼養倉鼠<br>
-                            籠具底部應是平面的材質，如使用簍空材質，容易造成足部受傷<br>
-                            市售鼠籠多為鐵籠，不良設計常造成倉鼠卡在縫隙中重傷死亡，因此不建議以鐵籠飼養倉鼠<br>
-                            建議使用經濟實惠的大號「整理箱」作為飼養倉鼠的首選，箱體建議鑽洞通風<br>
-                            鼠籠記得加裝上蓋，避免倉鼠攀爬逃家導致受傷
-                        </p>
-                    </li>
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">活動空間大小</p>
-                        <p class="article-nav content">
-                            空間需足以讓倉鼠跳躍、奔跑、以及完全伸展<br>
-                            侏儒倉鼠至少需要30*50=1500平方公分，40*60=2400平方公分以上佳<br>
-                            黃金鼠至少需要40*60=2400平方公分，60*80=4800平方公分以上佳
-                        </p>
-                    </li>
-                </ul>
-            </article>
-            <!-- 關於環境-必備生活用品 -->
-            <article class="main-article">
-                <h3 class="article-title">必備生活用品：</h3>
-                <p class="article-subtitle">倉鼠基本的生活必需品</p>
-                <ul class="article-nav">
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">墊材</p>
-                        <p class="article-nav content">
-                            滿足倉鼠挖掘、築巢、穴居、躲藏的天性，還可以調節溫度、吸尿、防臭，保持籠內的乾爽<br>
-                            挑選低粉塵、無化學添加之墊材，像是廚房紙巾、紙墊料或是牧草類<br>
-                            鋪設厚度建議達到4公分以上，10公分以上佳
-                        </p>
-                    </li>
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">水瓶</p>
-                        <p class="article-nav content">
-                            應24小時提供倉鼠乾淨的水<br>
-                            倉鼠飲水量少，建議一天飲水量為每100公克體重10毫升<br>
-                            需要每天檢查是否漏水及堵塞
-                        </p>
-                    </li>
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">滾輪</p>
-                        <p class="article-nav content">
-                            倉鼠原生環境遼闊，有長途奔跑習性，跑滾輪可以滿足倉鼠的活動需求<br>
-                            挑選大小合適且平坦無縫隙的滾輪，隨時提供倉鼠使用
-                        </p>
-                    </li>
-                </ul>
-            </article>
-            <!-- 關於環境-陪伴與互動 -->
-            <article class="main-article">
-                <h3 class="article-title">陪伴與互動：</h3>
-                <p class="article-subtitle">給倉鼠好多好多的關懷與陪伴</p>
-                <ul class="article-nav">
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">一籠一鼠</p>
-                        <p class="article-nav content">
-                            大部分的倉鼠都具有強烈的領域性，陌生個體接觸容易打架<br>
-                            同時飼養很多倉鼠容易發生同性互殘、異性大量繁殖及互殘<br>
-                            要讓倉鼠繁殖必須有良好的繁殖計畫，包括如何隔離以及合適的安置
-                        </p>
-                    </li>
-                    <li class="article-nav-li">
-                        <p class="article-nav-title">每日提供陪伴與互動</p>
-                        <p class="article-nav content">
-                            鼠類天性容易受到驚嚇，應避免高分貝、具威脅性的聲音<br>
-                            在移動或接觸牠們時應謹慎而堅定，且非必要應避免帶倉鼠外出<br>
-                            應每天觀察倉鼠的健康狀態，約3-5天就需要清掃一次鼠籠<br>
-                            當無法照料倉鼠時，應確保有人能協助，並給予熟悉氣味的物件讓倉鼠安心
-                        </p>
-                    </li>
-                </ul>
-            </article>
-        </section>
-    </main>
+                <!-- 關於環境-溫度 -->
+                <article class="main-article">
+                    <h3 class="article-title">溫度：</h3>
+                    <p
+                        class="article-subtitle">倉鼠只能藉由耳朵及尾部散熱，屬於穴居動物，對於高溫的耐受能力有限</p>
+                    <ul class="article-nav">
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">適宜的環境溫度</p>
+                            <p class="article-nav content">
+                                攝氏20-28度，濕度：50-75%<br>
+                                通風、安靜、無陽光直接照射（直曬太陽易造成中暑!）
+                            </p>
+                        </li>
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">降溫與保暖</p>
+                            <p class="article-nav content">
+                                天氣炎熱時可用電扇、冷氣，降低飼養環境的溫度<br>
+                                天冷時可提供保暖設備，如保暖燈或暖暖包
+                            </p>
+                        </li>
+                    </ul>
+                </article>
+                <!-- 關於環境-生活空間 -->
+                <article class="main-article">
+                    <h3 class="article-title">生活空間：</h3>
+                    <p class="article-subtitle">請給它一個安全又舒適的家</p>
+                    <ul class="article-nav">
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">合適的籠子</p>
+                            <p class="article-nav content">
+                                倉鼠會透過啃咬物品磨牙，為了確保倉鼠的安全，建議關籠飼養倉鼠<br>
+                                籠具底部應是平面的材質，如使用簍空材質，容易造成足部受傷<br>
+                                市售鼠籠多為鐵籠，不良設計常造成倉鼠卡在縫隙中重傷死亡，因此不建議以鐵籠飼養倉鼠<br>
+                                建議使用經濟實惠的大號「整理箱」作為飼養倉鼠的首選，箱體建議鑽洞通風<br>
+                                鼠籠記得加裝上蓋，避免倉鼠攀爬逃家導致受傷
+                            </p>
+                        </li>
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">活動空間大小</p>
+                            <p class="article-nav content">
+                                空間需足以讓倉鼠跳躍、奔跑、以及完全伸展<br>
+                                侏儒倉鼠至少需要30*50=1500平方公分，40*60=2400平方公分以上佳<br>
+                                黃金鼠至少需要40*60=2400平方公分，60*80=4800平方公分以上佳
+                            </p>
+                        </li>
+                    </ul>
+                </article>
+                <!-- 關於環境-必備生活用品 -->
+                <article class="main-article">
+                    <h3 class="article-title">必備生活用品：</h3>
+                    <p class="article-subtitle">倉鼠基本的生活必需品</p>
+                    <ul class="article-nav">
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">墊材</p>
+                            <p class="article-nav content">
+                                滿足倉鼠挖掘、築巢、穴居、躲藏的天性，還可以調節溫度、吸尿、防臭，保持籠內的乾爽<br>
+                                挑選低粉塵、無化學添加之墊材，像是廚房紙巾、紙墊料或是牧草類<br>
+                                鋪設厚度建議達到4公分以上，10公分以上佳
+                            </p>
+                        </li>
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">水瓶</p>
+                            <p class="article-nav content">
+                                應24小時提供倉鼠乾淨的水<br>
+                                倉鼠飲水量少，建議一天飲水量為每100公克體重10毫升<br>
+                                需要每天檢查是否漏水及堵塞
+                            </p>
+                        </li>
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">滾輪</p>
+                            <p class="article-nav content">
+                                倉鼠原生環境遼闊，有長途奔跑習性，跑滾輪可以滿足倉鼠的活動需求<br>
+                                挑選大小合適且平坦無縫隙的滾輪，隨時提供倉鼠使用
+                            </p>
+                        </li>
+                    </ul>
+                </article>
+                <!-- 關於環境-陪伴與互動 -->
+                <article class="main-article">
+                    <h3 class="article-title">陪伴與互動：</h3>
+                    <p class="article-subtitle">給倉鼠好多好多的關懷與陪伴</p>
+                    <ul class="article-nav">
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">一籠一鼠</p>
+                            <p class="article-nav content">
+                                大部分的倉鼠都具有強烈的領域性，陌生個體接觸容易打架<br>
+                                同時飼養很多倉鼠容易發生同性互殘、異性大量繁殖及互殘<br>
+                                要讓倉鼠繁殖必須有良好的繁殖計畫，包括如何隔離以及合適的安置
+                            </p>
+                        </li>
+                        <li class="article-nav-li">
+                            <p class="article-nav-title">每日提供陪伴與互動</p>
+                            <p class="article-nav content">
+                                鼠類天性容易受到驚嚇，應避免高分貝、具威脅性的聲音<br>
+                                在移動或接觸牠們時應謹慎而堅定，且非必要應避免帶倉鼠外出<br>
+                                應每天觀察倉鼠的健康狀態，約3-5天就需要清掃一次鼠籠<br>
+                                當無法照料倉鼠時，應確保有人能協助，並給予熟悉氣味的物件讓倉鼠安心
+                            </p>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+        </main>
 
-    <!-- 每一頁的頁腳都要長一樣 -->
-    <footer class="footer">
-        <p class="footer-p">用愛與關懷，打造倉鼠的美好生活</p>
-        <section class="footer-source">
-            <p class="footer-source-title">資料來源：</p>
-            <a href="https://rodentscare.org/" target="_blank" class="footer-source-link"><img src="./img/RodentsCare-logo.png" alt="愛鼠協會"></a>
-            <a href="https://animal.moa.gov.tw/Frontend/Know/Detail/LT00000829?parentID=Tab0000126" target="_blank" class="footer-source-link"><img src="./img/AnimalProtectInfo-logo.png" alt="動物保護資訊網"></a>
-            <a href="https://www.spca.org.tw/post/shu-lei-si-yang-xu-zhi" target="_blank" class="footer-source-link"><img src="./img/TaiwanSPCA-logo.png" alt="台灣防止虐待動物協會"></a>
-            <a href="https://animal-friendly.co/pet/42437/" target="_blank" class="footer-source-link"><img src="./img/AnimalFriendly-logo.png" alt="動物友善網"></a>
-        </section>
-    </footer>
-    <script src="js/nav.js"></script>
-</body>
+        <!-- 每一頁的頁腳都要長一樣 -->
+        <footer class="footer">
+            <p class="footer-p">用愛與關懷，打造倉鼠的美好生活</p>
+            <section class="footer-source">
+                <p class="footer-source-title">資料來源：</p>
+                <a href="https://rodentscare.org/" target="_blank"
+                    class="footer-source-link"><img
+                        src="../img/RodentsCare-logo.png" alt="愛鼠協會"></a>
+                <a href="https://animal.moa.gov.tw/Frontend/Know/Detail/LT00000829?parentID=Tab0000126"
+                    target="_blank" class="footer-source-link"><img
+                        src="../img/AnimalProtectInfo-logo.png"
+                        alt="動物保護資訊網"></a>
+                <a href="https://www.spca.org.tw/post/shu-lei-si-yang-xu-zhi"
+                    target="_blank" class="footer-source-link"><img
+                        src="../img/TaiwanSPCA-logo.png" alt="台灣防止虐待動物協會"></a>
+                <a href="https://animal-friendly.co/pet/42437/" target="_blank"
+                    class="footer-source-link"><img
+                        src="../img/AnimalFriendly-logo.png" alt="動物友善網"></a>
+            </section>
+        </footer>
+        <script src="js/nav.js"></script>
+    </body>
