@@ -491,6 +491,10 @@ section[id] {
 
 
   /* 📚 書籍區 - 改成直向排列 */
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
   .book-item {
     flex-direction: column !important;
     text-align: left;
