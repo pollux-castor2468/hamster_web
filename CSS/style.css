@@ -526,9 +526,6 @@ section[id] {
 
 
   /* 🎬 影片區 - 改成直向排列 */
-  /* .placeholder-video {
-    padding-top: 40%; 
-  } */
 
   .video-wrapper {
     grid-template-columns: 1fr !important;
