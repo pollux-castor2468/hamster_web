@@ -9,15 +9,16 @@ section[id] {
 }
 
 /* header圖片 */
-
 .header::before {
   background-image: url("../img/header.jpeg");
 }
 
+/* 網頁內容 */
 .main-info {
   /* 總共有四大區的內容 */
-  margin-bottom: 5rem;
-  padding: 3rem 2rem;
+  /* 手機預設較小的填充 */
+  margin-bottom: 3rem;
+  padding: 2rem 1rem;
   background: linear-gradient(
     to bottom,
     var(--color-primary),
@@ -44,7 +45,8 @@ section[id] {
 
 .main-info-header-title {
   font-family: "Noto Sans TC", sans-serif;
-  font-size: 2.5rem;
+  /* 手機字體大小 */
+  font-size: 2rem;
   color: var(--color-text);
   position: relative;
 }
@@ -67,7 +69,8 @@ section[id] {
   line-height: 2;
   color: var(--color-text);
   background-color: rgba(255, 255, 255, 0.7);
-  padding: 2rem;
+  /* 手機填充 */
+  padding: 1.5rem;
   border-radius: var(--radius-medium);
   box-shadow: var(--shadow-soft);
   position: relative;
@@ -77,9 +80,9 @@ section[id] {
   content: "❤";
   position: absolute;
   top: 50%;
-  right: 12px;
+  right: 8px; /* 手機調整位移 */
   transform: translateY(-50%) rotate(-12deg);
-  font-size: 72px;
+  font-size: 52px; /* 手機調整字體 */
   line-height: 1;
   color: rgba(238, 106, 124, 0.18);
   pointer-events: none;
@@ -88,14 +91,16 @@ section[id] {
 .main-info-grid {
   /* 包含四個小區塊 */
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.5rem 2rem;
+  /* 手機版單欄 */
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
   list-style: none;
   padding: 0;
 }
 
 .main-info-grid-li {
-  grid-column: span 7;
+  /* 手機版佔滿一整欄 */
+  grid-column: span 1;
   background-color: #fff;
   padding: 2rem 2rem 2.5rem 2rem;
   border-radius: var(--radius-medium);
@@ -106,7 +111,8 @@ section[id] {
 }
 
 .mag-card {
-  grid-column: span 6;
+  /* 手機版佔滿一整欄 */
+  grid-column: span 1;
   background-color: #fff;
   border-radius: var(--radius-medium);
   padding: 1.75rem;
@@ -154,10 +160,11 @@ section[id] {
 
 /* 第二區-推薦的倉鼠飼養基本指南書籍 */
 .container {
-  width: 80%;
+  /* 手機版佔滿全寬 */
+  width: 100%;
   margin: auto;
   overflow: hidden;
-  padding: 20px;
+  padding: 10px;
 }
 
 .books-showcase {
@@ -169,18 +176,24 @@ section[id] {
 }
 
 .book-item {
+  /* 手機版直向排列 */
   display: flex;
+  flex-direction: column;
   gap: 3rem;
   align-items: center;
+  text-align: left;
 }
 
 .book-item:nth-child(even) {
-  flex-direction: row-reverse;
+  /* 偶數項在手機版維持直向 */
+  flex-direction: column;
 }
 
 .book-media {
-  position: relative;
-  flex: 0 0 300px;
+  /* 手機版佔滿寬度 */
+  flex: none;
+  width: 100%;
+  margin-bottom: 1.5rem;
 }
 
 .book-cover {
@@ -196,10 +209,11 @@ section[id] {
   overflow: hidden;
 }
 
-
 .book-image {
-  width: 100%;
+  /* 手機版置中，縮小圖片 */
+  width: 80%;
   height: auto;
+  margin: 0 auto;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(91, 70, 54, 0.15);
   display: block;
@@ -212,19 +226,10 @@ section[id] {
   font-size: 0.9rem;
 }
 
-.book-shadow {
-  position: absolute;
-  bottom: -20px;
-  left: 10%;
-  right: 10%;
-  height: 20px;
-  background: rgba(0, 0, 0, 0.1);
-  filter: blur(10px);
-  border-radius: 50%;
-}
 
 .book-info {
   flex: 1;
+  width: 100%;
 }
 
 .book-meta {
@@ -241,13 +246,13 @@ section[id] {
 }
 
 .book-info h4 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "Noto Sans TC", sans-serif;
   margin-bottom: 1rem;
 }
 
 .book-info p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.8;
   margin-bottom: 2rem;
 }
@@ -270,14 +275,17 @@ section[id] {
 
 .video-wrapper {
   /* 包裝影片的，總共有四塊影片 */
+  /* 手機版單欄 */
   display: grid;
-  grid-template-columns: 2.4fr 1.5fr;
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
   align-items: start;
 }
 
 .video-main {
   /* 第一區塊大影片 */
+  /* 手機版通常讓主影片顯示在列表上方 */
+  order: -1;
   position: relative;
   border-radius: 30px;
   padding: 20px;
@@ -327,7 +335,7 @@ section[id] {
   /* 二、三、四塊影片清單 */
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .video-item {
@@ -340,6 +348,7 @@ section[id] {
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  align-items: center;
 }
 
 .video-item:hover {
@@ -348,8 +357,8 @@ section[id] {
 }
 
 .video-thumbnail {
-  width: 135px;
-  height: 75px;
+  width: 120px;
+  height: 70px;
   background: var(--color-tertiary);
   border-radius: 10px;
   position: relative;
@@ -393,8 +402,9 @@ section[id] {
 .main-info-nav {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.5rem;
+  /* 手機版單欄 */
+  grid-template-columns: 1fr;
+  gap: 1rem;
   padding: 0;
 }
 
@@ -413,8 +423,11 @@ section[id] {
   box-shadow: var(--shadow-soft);
   transition: all 0.3s ease;
   overflow: hidden;
-  /* 桌面版 */
-  grid-column: span 6;
+  /* 手機版佔滿一整欄 */
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .main-info-nav-li:hover {
@@ -441,109 +454,128 @@ section[id] {
   margin: 20px;
 }
 
+/* 導覽列與頁腳樣式統一於 CSS/global.css，避免頁面覆寫 */
 
 
-@media screen and (max-width: 768px) {
+/* --- 桌機/寬螢幕樣式 (min-width: 769px) --- */
+
+@media screen and (min-width: 769px) {
   .main-info {
-    padding: 2rem 1rem;
-    margin-bottom: 3rem;
+    /* 桌面版較大的填充 */
+    margin-bottom: 5rem;
+    padding: 3rem 2rem;
   }
 
   .main-info-header-title {
-    font-size: 2rem;
-  }
-
-  .main-info-title {
-    font-size: 1.75rem;
-    margin-bottom: 2rem;
+    /* 桌面版字體大小 */
+    font-size: 2.5rem;
   }
 
   .main-info-content {
-    padding: 1.5rem;
+    /* 桌面版填充 */
+    padding: 2rem;
   }
 
   .main-info-content::after {
-    font-size: 52px;
-    right: 8px;
-  }
-
-  .main-info-nav {
-    display: grid;
-    grid-template-columns: 1fr !important;
-    gap: 1rem;
-    width: 100%;
-  }
-
-  .main-info-nav-li {
-    grid-column: 1 / -1 !important;
-    width: 100%;
-    min-width: 0; /* 防止超出容器 */
-    box-sizing: border-box;
-  }
-
-  .mag-card {
-    grid-column: span 1;
+    content: "❤";
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%) rotate(-12deg);
+    font-size: 72px; /* 桌面調整字體 */
   }
 
   .main-info-grid {
-    grid-template-columns: 1fr;
+    /* 包含四個小區塊 */
+    /* 桌面版自訂欄位 */
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem 2rem;
   }
 
+  .main-info-grid-li {
+    /* 桌面版佔 7 欄 */
+    grid-column: span 7;
+  }
 
-  /* 📚 書籍區 - 改成直向排列 */
+  .mag-card {
+    /* 桌面版佔 6 欄 */
+    grid-column: span 6;
+  }
+
+  /* 第二區-推薦的倉鼠飼養基本指南書籍 */
   .container {
-    width: 100%;
-    padding: 10px;
-  }
-  .book-item {
-    flex-direction: column !important;
-    text-align: left;
-  }
-
-  .book-media {
-    flex: none;
-    width: 100%;
-    margin-bottom: 1.5rem;
-  }
-
-  .book-info {
-    width: 100%;
-  }
-
-  .book-image {
+    /* 桌面版佔 80% 寬度 */
     width: 80%;
-    height: auto;
-    margin: 0 auto;
-  }
-  .book-info h4 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    padding: 20px;
   }
 
-  .book-info p {
-    font-size: 1rem;
-  }
-
-
-  /* 🎬 影片區 - 改成直向排列 */
-
-  .video-wrapper {
-    grid-template-columns: 1fr !important;
-    gap: 1rem;
-  }
-
-  .video-main {
-    order: -1; /* 讓主影片在最上面 */
-  }
-
-  .video-item {
+  .book-item {
+    /* 桌面版橫向排列 */
     flex-direction: row;
     align-items: center;
   }
 
+  .book-item:nth-child(even) {
+    /* 偶數項在桌面版反向排列 */
+    flex-direction: row-reverse;
+  }
+
+  .book-media {
+    flex: 0 0 300px;
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .book-image {
+    width: 100%;
+    margin: 0;
+  }
+
+  .book-info h4 {
+    font-size: 2rem;
+  }
+
+  .book-info p {
+    font-size: 1.1rem;
+  }
+
+  /* 第三區-倉鼠的介紹與飼養相關影片 */
+
+  .video-wrapper {
+    /* 桌面版雙欄佈局 */
+    grid-template-columns: 2.4fr 1.5fr;
+    gap: 1.5rem;
+  }
+
+  .video-main {
+    /* 桌面版移除 order 屬性 */
+    order: 0;
+  }
+
+  .video-list {
+    gap: 1.5rem;
+  }
+
+  .video-item {
+    padding: 0.8rem 1rem;
+  }
+
   .video-thumbnail {
-    width: 120px;
-    height: 70px;
+    width: 135px;
+    height: 75px;
+  }
+
+  /* 第四區-動物友善團體及機構 */
+  .main-info-nav {
+    /* 桌面版雙欄佈局 */
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+  }
+
+  .main-info-nav-li {
+    /* 桌面版佔 6 欄 */
+    grid-column: span 6;
+    width: auto;
+    min-width: auto;
   }
 }
-/* 導覽列與頁腳樣式統一於 CSS/global.css，避免頁面覆寫 */
