@@ -15,6 +15,8 @@ $(function() {
     $(".nav-item-toggle").on("click", function (e) {
         if (window.innerWidth <= 768) {
             e.preventDefault();
+            // 關閉其他打開的下拉選單
+            $(".nav-dropdown").not($(this).closest(".has-dropdown").find(".nav-dropdown")).removeClass('show');
             $(this).closest(".has-dropdown").find(".nav-dropdown").toggleClass('show');
         }
     });
@@ -37,4 +39,5 @@ $(function() {
         $(this).toggleClass('active');
         $(".nav-link").toggleClass('show');
     });
+
 });
