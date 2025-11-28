@@ -120,32 +120,28 @@ a.top-nav-site {
 }
 
 .nav-link {
-  /* 側邊滑出菜單的關鍵屬性 */
-  display: flex; /* 預設為 flex，透過 transform 隱藏 */
+  display: flex;
   flex-direction: column;
   list-style: none;
   
-  position: fixed; /* 固定在視口上，不隨頁面滾動 */
+  position: fixed;
   top: 0;
-  left: auto; /* 重設 left */
-  right: 0; /* <<< 錨定在右側 */
+  left: auto; 
+  right: 0;
   width: 50%;
-  max-width: 300px; /* 避免在平板上過寬 */
-  height: 100vh; /* 佔滿整個視口高度 */
-  z-index: 1050; /* 確保在 top-nav (z-index: 1000) 上方 */
-  overflow-y: auto; /* 菜單過長時允許滾動 */
+  max-width: 300px; 
+  height: 100vh; 
+  z-index: 1050; 
+  overflow-y: auto;
 
   background: var(--color-secondary);
   padding: 1rem 0;
-  padding-top: 72px; /* 確保內容從固定導覽列下方開始 */
-  
-  /* 初始狀態：隱藏在右側視口外 */
-  transform: translateX(100%); /* <<< 隱藏到右側 */
-  transition: transform 0.35s ease-out; /* 滑動動畫效果 */
+  padding-top: 72px; 
+  transform: translateX(100%); 
+  transition: transform 0.35s ease-out;
 }
 
 .nav-link.show {
-  /* 顯示狀態：滑入視口內 */
   transform: translateX(0); 
 }
 
@@ -155,20 +151,12 @@ a.top-nav-site {
   color: var(--color-text);
   font-size: 1.2rem;
   position: relative;
-  /* 調整主連結 padding */
   padding: 0.75rem 1.5rem; 
   display: block;
   transition: color 0.3s ease; 
   margin-right: 10%;
 }
 
-/* 下拉選單樣式 */
-.nav-link li {
-  position: relative;
-  width: 100%;
-  text-align: right; /* <<< 靠右滑出時，文字靠右對齊 */
-  
-}
 
 .nav-item-toggle {
   cursor: pointer;
@@ -178,22 +166,15 @@ a.top-nav-site {
 .nav-link li {
   position: relative;
   width: 100%;
-  text-align: right; /* <<< 靠右滑出時，文字靠右對齊 */
+  text-align: right;
 }
-
-/* ... nav-item-toggle 維持不變 ... */
 
 .nav-dropdown {
   position: static;
-  /* 移除 display: none，改用 max-height 隱藏 */
   display: block; 
-  max-height: 0; /* 隱藏狀態 */
-  overflow: hidden; /* 隱藏溢出的內容 */
-  
-  /* 加入動畫效果 */
+  max-height: 0;
+  overflow: hidden;
   transition: max-height 0.4s ease-in-out; 
-  
-  /* ... 保持其他屬性不變 ... */
   background: transparent;
   box-shadow: none;
   padding: 0;
@@ -204,17 +185,15 @@ a.top-nav-site {
 }
 
 .nav-dropdown.show {
-  /* 展開狀態：給予一個足夠大的高度值，以確保所有內容都能顯示 */
   max-height: 500px; 
 }
 
-/* 階梯式效果：調整下拉選單的右側內縮 */
 .nav-dropdown li a {
-  /* 增加右側填充，製造階梯式層級效果 */
-  padding: 0.5rem 3rem 0.5rem 0.75rem; /* <<< 翻轉 padding */
+  padding: 0.5rem 3rem 0.5rem 0.75rem;
   font-size: 0.98rem;
   background-color: rgba(0, 0, 0, 0.04);
 }
+
 /* 上面的標題區 - 每一頁也都差不多 */
 .header {
   height: 40vh;
@@ -284,7 +263,7 @@ a.top-nav-site {
 .main-info-nav-li {
   grid-column: 1 / -1;
   width: 100%;
-  min-width: 0; /* 防止超出容器 */
+  min-width: 0; 
   box-sizing: border-box;
 }
 
@@ -323,12 +302,39 @@ footer {
 }
 
 
-/* --- 桌機/寬螢幕樣式 (Media Query) --- */
-
+/* --- 平板 --- */
 @media screen and (min-width: 769px) {
+    /* 網頁內容 */
+  .main {
+    padding: 2rem;
+  }
+
   body {
-    /* 桌面版頂部填充 */
-    padding-top: 80px;
+    padding-top: 100px;
+  }
+}
+
+/* --- 筆電 --- */
+@media screen and (min-width: 1025px) {
+  body {
+    padding-top: 100px;
+  }
+  .site-title {
+    font-size: 1.75rem;
+  }
+
+  .site-subtitle {
+    font-size: 1rem;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+/* --- 桌機 --- */
+@media screen and (min-width: 1200px) {
+  body {
+    padding-top: 120px;
   }
 
   /* 導覽列 */
@@ -345,19 +351,6 @@ footer {
 
   a.top-nav-site {
     display: flex;
-  }
-
-  .site-title {
-    font-size: 1.75rem;
-  }
-
-  .site-subtitle {
-    font-size: 1rem;
-  }
-  
-  /* 漢堡按鈕在桌機版隱藏 */
-  .hamburger {
-    display: none;
   }
 
   .nav-link {
@@ -403,18 +396,15 @@ footer {
     width: 100%;
   }
 
-  /* 下拉選單樣式 (桌機版覆蓋) */
+
 .nav-dropdown {
     position: absolute;
     top: calc(100%);
     left: 0;
-    
-    /* 關鍵修正：重設手機版動畫屬性，確保內容能正常顯示 */
     max-height: none; 
     overflow: visible; 
-    transition: none; /* 確保不會有 max-height 轉換的延遲 */
-
-    display: none; /* Hidden by default */
+    transition: none; 
+    display: none;
     background: rgba(255, 255, 255, 0.98);
     border-radius: 8px;
     min-width: 150px;
@@ -422,9 +412,8 @@ footer {
     padding: 0.25rem 0;
   }
 
-  /* 桌面版 JS 邏輯 or Hover */
+
   .nav-dropdown.show {
-    /* 在桌機模式下，我們主要依賴 .has-dropdown.open 或 :hover，所以強制隱藏 .show */
     display: none; 
   }
 
@@ -448,10 +437,7 @@ footer {
     height: 70vh;
   }
 
-  /* 網頁內容 */
-  .main {
-    padding: 2rem;
-  }
+
 
   .main-info {
     margin-bottom: 5rem;
