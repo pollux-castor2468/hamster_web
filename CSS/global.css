@@ -330,12 +330,6 @@ footer {
   .hamburger {
     display: none;
   }
-}
-/* --- 桌機 --- */
-@media screen and (min-width: 1200px) {
-  body {
-    padding-top: 120px;
-  }
 
   /* 導覽列 */
   .top-nav {
@@ -431,6 +425,14 @@ footer {
   .nav-dropdown li a:hover {
     background: rgba(193, 162, 110, 0.06);
   }
+}
+/* --- 桌機 --- */
+@media screen and (min-width: 1200px) {
+  body {
+    padding-top: 120px;
+  }
+
+  
 
   /* 上面的標題區 */
   .header {

@@ -9,44 +9,57 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../../CSS/global.css">
-    <link rel="stylesheet" href="encyclopedia.css">
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/mesocricetus.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="mesocricetus.js"></script>
     <!-- favicon -->
-    <link rel="shortcut icon" href="./img/favicon.ico" />
-    <link rel="bookmark" href="./img/favicon.ico" />
+    <link rel="shortcut icon" href="../img/favicon.ico" />
+    <link rel="bookmark" href="../img/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <!-- 每一頁的導覽列都要長一樣 -->
-    <nav class="top-nav">
-        <img src="./img/favicon.ico" alt="favicon" class="top-nav-favicon">
-        <a href="index.html" class="top-nav-site">
-            <h1 class="site-title">倉鼠調查中</h1>
-            <p class="site-subtitle">認識可愛的倉鼠世界</p>
-        </a>
-        <ul class="nav-link">
-            <li class="has-dropdown">
-                <a href="index.html" class="nav-item-toggle" aria-haspopup="true" aria-expanded="false">首頁 ▾</a>
-                <ul class="nav-dropdown" aria-label="首頁選單">
-                    <li><a href="index.html#before-keeping">倉鼠飼養前須知</a></li>
-                    <li><a href="index.html#reading-list">推薦的倉鼠飼養基本指南書籍</a></li>
-                    <li><a href="index.html#video-gallery">倉鼠的介紹與飼養相關影片</a></li>
-                    <li><a href="index.html#organizations">動物友善團體及機構</a></li>
-                </ul>
-            </li>
-            <li><a href="care.html">如何照料</a></li>
-            <li><a href="encyclopedia.html">鼠鼠百科</a></li>
-            <li><a href="setup.html">小窩佈置</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-            <span></span> <!-- 三條線漢堡選單 -->
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+        <nav class="top-nav">
+            <img src="../img/favicon.ico" alt="favicon" class="top-nav-favicon">
+            <a href="../index.html" class="top-nav-site">
+                <h1 class="site-title">倉鼠調查中</h1>
+                <p class="site-subtitle">認識可愛的倉鼠世界</p>
+            </a>
+            <ul class="nav-link">
+                <li class="has-dropdown">
+                    <a href="../index.html" class="nav-item-toggle"
+                        aria-haspopup="true" aria-expanded="false">首頁 ▾</a>
+                    <ul class="nav-dropdown" aria-label="首頁選單">
+                        <li><a
+                                href="../index.html#before-keeping">飼養前須知</a></li>
+                        <li><a href="../index.html#reading-list">推薦書籍</a></li>
+                        <li><a
+                                href="../index.html#video-gallery">飼養相關影片</a></li>
+                        <li><a
+                                href="../index.html#organizations">動物友善團體</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="../care.html" class="nav-item-toggle"
+                        aria-haspopup="true" aria-expanded="false">如何照料 ▾</a>
+                    <ul class="nav-dropdown" aria-label="如何照料選單">
+                        <li><a href="environment.html">關於環境</a></li>
+                        <li><a href="food.html">關於飲食</a></li>
+                        <li><a href="illness.html">關於疾病</a></li>
+                        <li><a href="funeral.html">最後時光</a></li>
+                    </ul>
+                </li>
+                <li><a href="../encyclopedia.html">鼠鼠百科</a></li>
+                <li><a href="../setup.html">小窩佈置</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span> <!-- 三條線漢堡選單 -->
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
 
     <main class="main">
         <section class="main-species">
@@ -166,14 +179,14 @@
         <section class="footer-source">
             <p class="footer-source-title">資料來源：</p>
             <a href="https://rodentscare.org/" target="_blank" class="footer-source-link"><img
-                    src="./img/RodentsCare-logo.png" alt="愛鼠協會"></a>
+                    src="../img/RodentsCare-logo.png" alt="愛鼠協會"></a>
             <a href="https://animal.moa.gov.tw/Frontend/Know/Detail/LT00000829?parentID=Tab0000126" target="_blank"
-                class="footer-source-link"><img src="./img/AnimalProtectInfo-logo.png" alt="動物保護資訊網"></a>
+                class="footer-source-link"><img src="../img/AnimalProtectInfo-logo.png" alt="動物保護資訊網"></a>
             <a href="https://www.spca.org.tw/post/shu-lei-si-yang-xu-zhi" target="_blank"
-                class="footer-source-link"><img src="./img/TaiwanSPCA-logo.png" alt="台灣防止虐待動物協會"></a>
+                class="footer-source-link"><img src="../img/TaiwanSPCA-logo.png" alt="台灣防止虐待動物協會"></a>
             <a href="https://animal-friendly.co/pet/42437/" target="_blank" class="footer-source-link"><img
-                    src="./img/AnimalFriendly-logo.png" alt="動物友善網"></a>
+                    src="../img/AnimalFriendly-logo.png" alt="動物友善網"></a>
         </section>
     </footer>
-    <script src="js/nav.js"></script>
+    <script src="../js/jquery.js"></script>
 </body>
