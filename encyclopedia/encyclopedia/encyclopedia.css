@@ -1,0 +1,218 @@
+/* header 圖片 */
+.header::before {
+    background-image: url('../img/hamster8.jpg');
+}
+
+
+/* main */
+/* 倉鼠的內容大包裝 */
+.main-species {
+    background-color: #fff;
+    padding: 2rem;
+    overflow: hidden;
+    border-radius: 1%;
+    margin-bottom: 2em;
+}
+
+.species-info-img {
+    width: 100%;
+    border-radius: 5%;
+}
+
+/* 倉鼠名稱 + 三格資訊 */
+/* 螢幕變寬要移動到圖片右邊 */
+.species-info {
+    margin: 1.5em 0;
+    /* text-align: center; */
+}
+
+.species-info-header {
+    margin-bottom: 0.5rem;
+}
+
+.species-info-header h3 {
+    font-size: 1.5em;
+}
+
+.species-info-header-name {
+    color: var(--color-wood);
+}
+
+.species-info-content {
+    margin-bottom: 1rem;
+}
+
+/* 三條併排的倉鼠資訊 */
+.species-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    /* font-size: 1em; */
+}
+
+.species-info-grid-block {
+    background: rgba(239, 237, 230, 0.6);
+    border: 1px solid rgba(193, 162, 110, 0.25);
+    border-radius: 5%;
+    padding: 0.5rem;
+}
+
+.species-info-grid-block p {
+    font-size: 0.85em;
+}
+
+/* .species-picture {
+    visibility: hidden;
+    position: absolute;
+}
+
+.species-picture img {
+    display: block;
+    width: 100%;
+} */
+
+@media (min-width: 768px) {
+    .species-info-img {
+        width: 50%;
+    }
+    .species-info-flex {
+        display: flex;
+        margin-bottom: 1rem;
+    }
+    .species-info {
+        margin: 0 0 0 1.5em;
+        text-align: left;
+    }
+    .species-info-grid {
+        position: absolute;
+    }
+}
+
+@media (min-width: 1024px) {
+    .species-info-img {
+        width: 50%;
+    }
+    .species-info-grid {
+        width: 30%;
+    }
+    /* .species-picture {
+        visibility: visible;
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.5rem;
+        margin: 1rem 0;
+        top: 5em;
+    } */
+}
+
+
+/* 中間的鼠鼠資訊區 */
+.species-detail {
+    /* padding: 0.5rem 0; */
+    border-top: 5px dotted var(--color-wood);
+    border-bottom: 5px dotted var(--color-wood);
+    margin: 0.5rem;
+    /* display: flex; */
+    /* justify-content: space-around; */
+}
+
+.species-detial-block {
+    padding: 1rem;
+    border-top: 2px solid var(--color-text);
+    border-bottom: 2px solid var(--color-text);
+    margin: 1rem;
+}
+
+/* 螢幕變寬可以變成並排 */
+/* 話說這樣排版真的可以嗎? */
+@media (min-width: 1024px) {
+    .species-detail {
+        display: flex;
+        justify-content: space-around;
+        margin: 0.5rem 2rem;
+    }
+}
+
+
+/* 中間圖片區 */
+/* 可以加個js來切換大圖片 */
+.species-img-big {
+    padding: 0.5rem 0;
+    border-bottom: 2px dotted var(--color-wood);
+    margin: 1rem 0;
+}
+
+.species-img-big-flex {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.species-img-big-flex p {
+    width: 30%;
+}
+
+.species-img-big-img {
+    display: block;
+    width: 60%;
+}
+
+.species-img-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.img-bottom {
+    overflow: hidden;
+    /* height: 5rem; */
+    /* text-align: center; */
+}
+
+.species-img-grid-img {
+    width: 100%;
+    transition-duration: 0.5s;
+    padding: 0.5rem;
+}
+.species-img-grid-img:hover {
+    /* position: relative; */
+    /* top: -10px; */
+    /* left: -15px; */
+    /* width: 100%; */
+    overflow: hidden;
+    padding: 0;
+}
+
+@media (min-width: 1024px) {
+    .species-img-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+/* 最底下的按鈕 */
+.bottom {
+    text-align: center;
+}
+.bottom a {
+    text-decoration: none;
+    /* font-size: 1.2em; */
+    background-color: var(--color-wood);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 10%;
+    margin: 1rem;
+}
+
+.bottom a:hover {
+    font-weight: 700;
+    background-color: var(--color-text);
+}
+
+.bottom-back:hover {
+    border-left: 5px solid var(--color-text);
+    border-right: 5px solid var(--color-text);
+    margin: 0 2rem;
+}
