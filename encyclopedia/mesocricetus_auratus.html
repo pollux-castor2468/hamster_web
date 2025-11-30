@@ -104,11 +104,22 @@
                         現在已經發展出各種毛色，可分為米熊(奶油色，又名金絲熊)、肉桂熊、純銀熊/雜銀熊、淺灰熊/深灰熊、眼圈熊(紫貂色)、鏽金熊、黃熊/玳瑁三色熊、黑熊/藍熊
                     </p>
                 </div>
-                <div class="species-detial-block">
+                <div class="species-detial-block" id="species-detial-block">
                     <h4>毛色</h4>
                     <p>除了最初的短毛外，亦有長毛、捲毛、緞毛</p>
                 </div>
             </article>
+            <!-- 嘗試做看看圖片寫真&鼠片區切換按鈕 -->
+            <nav class="species-nav" id="species-nav">
+                <ul>
+                    <li class="species-nav-bottom present-nav-bottom" id="picture">
+                        <a href="#species-detial-block">寫真</a>
+                    </li>
+                    <li class="species-nav-bottom" id="movie">
+                        <a href="#species-detial-block">鼠片</a>
+                    </li>
+                </ul>
+            </nav>
             <!-- 鼠鼠圖片寫真區 -->
             <article class="species-img" id="species-img">
                 <!-- 大圖片區 -->
@@ -126,31 +137,62 @@
                 </div>
                 <!-- 小圖片區 -->
                 <div class="species-img-small grid">
-                    <a href="#species-img" class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom1">
+                    <a href="#species-detial-block" class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom1">
                         <img class="small-img"
                             src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6596.jpg" alt="黃金鼠圖片1">
                     </a>
-                    <a href="#species-img" class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom2">
+                    <a href="#species-detial-block" class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom2">
                         <img class="small-img"
                             src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6595.jpg" alt="黃金鼠圖片1">
                     </a>
-                    <a href="#species-img" class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom3">
+                    <a href="#species-detial-block" class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom3">
                         <img class="small-img"
                             src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6603.jpg" alt="黃金鼠圖片1">
                     </a>
-                    <a href="#species-img" class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom4">
+                    <a href="#species-detial-block" class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom4">
                         <img class="small-img"
                             src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6599.jpg" alt="黃金鼠圖片1">
                     </a>
-                    <a href="#species-img" class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom5">
+                    <a href="#species-detial-block" class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom5">
                         <img class="small-img"
                             src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6593.jpg" alt="黃金鼠圖片1">
                     </a>
-                    <a href="#species-img" class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom6">
+                    <a href="#species-detial-block" class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom6">
                         <img class="small-img"
                             src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6607.jpg" alt="黃金鼠圖片1">
                     </a>
                 </div>
+            </article>
+            <!-- 鼠片區 -->
+            <article class="species-img species-hidden" id="species-video">
+                <!-- <p>影片載入中...</p> -->
+                <div class="grid">
+                    <div class="species-video-block g-col-xs-12 g-col-m-6">
+                        <a href="https://youtu.be/nUsOIVfCas4?si=FGDTauidtXz37tWx" target="_blank" class="species-video-a">
+                            <img src="https://i.ytimg.com/an_webp/nUsOIVfCas4/mqdefault_6s.webp?du=3000&sqp=CIzjsMkG&rs=AOn4CLBJoX0m5CqBoCWjwj84-flSmj1AcQ" alt="影片1">
+                            <p class="species-video-info">筋骨超軟Q的黃金鼠 不用開門就可以自己逃跑！</p>
+                        </a>
+                    </div>
+                    <div class="species-video-block g-col-xs-12 g-col-m-2">
+                        <a href="https://youtube.com/shorts/0IQFN6Q4Q_w?si=xQ24VxoiONnAPvGr" target="_blank" class="species-video-a">
+                            <img src="https://i.ytimg.com/vi/0IQFN6Q4Q_w/oardefault.jpg?sqp=-oaymwEoCJUDENAFSFqQAgHyq4qpAxcIARUAAIhC2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLBM-q5NJW8KLPddyBG05beyopaW4Q" alt="影片2">
+                            <p class="species-video-info">當倉鼠遇到大核桃</p>
+                        </a>
+                    </div>
+                    <div class="species-video-block g-col-xs-12 g-col-m-2">
+                        <a href="https://youtube.com/shorts/9uXoPrHgUms?si=EmPnrNBDPRUEhami" target="_blank" class="species-video-a">
+                            <img src="https://i.ytimg.com/vi/9uXoPrHgUms/hq720.jpg?sqp=-oaymwEoCJUDENAFSFryq4qpAxoIARUAAIhC0AEB2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLD0vIXe4YGDHsaNTIzgmmo6ixrLkw" alt="影片2">
+                            <p class="species-video-info">倉鼠不喜歡時會怎樣？</p>
+                        </a>
+                    </div>
+                    <div class="species-video-block g-col-xs-12 g-col-m-2">
+                        <a href="https://youtube.com/shorts/jMTe6l4sd44?si=IdfFMSRnhM39prfq" target="_blank" class="species-video-a">
+                            <img src="https://i.ytimg.com/vi/jMTe6l4sd44/hq720_2.jpg?sqp=-oaymwEoCMAEENAFSFryq4qpAxoIARUAAIhC0AEB2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLA8-dz2EHotfwlr-I2hBIFzJ3bhag" alt="影片2">
+                            <p class="species-video-info">What！黃金鼠低頭度估 下秒上演「無敵風火輪」</p>
+                        </a>
+                    </div>
+                </div>
+                <!-- <br><br><br><br><br><br><br><br><br> -->
             </article>
         </section>
         <div class="bottom">

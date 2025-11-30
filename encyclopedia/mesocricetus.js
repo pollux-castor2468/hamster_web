@@ -1,5 +1,21 @@
 $(document).ready(function() {
-    
+    // 切換圖片&影片區按鈕
+    $("#picture").click(function(){
+        $("#picture").addClass("present-nav-bottom");
+        $("#movie").removeClass("present-nav-bottom");
+
+        $("#species-img").removeClass("species-hidden");
+        $("#species-video").addClass("species-hidden");
+    })
+    $("#movie").click(function(){
+        $("#picture").removeClass("present-nav-bottom");
+        $("#movie").addClass("present-nav-bottom");
+
+        $("#species-img").addClass("species-hidden");
+        $("#species-video").removeClass("species-hidden");
+    })
+
+
     // 點小圖片之後會切換最上面的大圖片
     $("#img-bottom1").click(function(){
 		$(".species-img-big").html(
