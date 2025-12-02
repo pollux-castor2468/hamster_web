@@ -303,7 +303,7 @@ footer {
 
 
 /* --- 平板 --- */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
     /* 網頁內容 */
   .main {
     padding: 2rem;
@@ -315,7 +315,7 @@ footer {
 }
 
 /* --- 筆電 --- */
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
   body {
     padding-top: 100px;
   }

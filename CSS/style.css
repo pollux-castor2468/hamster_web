@@ -457,22 +457,76 @@ section[id] {
 /* 導覽列與頁腳樣式統一於 CSS/global.css，避免頁面覆寫 */
 
 
-/* --- 桌機/寬螢幕樣式 (min-width: 769px) --- */
+/* --- 平板 --- */
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .main-info {
-    /* 桌面版較大的填充 */
+    margin-bottom: 4rem;
+    padding: 3rem 2rem;
+  }
+  .book-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* 不給內容造成擠壓 */
+  }
+
+  .book-item:nth-child(even) {
+    flex-direction: row-reverse; /* 偶數書反向排列 */
+  }
+
+  .book-media {
+    flex-shrink: 0;          /* ❗ 不允許它被壓縮 */
+    width: 280px;            /* ❗ 固定寬度（妳可以調） */
+    height: auto;
+  }
+
+  .book-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+    /* 第四區-動物友善團體及機構 */
+  .main-info-nav {
+    /* 雙欄佈局 */
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+  }
+  .main-info-nav-div {
+    display: block;
+  }
+
+  .main-info-nav-li {
+    /* 雙欄佈局 */
+    grid-column: span 6;
+    width: auto;
+    min-width: auto;
+  }
+
+  .main-info-nav-content {
+    border-top: 2px solid var(--color-wood);
+    border-left: none;
+  }
+
+  .main-info-nav-img {
+    width: 95%;
+    max-height: 150px;
+  }
+}
+
+/* --- 筆電 --- */
+@media screen and (min-width: 1024px) {
+    .main-info {
     margin-bottom: 5rem;
     padding: 3rem 2rem;
   }
 
   .main-info-header-title {
-    /* 桌面版字體大小 */
     font-size: 2.5rem;
   }
 
   .main-info-content {
-    /* 桌面版填充 */
+    /* 筆電填充 */
     padding: 2rem;
   }
 
@@ -482,41 +536,41 @@ section[id] {
     top: 50%;
     right: 12px;
     transform: translateY(-50%) rotate(-12deg);
-    font-size: 72px; /* 桌面調整字體 */
+    font-size: 72px; /* 筆電調整字體 */
   }
 
   .main-info-grid {
     /* 包含四個小區塊 */
-    /* 桌面版自訂欄位 */
+    /* 筆電版自訂欄位 */
     grid-template-columns: repeat(12, 1fr);
     gap: 1.5rem 2rem;
   }
 
   .main-info-grid-li {
-    /* 桌面版佔 7 欄 */
+    /* 筆電版佔 7 欄 */
     grid-column: span 7;
   }
 
   .mag-card {
-    /* 桌面版佔 6 欄 */
+    /* 筆電版佔 6 欄 */
     grid-column: span 6;
   }
 
   /* 第二區-推薦的倉鼠飼養基本指南書籍 */
   .container {
-    /* 桌面版佔 80% 寬度 */
+    /* 筆電版佔 80% 寬度 */
     width: 80%;
     padding: 20px;
   }
 
   .book-item {
-    /* 桌面版橫向排列 */
+    /* 筆電版橫向排列 */
     flex-direction: row;
     align-items: center;
   }
 
   .book-item:nth-child(even) {
-    /* 偶數項在桌面版反向排列 */
+    /* 偶數項在筆電版反向排列 */
     flex-direction: row-reverse;
   }
 
@@ -542,13 +596,13 @@ section[id] {
   /* 第三區-倉鼠的介紹與飼養相關影片 */
 
   .video-wrapper {
-    /* 桌面版雙欄佈局 */
+    /* 筆電版雙欄佈局 */
     grid-template-columns: 2.4fr 1.5fr;
     gap: 1.5rem;
   }
 
   .video-main {
-    /* 桌面版移除 order 屬性 */
+    /* 筆電版移除 order 屬性 */
     order: 0;
   }
 
@@ -564,18 +618,20 @@ section[id] {
     width: 135px;
     height: 75px;
   }
-
-  /* 第四區-動物友善團體及機構 */
-  .main-info-nav {
-    /* 桌面版雙欄佈局 */
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1.5rem;
-  }
-
   .main-info-nav-li {
-    /* 桌面版佔 6 欄 */
-    grid-column: span 6;
+    /* 四欄佈局 */
+    grid-column: span 3;
     width: auto;
     min-width: auto;
+  }
+
+}
+
+/* --- 大螢幕 --- */
+@media screen and (min-width: 1200px) {
+  .main-info {
+    /* 大螢幕版更大的填充 */
+    margin-bottom: 6rem;
+    padding: 4rem 3rem;
   }
 }
