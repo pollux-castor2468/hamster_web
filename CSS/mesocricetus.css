@@ -3,39 +3,71 @@
     background-image: url('../img/hamster8.jpg');
 }
 
+/* 如果加上綜合rwd */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+}
+.g-col-xs-2 { grid-column: span 2; }
+.g-col-xs-3 { grid-column: span 3; }
+.g-col-xs-4 { grid-column: span 4; }
+.g-col-xs-6 { grid-column: span 6; }
+.g-col-xs-8 { grid-column: span 8; }
+.g-col-xs-12 { grid-column: span 12; }
+@media (min-width: 768px) {
+    .g-col-m-2 { grid-column: span 2; }
+    .g-col-m-3 { grid-column: span 3; }
+    .g-col-m-4 { grid-column: span 4; }
+    .g-col-m-6 { grid-column: span 6; }
+    .g-col-m-8 { grid-column: span 8; }
+    .g-col-m-12 { grid-column: span 12; }
+}
+@media (min-width: 1024px) {
+    .g-col-mx-2 { grid-column: span 2; }
+    .g-col-mx-3 { grid-column: span 3; }
+    .g-col-mx-4 { grid-column: span 4; }
+    .g-col-mx-6 { grid-column: span 6; }
+    .g-col-mx-8 { grid-column: span 8; }
+    .g-col-mx-12 { grid-column: span 12; }
+}
 
 /* main */
+.main {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
 /* 倉鼠的內容大包裝 */
 .main-species {
     background-color: #fff;
     padding: 2rem;
     overflow: hidden;
     border-radius: 1%;
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 
-.species-info-img {
+/* 大圖片&小圖片通用 */
+.big-img {
     width: 100%;
-    border-radius: 5%;
+    border-radius: 3%;
+}
+.small-img {
+    width: 100%;
 }
 
 /* 倉鼠名稱 + 三格資訊 */
 /* 螢幕變寬要移動到圖片右邊 */
 .species-info {
     margin: 1.5em 0;
-    /* text-align: center; */
 }
 
-.species-info-header {
-    margin-bottom: 0.5rem;
-}
-
-.species-info-header h3 {
+.species-info-content h3 {
     font-size: 1.5em;
 }
 
-.species-info-header-name {
+.species-info-content-name {
     color: var(--color-wood);
+    margin-bottom: 0.5rem;
 }
 
 .species-info-content {
@@ -43,13 +75,7 @@
 }
 
 /* 三條併排的倉鼠資訊 */
-.species-info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.5rem;
-    /* font-size: 1em; */
-}
-
+/* 改成.grid -> .grid-col-xs-4 */
 .species-info-grid-block {
     background: rgba(239, 237, 230, 0.6);
     border: 1px solid rgba(193, 162, 110, 0.25);
@@ -61,30 +87,17 @@
     font-size: 0.85em;
 }
 
-/* .species-picture {
-    visibility: hidden;
-    position: absolute;
-}
-
-.species-picture img {
-    display: block;
-    width: 100%;
-} */
-
 @media (min-width: 768px) {
-    .species-info-img {
-        width: 50%;
-    }
     .species-info-flex {
         display: flex;
         margin-bottom: 1rem;
     }
+    .species-info-flex img {
+        width: 50%;
+    }
     .species-info {
         margin: 0 0 0 1.5em;
         text-align: left;
-    }
-    .species-info-grid {
-        position: absolute;
     }
 }
 
@@ -95,16 +108,6 @@
     .species-info-grid {
         width: 30%;
     }
-    /* .species-picture {
-        visibility: visible;
-        position: relative;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 0.5rem;
-        margin: 1rem 0;
-        top: 5em;
-    } */
 }
 
 
@@ -114,8 +117,6 @@
     border-top: 5px dotted var(--color-wood);
     border-bottom: 5px dotted var(--color-wood);
     margin: 0.5rem;
-    /* display: flex; */
-    /* justify-content: space-around; */
 }
 
 .species-detial-block {
@@ -126,7 +127,6 @@
 }
 
 /* 螢幕變寬可以變成並排 */
-/* 話說這樣排版真的可以嗎? */
 @media (min-width: 1024px) {
     .species-detail {
         display: flex;
@@ -136,61 +136,170 @@
 }
 
 
+/* 切換圖片&影片區按鈕 */
+/* .species-nav {
+    text-align: center;
+} */
+.species-nav ul {
+    display: flex;
+    /* justify-content: center; */
+    list-style: none;
+    background-color: var(--color-wood);
+    opacity: 75%;
+    padding: 0 0.5rem;
+    border-top: 5px solid var(--color-wood);
+    margin-top: 1rem;
+}
+.species-nav-bottom {
+    width: 100px;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 0;
+    margin: 0 0.5rem;
+    transition-duration: 0.5s;
+}
+.species-nav-bottom a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 700;
+    font-size: 1.1em;
+}
+.species-nav-bottom:hover {
+    background-color: rgba(239, 237, 230);
+    border: 3px solid var(--color-text);
+    border-bottom: 0;
+    border-radius: 10%;
+    box-shadow: 1px -1px 2px 2px;
+}
+
+.present-nav-bottom {
+    background-color: rgba(239, 237, 230);
+    border: 3px solid var(--color-text);
+    border-bottom: 0;
+    border-radius: 10%;
+}
+
 /* 中間圖片區 */
 /* 可以加個js來切換大圖片 */
+.species-img {
+    background-color: rgba(239, 237, 230);
+    padding: 0.5rem;
+    transition-duration: 1s;
+}
+
 .species-img-big {
-    padding: 0.5rem 0;
-    border-bottom: 2px dotted var(--color-wood);
-    margin: 1rem 0;
+    position: absolute;
+    /* display: flex; */
+    /* justify-content: center; */
 }
 
-.species-img-big-flex {
+.species-img-big-border {
+    position: relative;
+    left: -5%;
     width: 80%;
+    padding: 0.5rem;
+    border: 3px solid var(--color-wood);
+    border-radius: 3%;
+    margin: 0 auto;
+    background-color: rgba(239, 237, 230);
+    z-index: 9;
+}
+
+.species-img-big-info {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+}
+.species-img-big-info-p {
+    align-self: center;
+}
+.species-img-big-info-a {
+    align-self: flex-end;
+    font-size: 0.5em;
+    border-bottom: 1px solid var(--color-text)
+}
+.species-img-big-info-a a {
+    text-decoration: none;
 }
 
-.species-img-big-flex p {
-    width: 30%;
+.close-bottom {
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* font-size: 1em; */
+    font-weight: 900;
+    background-color: var(--color-wood);
+    padding: 0 0.5rem;
+    border: 2px solid var(--color-text);
+    border-radius: 50%;
+}
+.close-bottom:hover {
+    background-color: var(--color-text);
+    color: var(--color-wood);
 }
 
-.species-img-big-img {
-    display: block;
-    width: 60%;
-}
-
-.species-img-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
+.cover {
+    position: absolute;
+    /* width: 100%; */
+    /* height: 100%; */
+    width: 100vw;
+    height: 350vh;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 30%;
 }
 
 .img-bottom {
-    overflow: hidden;
-    /* height: 5rem; */
-    /* text-align: center; */
-}
-
-.species-img-grid-img {
-    width: 100%;
-    transition-duration: 0.5s;
     padding: 0.5rem;
+    overflow: hidden;
+    transition-duration: 0.5s;
 }
-.species-img-grid-img:hover {
-    /* position: relative; */
-    /* top: -10px; */
-    /* left: -15px; */
-    /* width: 100%; */
+.img-bottom:hover {
     overflow: hidden;
     padding: 0;
 }
 
-@media (min-width: 1024px) {
-    .species-img-grid {
-        grid-template-columns: 1fr 1fr 1fr;
+@media (min-width: 768px) {
+    .species-img-big-border {
+        width: 50%;
+        /* left: 20%; */
+        padding: 1rem;
     }
 }
 
+@media (min-width: 1024px) {
+    .species-img-big-border {
+        left: 0;
+    }
+    /* .species-img-big-info {
+        margin: 2rem 0;
+    } */
+}
+
+/* 中間影片區 */
+.species-video-block {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5%;
+}
+
+.species-video-block img {
+    width: 100%;
+    /* height: 30%; */
+    border-radius: 5%;
+    overflow: hidden;
+    opacity: 75%;
+}
+
+.species-video-info {
+    color: var(--color-text);
+}
+
+/* 中間圖片&影片切換 */
+.species-hidden {
+    display: none;
+    position: absolute;
+}
 
 /* 最底下的按鈕 */
 .bottom {
@@ -204,6 +313,7 @@
     padding: 0.5rem 1rem;
     border-radius: 10%;
     margin: 1rem;
+    transition-duration: 0.25s;
 }
 
 .bottom a:hover {
@@ -212,7 +322,7 @@
 }
 
 .bottom-back:hover {
-    border-left: 5px solid var(--color-text);
-    border-right: 5px solid var(--color-text);
-    margin: 0 2rem;
+    padding: 0.5rem 1.5rem;
+    margin: 1rem 1.5rem;
+    
 }

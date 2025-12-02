@@ -64,35 +64,28 @@
     <main class="main">
         <section class="main-species">
             <article class="species-info-flex">
-                <img src="https://fluffiy.com/images/hamster/hamster-01-680.webp" alt="黃金鼠圖片" class="species-info-img">
+                <img src="https://fluffiy.com/images/hamster/hamster-01-680.webp" alt="黃金鼠圖片" class="big-img">
                 <div class="species-info">
-                    <header class="species-info-header">
+                    <header class="species-info-content">
                         <h3>敘利亞倉鼠</h3>
-                        <p class="species-info-header-name">Mesocricetus auratus</p>
-                    </header>
-                    <div class="species-info-content">
+                        <p class="species-info-content-name">Mesocricetus auratus</p>
                         <h4>俗稱</h4>
                         <p>黃金鼠、熊鼠、黃金倉鼠、金倉鼠、金色中倉鼠、金絲熊</p>
-                    </div>
-                    <div class="species-info-grid">
-                        <div class="species-info-grid-block">
+                    </header>
+                    <div class="grid">
+                        <div class="species-info-grid-block g-col-xs-4">
                             <h4>身長</h4>
                             <p>12.5~18公分</p>
                         </div>
-                        <div class="species-info-grid-block">
+                        <div class="species-info-grid-block g-col-xs-4">
                             <h4>壽命</h4>
                             <p>2~3年</p>
                         </div>
-                        <div class="species-info-grid-block">
+                        <div class="species-info-grid-block g-col-xs-4">
                             <h4>原生地</h4>
                             <p>敘利亞</p>
                         </div>
                     </div>
-                    <!-- <div class="species-picture">
-                        <img src="https://fluffiy.com/images/hamster/hamster-01-680.webp" alt="黃金鼠圖片2">
-                        <img src="https://fluffiy.com/images/hamster/hamster-01-680.webp" alt="黃金鼠圖片3">
-                        <img src="https://fluffiy.com/images/hamster/hamster-01-680.webp" alt="黃金鼠圖片4">
-                    </div> -->
                 </div>
             </article>
             <!-- 中間的鼠鼠資訊區 -->
@@ -111,58 +104,161 @@
                         現在已經發展出各種毛色，可分為米熊(奶油色，又名金絲熊)、肉桂熊、純銀熊/雜銀熊、淺灰熊/深灰熊、眼圈熊(紫貂色)、鏽金熊、黃熊/玳瑁三色熊、黑熊/藍熊
                     </p>
                 </div>
-                <div class="species-detial-block">
+                <div class="species-detial-block" id="species-detial-block">
                     <h4>毛色</h4>
                     <p>除了最初的短毛外，亦有長毛、捲毛、緞毛</p>
                 </div>
             </article>
+            <!-- 嘗試做看看圖片寫真&鼠片區切換按鈕 -->
+            <nav class="species-nav" id="species-nav">
+                <ul>
+                    <li class="species-nav-bottom present-nav-bottom" id="picture">
+                        <a href="#species-detial-block">寫真</a>
+                    </li>
+                    <li class="species-nav-bottom" id="movie">
+                        <a href="#species-detial-block">鼠片</a>
+                    </li>
+                </ul>
+            </nav>
             <!-- 鼠鼠圖片寫真區 -->
             <article class="species-img" id="species-img">
                 <!-- 大圖片區 -->
-                <div class="species-img-big">
-                    <div class="species-img-big-flex">
-                        <img class="species-img-big-img"
+                <div class="species-img-big species-hidden" id="species-img-big1">
+                    <div class="species-img-big-border">
+                        <img class="big-img"
                         src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6596.jpg" alt="黃金鼠圖片1">
-                        <p>emmmmmmmmmmmmm</p>
+                        <div class="species-img-big-info">
+                            <p class="species-img-big-info-p">emmmmmmmmmmmmm</p>
+                            <p class="species-img-big-info-a">圖片來源：
+                                <a href="https://rodentscare.org/" target="_blank">愛鼠協會...</a>
+                            </p>
+                            <p class="close-bottom" id="close-bottom1">x</p>
+                        </div>
                     </div>
                 </div>
-                <!-- 下面都是小圖片 -->
-                <!-- <div class="species-img-grid">
-                    <a href="#species-img" class="img-bottom" id="img-bottom1">
-                        <img class="species-img-grid-img"
+                <div class="species-img-big species-hidden" id="species-img-big2">
+                    <div class="species-img-big-border">
+                        <img class="big-img"
+                        src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6595.jpg" alt="黃金鼠圖片2">
+                        <div class="species-img-big-info">
+                            <p class="species-img-big-info-p">emmmmmmmmmmmmm</p>
+                            <p class="species-img-big-info-a">圖片來源：
+                                <a href="https://rodentscare.org/" target="_blank">愛鼠協會...</a>
+                            </p>
+                            <p class="close-bottom" id="close-bottom2">x</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="species-img-big species-hidden" id="species-img-big3">
+                    <div class="species-img-big-border">
+                        <img class="big-img"
+                        src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6603.jpg" alt="黃金鼠圖片3">
+                        <div class="species-img-big-info">
+                            <p class="species-img-big-info-p">emmmmmmmmmmmmm</p>
+                            <p class="species-img-big-info-a">圖片來源：
+                                <a href="https://rodentscare.org/" target="_blank">愛鼠協會...</a>
+                            </p>
+                            <p class="close-bottom" id="close-bottom3">x</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="species-img-big species-hidden" id="species-img-big4">
+                    <div class="species-img-big-border">
+                        <img class="big-img"
+                        src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6599.jpg" alt="黃金鼠圖片4">
+                        <div class="species-img-big-info">
+                            <p class="species-img-big-info-p">emmmmmmmmmmmmm</p>
+                            <p class="species-img-big-info-a">圖片來源：
+                                <a href="https://rodentscare.org/" target="_blank">愛鼠協會...</a>
+                            </p>
+                            <p class="close-bottom" id="close-bottom4">x</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="species-img-big species-hidden" id="species-img-big5">
+                    <div class="species-img-big-border">
+                        <img class="big-img"
+                        src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6593.jpg" alt="黃金鼠圖片5">
+                        <div class="species-img-big-info">
+                            <p class="species-img-big-info-p">emmmmmmmmmmmmm</p>
+                            <p class="species-img-big-info-a">圖片來源：
+                                <a href="https://rodentscare.org/" target="_blank">愛鼠協會...</a>
+                            </p>
+                            <p class="close-bottom" id="close-bottom5">x</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="species-img-big species-hidden" id="species-img-big6">
+                    <div class="species-img-big-border">
+                        <img class="big-img"
+                        src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6607.jpg" alt="黃金鼠圖片6">
+                        <div class="species-img-big-info">
+                            <p class="species-img-big-info-p">emmmmmmmmmmmmm</p>
+                            <p class="species-img-big-info-a">圖片來源：
+                                <a href="https://rodentscare.org/" target="_blank">愛鼠協會...</a>
+                            </p>
+                            <p class="close-bottom" id="close-bottom6">x</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 小圖片區 -->
+                <div class="species-img-small grid">
+                    <a class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom1">
+                        <img class="small-img"
                             src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6596.jpg" alt="黃金鼠圖片1">
                     </a>
-                    <a href="#species-img" class="img-bottom" id="img-bottom2">
-                        <img class="species-img-grid-img"
-                            src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6595.jpg" alt="黃金鼠圖片1">
+                    <a class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom2">
+                        <img class="small-img"
+                            src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6595.jpg" alt="黃金鼠圖片2">
                     </a>
-                    <a href="#species-img" class="img-bottom" id="img-bottom3">
-                        <img class="species-img-grid-img"
-                            src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6603.jpg" alt="黃金鼠圖片1">
+                    <a class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom3">
+                        <img class="small-img"
+                            src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6603.jpg" alt="黃金鼠圖片3">
                     </a>
-                    <a href="#species-img" class="img-bottom" id="img-bottom4">
-                        <img class="species-img-grid-img"
-                            src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6599.jpg" alt="黃金鼠圖片1">
+                    <a class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom4">
+                        <img class="small-img"
+                            src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6599.jpg" alt="黃金鼠圖片4">
                     </a>
-                </div> -->
-                <div class="species-img-grid">
-                    <a href="#species-img" class="img-bottom" id="img-bottom1">
-                        <img class="species-img-grid-img"
-                            src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6596.jpg" alt="黃金鼠圖片1">
+                    <a class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom5">
+                        <img class="small-img"
+                            src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6593.jpg" alt="黃金鼠圖片5">
                     </a>
-                    <a href="#species-img" class="img-bottom" id="img-bottom2">
-                        <img class="species-img-grid-img"
-                            src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6595.jpg" alt="黃金鼠圖片1">
-                    </a>
-                    <a href="#species-img" class="img-bottom" id="img-bottom3">
-                        <img class="species-img-grid-img"
-                            src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6603.jpg" alt="黃金鼠圖片1">
-                    </a>
-                    <a href="#species-img" class="img-bottom" id="img-bottom4">
-                        <img class="species-img-grid-img"
-                            src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6599.jpg" alt="黃金鼠圖片1">
+                    <a class="img-bottom g-col-xs-6 g-col-m-4" id="img-bottom6">
+                        <img class="small-img"
+                            src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6607.jpg" alt="黃金鼠圖片6">
                     </a>
                 </div>
+            </article>
+            <!-- 鼠片區 -->
+            <article class="species-img species-hidden" id="species-video">
+                <!-- <p>影片載入中...</p> -->
+                <div class="grid">
+                    <div class="species-video-block g-col-xs-12 g-col-m-6">
+                        <a href="https://youtu.be/nUsOIVfCas4?si=FGDTauidtXz37tWx" target="_blank" class="species-video-a">
+                            <img src="https://i.ytimg.com/an_webp/nUsOIVfCas4/mqdefault_6s.webp?du=3000&sqp=CJD0uMkG&rs=AOn4CLDPRQdIkZcBs5WyN-6hX9eupxua_Q" alt="影片1">
+                            <p class="species-video-info">筋骨超軟Q的黃金鼠 不用開門就可以自己逃跑！</p>
+                        </a>
+                    </div>
+                    <div class="species-video-block g-col-xs-12 g-col-m-2">
+                        <a href="https://youtube.com/shorts/0IQFN6Q4Q_w?si=xQ24VxoiONnAPvGr" target="_blank" class="species-video-a">
+                            <img src="https://i.ytimg.com/vi/0IQFN6Q4Q_w/oardefault.jpg?sqp=-oaymwEoCJUDENAFSFqQAgHyq4qpAxcIARUAAIhC2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLBM-q5NJW8KLPddyBG05beyopaW4Q" alt="影片2">
+                            <p class="species-video-info">當倉鼠遇到大核桃</p>
+                        </a>
+                    </div>
+                    <div class="species-video-block g-col-xs-12 g-col-m-2">
+                        <a href="https://youtube.com/shorts/9uXoPrHgUms?si=EmPnrNBDPRUEhami" target="_blank" class="species-video-a">
+                            <img src="https://i.ytimg.com/vi/9uXoPrHgUms/hq720.jpg?sqp=-oaymwEoCJUDENAFSFryq4qpAxoIARUAAIhC0AEB2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLD0vIXe4YGDHsaNTIzgmmo6ixrLkw" alt="影片2">
+                            <p class="species-video-info">倉鼠不喜歡時會怎樣？</p>
+                        </a>
+                    </div>
+                    <div class="species-video-block g-col-xs-12 g-col-m-2">
+                        <a href="https://youtube.com/shorts/jMTe6l4sd44?si=IdfFMSRnhM39prfq" target="_blank" class="species-video-a">
+                            <img src="https://i.ytimg.com/vi/jMTe6l4sd44/hq720_2.jpg?sqp=-oaymwEoCMAEENAFSFryq4qpAxoIARUAAIhC0AEB2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLA8-dz2EHotfwlr-I2hBIFzJ3bhag" alt="影片2">
+                            <p class="species-video-info">What！黃金鼠低頭度估 下秒上演「無敵風火輪」</p>
+                        </a>
+                    </div>
+                </div>
+                <!-- <br><br><br><br><br><br><br><br><br> -->
             </article>
         </section>
         <div class="bottom">
@@ -189,4 +285,6 @@
         </section>
     </footer>
     <script src="../js/jquery.js"></script>
+
+    <div class="cover species-hidden" id="cover"></div>
 </body>
