@@ -16,90 +16,63 @@ $(document).ready(function() {
     })
 
 
-    // 點小圖片之後會切換最上面的大圖片
+    // 點小圖片之後會出現最上面的大圖片
+// cover的部分
+    $(".img-bottom").click(function(){
+        $("#cover").fadeIn();
+	});
+    $(".close-bottom").click(function(){
+        $("#cover").fadeOut();
+    });
+    $("#cover").click(function(){
+        $("#cover").fadeOut();
+        $(".species-img-big").fadeOut();
+    });
+// 大圖片1
     $("#img-bottom1").click(function(){
-		$(".species-img-big").html(
-            `<div class="species-img-big-border grid">
-                <img class="big-img g-col-xs-12 g-col-mx-8"
-                src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6596.jpg" alt="黃金鼠圖片1">
-                <div class="species-img-big-info g-col-xs-12 g-col-mx-4">
-                    <p>emmmmmmmmmmmmm</p>
-                    <p class="species-img-big-info-a">圖片來源：
-                        <a href="https://rodentscare.org/" target="_blank">愛鼠協會...</a>
-                    </p>
-                </div>
-            </div>`
-        );
+		// $("#species-img-big1").removeClass("species-hidden");
+        $("#species-img-big1").fadeIn();
 	});
+    $("#close-bottom1").click(function(){
+        // $("#species-img-big1").addClass("species-hidden");
+        $("#species-img-big1").fadeOut();
+    });
+// 大圖片2
     $("#img-bottom2").click(function(){
-		$(".species-img-big").html(
-            `<div class="species-img-big-border grid">
-                <img class="big-img g-col-xs-12 g-col-mx-8"
-                src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6595.jpg" alt="黃金鼠圖片2">
-                <div class="species-img-big-info g-col-xs-12 g-col-mx-4">
-                    <p>emmmmmmmmmmmmm</p>
-                    <p class="species-img-big-info-a">圖片來源：
-                        <a href="https://rodentscare.org/" target="_blank">愛鼠協會...</a>
-                    </p>
-                </div>
-            </div>`
-        );
+		$("#species-img-big2").fadeIn();
 	});
+    $("#close-bottom2").click(function(){
+        $("#species-img-big2").fadeOut();
+    });
+// 大圖片3
     $("#img-bottom3").click(function(){
-		$(".species-img-big").html(
-            `<div class="species-img-big-border grid">
-                <img class="big-img g-col-xs-12 g-col-mx-8"
-                src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6603.jpg" alt="黃金鼠圖片3">
-                <div class="species-img-big-info g-col-xs-12 g-col-mx-4">
-                    <p>emmmmmmmmmmmmm</p>
-                    <p class="species-img-big-info-a">圖片來源：
-                        <a href="https://rodentscare.org/" target="_blank">愛鼠協會...</a>
-                    </p>
-                </div>
-            </div>`
-        );
+		$("#species-img-big3").fadeIn();
 	});
+    $("#close-bottom3").click(function(){
+        $("#species-img-big3").fadeOut();
+    });
+// 大圖片4
     $("#img-bottom4").click(function(){
-		$(".species-img-big").html(
-            `<div class="species-img-big-border grid">
-                <img class="big-img g-col-xs-12 g-col-mx-8"
-                src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6599.jpg" alt="黃金鼠圖片4">
-                <div class="species-img-big-info g-col-xs-12 g-col-mx-4">
-                    <p>emmmmmmmmmmmmm</p>
-                    <p class="species-img-big-info-a">圖片來源：
-                        <a href="https://rodentscare.org/" target="_blank">愛鼠協會...</a>
-                    </p>
-                </div>
-            </div>`
-        );
+		$("#species-img-big4").fadeIn();
 	});
+    $("#close-bottom4").click(function(){
+        $("#species-img-big4").fadeOut();
+    });
+// 大圖片5
     $("#img-bottom5").click(function(){
-		$(".species-img-big").html(
-            `<div class="species-img-big-border grid">
-                <img class="big-img g-col-xs-12 g-col-mx-8"
-                src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6593.jpg" alt="黃金鼠圖片4">
-                <div class="species-img-big-info g-col-xs-12 g-col-mx-4">
-                    <p>emmmmmmmmmmmmm</p>
-                    <p class="species-img-big-info-a">圖片來源：
-                        <a href="https://rodentscare.org/" target="_blank">愛鼠協會...</a>
-                    </p>
-                </div>
-            </div>`
-        );
+		$("#species-img-big5").fadeIn();
 	});
+    $("#close-bottom5").click(function(){
+        $("#species-img-big5").fadeOut();
+    });
+// 大圖片6
     $("#img-bottom6").click(function(){
-		$(".species-img-big").html(
-            `<div class="species-img-big-border grid">
-                <img class="big-img g-col-xs-12 g-col-mx-8"
-                src="https://rodentscare.org/wp-content/uploads/2025/11/IMG_6607.jpg" alt="黃金鼠圖片4">
-                <div class="species-img-big-info g-col-xs-12 g-col-mx-4">
-                    <p>emmmmmmmmmmmmm</p>
-                    <p class="species-img-big-info-a">圖片來源：
-                        <a href="https://rodentscare.org/" target="_blank">愛鼠協會...</a>
-                    </p>
-                </div>
-            </div>`
-        );
+		$("#species-img-big6").fadeIn();
 	});
+    $("#close-bottom6").click(function(){
+        $("#species-img-big6").fadeOut();
+    });
+
+    
 
 });
