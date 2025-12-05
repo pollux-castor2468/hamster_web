@@ -1,0 +1,44 @@
+.header::before {
+    background-image: url('https://rodentscare.org/wp-content/uploads/2024/06/basic_hamster_240626_08-1024x576.jpg');
+}
+
+
+.main-article {
+    padding: 1rem 2rem;
+    margin: 2rem 1rem;
+    border-radius: 8px;
+    background-color: var(--color-tertiary);
+    border-color: var(--color-wood);
+    border: dotted 2px;
+}
+.article-title{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.article-subtitle{
+    text-align: center;
+    font-weight: 500;
+}
+
+.article-nav-li {
+    background-color: var(--color-secondary);
+    border-radius: 30px;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+}
+.article-nav-title{
+    font-weight: bold;
+}
+
+.article-nav{
+    list-style: none;
+    padding-top: 0.2rem;
+}
+.main-underline {
+    width: 5em;
+    position: relative;
+    border-bottom: 3px solid var(--color-wood);
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}

@@ -460,3 +460,34 @@ footer {
     margin: 0 100px 10px;
   }
 }
+
+/* 如果加上綜合rwd */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+}
+.g-col-xs-2 { grid-column: span 2; }
+.g-col-xs-3 { grid-column: span 3; }
+.g-col-xs-4 { grid-column: span 4; }
+.g-col-xs-5 { grid-column: span 5; }
+.g-col-xs-6 { grid-column: span 6; }
+.g-col-xs-7 { grid-column: span 7; }
+.g-col-xs-8 { grid-column: span 8; }
+.g-col-xs-12 { grid-column: span 12; }
+@media (min-width: 768px) {
+    .g-col-m-2 { grid-column: span 2; }
+    .g-col-m-3 { grid-column: span 3; }
+    .g-col-m-4 { grid-column: span 4; }
+    .g-col-m-6 { grid-column: span 6; }
+    .g-col-m-8 { grid-column: span 8; }
+    .g-col-m-12 { grid-column: span 12; }
+}
+@media (min-width: 1024px) {
+    .g-col-mx-2 { grid-column: span 2; }
+    .g-col-mx-3 { grid-column: span 3; }
+    .g-col-mx-4 { grid-column: span 4; }
+    .g-col-mx-6 { grid-column: span 6; }
+    .g-col-mx-8 { grid-column: span 8; }
+    .g-col-mx-12 { grid-column: span 12; }
+}
