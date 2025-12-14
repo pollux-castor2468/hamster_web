@@ -156,7 +156,7 @@
     padding: 0.5rem 1rem;
     border-bottom: 0;
     margin: 0 0.5rem;
-    transition-duration: 0.5s;
+    transition-duration: 0.3s;
 }
 .species-nav-bottom a {
     text-decoration: none;
@@ -168,15 +168,17 @@
     background-color: rgba(239, 237, 230);
     border: 3px solid var(--color-text);
     border-bottom: 0;
-    border-radius: 10%;
-    box-shadow: 1px -1px 2px 2px;
+    border-radius: 10% 10% 0% 0%;
+    box-shadow: 
+        2px -2px 2px,
+        -2px -2px 2px;
 }
 
 .present-nav-bottom {
     background-color: rgba(239, 237, 230);
     border: 3px solid var(--color-text);
     border-bottom: 0;
-    border-radius: 10%;
+    border-radius: 10% 10% 0% 0%;
 }
 
 /* 中間圖片區 */
@@ -247,16 +249,22 @@
     left: 0;
     background-color: black;
     opacity: 30%;
+    /* filter: blur(5px); */
+    /* backdrop-filter: blur(10px); */
 }
 
 .img-bottom {
     padding: 0.5rem;
     overflow: hidden;
     transition-duration: 0.5s;
+    filter: invert(0.1);
+    /* filter: sepia(0); */
 }
 .img-bottom:hover {
     overflow: hidden;
     padding: 0;
+    filter: invert(0);
+    /* filter: sepia(0.3); */
 }
 
 @media (min-width: 768px) {
@@ -266,7 +274,6 @@
         padding: 1rem;
     }
 }
-
 @media (min-width: 1024px) {
     .species-img-big-border {
         left: 0;
@@ -283,12 +290,22 @@
     border-radius: 5%;
 }
 
-.species-video-block img {
+.video-img1 {
     width: 100%;
-    /* height: 30%; */
     border-radius: 5%;
     overflow: hidden;
-    opacity: 75%;
+    opacity: 0.75;
+}
+.species-video-img {
+    height: 200px;
+    overflow: hidden;
+    border-radius: 5%;
+}
+.species-video-img img {
+    width: 100%;
+    opacity: 0.75;
+    position: relative;
+    top: -50%;
 }
 
 .species-video-info {
@@ -299,6 +316,15 @@
 .species-hidden {
     display: none;
     position: absolute;
+}
+
+@media (min-width: 768px) {
+    .species-video-img {
+        height: auto;
+    }
+    .species-video-img img {
+        position: static;
+    }
 }
 
 /* 最底下的按鈕 */

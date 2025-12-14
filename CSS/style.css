@@ -8,6 +8,35 @@ section[id] {
   scroll-margin-top: calc(var(--nav-height) + 16px);
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+}
+.g-col-xs-2 { grid-column: span 2; }
+.g-col-xs-3 { grid-column: span 3; }
+.g-col-xs-4 { grid-column: span 4; }
+.g-col-xs-6 { grid-column: span 6; }
+.g-col-xs-8 { grid-column: span 8; }
+.g-col-xs-12 { grid-column: span 12; }
+@media (min-width: 768px) {
+    .g-col-m-2 { grid-column: span 2; }
+    .g-col-m-3 { grid-column: span 3; }
+    .g-col-m-4 { grid-column: span 4; }
+    .g-col-m-6 { grid-column: span 6; }
+    .g-col-m-8 { grid-column: span 8; }
+    .g-col-m-12 { grid-column: span 12; }
+}
+@media (min-width: 1024px) {
+    .g-col-mx-2 { grid-column: span 2; }
+    .g-col-mx-3 { grid-column: span 3; }
+    .g-col-mx-4 { grid-column: span 4; }
+    .g-col-mx-6 { grid-column: span 6; }
+    .g-col-mx-8 { grid-column: span 8; }
+    .g-col-mx-9 { grid-column: span 9; }
+    .g-col-mx-12 { grid-column: span 12; }
+}
+
 /* header圖片 */
 .header::before {
   background-image: url("../img/header.jpeg");
@@ -399,60 +428,203 @@ section[id] {
 }
 
 /* 第四區-動物友善團體及機構 */
-.main-info-nav {
-  list-style: none;
-  display: grid;
-  /* 手機版單欄 */
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  padding: 0;
+/* 友善機構資訊外框 */
+.info {
+  gap: 0;
 }
-
-.main-info-nav-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  padding: 1.5rem;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.main-info-nav-li {
-  background-color: var(--color-secondary);
-  border-radius: var(--radius-small);
-  box-shadow: var(--shadow-soft);
-  transition: all 0.3s ease;
-  overflow: hidden;
-  /* 手機版佔滿一整欄 */
-  grid-column: 1 / -1;
-  width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-}
-
-.main-info-nav-li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(91, 70, 54, 0.15);
-}
-
-.main-info-nav-img {
-  padding: 10px;
+.organizations-info {
   background-color: #fff;
-  width: 30%;
-  max-height: 100px;
+  border: 2px solid var(--color-text);
+  border-radius: 5% 5% 0 0 / 7%;
+  /* outline: 2px outset var(--color-wood); */
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.main-info-nav-div {
+/* 按下按鍵會左右切換，操作在switchleft.js */
+.organizations-info-block {
+  transition-duration: 0.5s;
+  position: relative;
+}
+.turn-1 {
+  left: 0;
+}
+.turn-2 {
+  left: -101%;
+}
+.turn-3 {
+  left: -201%;
+}
+.turn-4 {
+  left: -301%;
+}
+
+/* 資訊內容 */
+.organizations-link {
+  width: 100%;
+  display: inline-block;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 1.5rem 3rem;
+  /* transition-duration: 0.5s; */
+  /* transition-behavior: allow-discrete; */
+}
+/* .organizations-link:hover {
+  text-decoration: underline wavy var(--color-wood) 2px;
+} */
+
+.organizations-info-header {
   display: flex;
-  align-items: center;
+  margin-bottom: 1rem;
+}
+.organizations-img {
+  height: 2rem;
+  margin-right: 1rem;
 }
 
-.main-info-nav-content {
-  padding-left: 10px;
-  padding-top: 15px;
-  border-left: 2px solid var(--color-wood);
-  margin: 20px;
+.organizations-info-content {
+  white-space: normal;
 }
+
+/* 資訊下面的標籤按鈕 & 左右按鈕 */
+.organizations-underinfo {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-text);
+  border-radius: 0 0 5% 5% / 30%;
+}
+
+.underinfo-img {
+  padding: 0.5rem;
+  border-radius: 5% / 20%;
+  margin: 0.5rem 0 0.5rem 0.5rem;
+}
+.organizations-underimg {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  background-color: #fff;
+  border: 2px inset var(--color-wood);
+  border-radius: 10%;
+  overflow: hidden;
+  align-content: center;
+}
+.organizations-underimg img {
+  width: 90%;
+}
+.underimg-cover {
+  position: absolute;
+  top: -70%;
+  width: 100%;
+  height: 200%;
+  background-color: black;
+  opacity: 0.3;
+  transition-duration: 0.5s;
+}
+
+.underinfo-bottom {
+  margin: 0.6rem;
+}
+.organizations-bottom {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #fff;
+  background-color: var(--color-wood);
+  border: 2px outset var(--color-text);
+  border-radius: 50%;
+  transition-duration: 0.2s;
+  box-shadow: 5px 5px 5px black;
+  /* outline: 1px outset var(--color-text); */
+}
+.organizations-bottom:hover {
+  /* border-width: 4px; */
+  box-shadow: 1px 1px 1px black;
+}
+.bottom-left {
+  position: relative;
+  top: 15%;
+  left: -35%;
+  border-style: solid;
+  border-width: 15px 20px 15px 0;
+  border-color: transparent var(--color-text) transparent transparent;
+  transition-duration: 0.5s;
+}
+/* .bottom-left:hover {
+  left: -40%;
+} */
+.bottom-right {
+  position: relative;
+  top: 15%;
+  left: 35%;
+  border-style: solid;
+  border-width: 15px 0 15px 20px;
+  border-color: transparent transparent transparent var(--color-text);
+}
+
+@media (min-width: 768px) {
+  .organizations-info {
+    border-radius: 5% 5% 0 0 / 15%;
+  }
+  .organizations-link {
+    padding: 2rem 4rem;
+  }
+  .organizations-underinfo {
+    border-radius: 0 0 5% 5% / 40%;
+  }
+  .organizations-underimg {
+    width: 80px;
+    height: 40px;
+  }
+  .organizations-bottom {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .bottom-left {
+    top: 15%;
+    left: -35%;
+    border-width: 18px 25px 18px 0;
+  }
+  .bottom-right {
+    top: 15%;
+    left: 35%;
+    border-width: 18px 0 18px 25px;
+  }
+}
+@media (min-width: 1024px) {
+  .info {
+    margin: 2rem;
+  }
+  .organizations-info {
+    border-radius: 5% 0 0 5% / 15%;
+  }
+  .organizations-link {
+    padding: 2.5rem 5rem;
+  }
+  .organizations-underinfo {
+    border-radius: 0 15% 15% 0;
+    flex-direction: column;
+  }
+  .organizations-underimg {
+    width: 90px;
+    height: 50px;
+  }
+  .organizations-bottom {
+    margin: 0 0.5rem;
+  }
+}
+
+/* 練習用程式碼 */
+*::selection {
+  color: var(--color-primary);
+  background-color: var(--color-wood);
+}
+/* * {
+  cursor: url("/img/favicon.ico"), auto;
+} */
+
 
 /* 導覽列與頁腳樣式統一於 CSS/global.css，避免頁面覆寫 */
 

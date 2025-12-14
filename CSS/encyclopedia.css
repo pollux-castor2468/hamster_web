@@ -53,6 +53,7 @@
     padding: 2rem;
     overflow: hidden;
     border-radius: 5%;
+    box-shadow: inset -5px -5px 15px 2px rgb(193, 126, 110, 0.5);
 }
 
 .species-img {
