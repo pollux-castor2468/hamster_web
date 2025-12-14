@@ -274,7 +274,6 @@
         padding: 1rem;
     }
 }
-
 @media (min-width: 1024px) {
     .species-img-big-border {
         left: 0;
@@ -291,12 +290,22 @@
     border-radius: 5%;
 }
 
-.species-video-block img {
+.video-img1 {
     width: 100%;
-    /* height: 30%; */
     border-radius: 5%;
     overflow: hidden;
-    opacity: 75%;
+    opacity: 0.75;
+}
+.species-video-img {
+    height: 200px;
+    overflow: hidden;
+    border-radius: 5%;
+}
+.species-video-img img {
+    width: 100%;
+    opacity: 0.75;
+    position: relative;
+    top: -50%;
 }
 
 .species-video-info {
@@ -307,6 +316,15 @@
 .species-hidden {
     display: none;
     position: absolute;
+}
+
+@media (min-width: 768px) {
+    .species-video-img {
+        height: auto;
+    }
+    .species-video-img img {
+        position: static;
+    }
 }
 
 /* 最底下的按鈕 */
