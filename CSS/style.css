@@ -37,6 +37,36 @@ section[id] {
     .g-col-mx-12 { grid-column: span 12; }
 }
 
+/* 練習用程式碼 */
+/* 選取顏色會變 */
+*::selection {
+  color: var(--color-primary);
+  background-color: var(--color-wood);
+}
+/* 這個可以更換滑鼠的樣式耶 */
+/* * {
+  cursor: url("/img/favicon.ico"), auto;
+} */
+
+/* 加入 hover-hand 就可以獲得倉鼠手掌啦 */
+.hover-hand {
+  position: relative;
+}
+.hover-hand::after {
+  content: url(../img/hand.png);
+  position: absolute;
+  right: -25px;
+  rotate: 30deg;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.hover-hand:hover::after {
+  opacity: 1;
+  right: 10px;
+  rotate: -45deg;
+}
+/* 手掌結束 */
+
 /* header圖片 */
 .header::before {
   background-image: url("../img/header.jpeg");
@@ -466,12 +496,7 @@ section[id] {
   color: var(--color-text);
   text-decoration: none;
   padding: 1.5rem 3rem;
-  /* transition-duration: 0.5s; */
-  /* transition-behavior: allow-discrete; */
 }
-/* .organizations-link:hover {
-  text-decoration: underline wavy var(--color-wood) 2px;
-} */
 
 .organizations-info-header {
   display: flex;
@@ -536,7 +561,7 @@ section[id] {
   border: 2px outset var(--color-text);
   border-radius: 50%;
   transition-duration: 0.2s;
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 3px 3px 5px black;
   /* outline: 1px outset var(--color-text); */
 }
 .organizations-bottom:hover {
@@ -615,15 +640,6 @@ section[id] {
     margin: 0 0.5rem;
   }
 }
-
-/* 練習用程式碼 */
-*::selection {
-  color: var(--color-primary);
-  background-color: var(--color-wood);
-}
-/* * {
-  cursor: url("/img/favicon.ico"), auto;
-} */
 
 
 /* 導覽列與頁腳樣式統一於 CSS/global.css，避免頁面覆寫 */

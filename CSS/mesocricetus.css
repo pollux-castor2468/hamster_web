@@ -184,6 +184,7 @@
 /* 中間圖片區 */
 /* 可以加個js來切換大圖片 */
 .species-img {
+    position: relative;
     background-color: rgba(239, 237, 230);
     padding: 0.5rem;
     transition-duration: 1s;
@@ -191,8 +192,7 @@
 
 .species-img-big {
     position: absolute;
-    /* display: flex; */
-    /* justify-content: center; */
+    width: 100%;
 }
 
 .species-img-big-border {
@@ -285,9 +285,31 @@
 
 /* 中間影片區 */
 .species-video-block {
+    /* position: relative; */
     background-color: #fff;
     padding: 1rem;
     border-radius: 5%;
+}
+.species-video-a {
+    text-decoration-color: var(--color-wood);
+}
+
+.hand-hover {
+    position: relative;
+}
+.hand-hover::after {
+    content: url(../img/hand.png);
+    position: absolute;
+    bottom: 0;
+    right: -20px;
+    rotate: 30deg;
+    opacity: 0;
+    transition-duration: 0.5s;
+}
+.hand-hover:hover::after {
+    opacity: 1;
+    rotate: -45deg;
+    right: 0;
 }
 
 .video-img1 {

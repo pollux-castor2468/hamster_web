@@ -139,6 +139,7 @@
 
 /* 按鈕 */
 .species-bottom {
+    position: relative;
     display: flex;
     justify-content: center;
 }
@@ -158,6 +159,34 @@
 .species-bottom-p:hover {
     font-weight: 700;
     background-color: var(--color-text);
+}
+.species-bottom-p::after {
+    content: url(../img/hand.png);
+    opacity: 0;
+    transition-duration: 0.5s;
+    position: absolute;
+    right: 32%;
+    bottom: -10%;
+    rotate: 10deg;
+}
+.species-bottom-p::before {
+    content: url(../img/hand.png);
+    opacity: 0;
+    transition-duration: 0.5s;
+    position: absolute;
+    left: 32%;
+    bottom: -10%;
+    rotate: -10deg;
+}
+.species-bottom-p:hover::after {
+    opacity: 1;
+    right: 28%;
+    rotate: 40deg;
+}
+.species-bottom-p:hover::before {
+    opacity: 1;
+    left: 28%;
+    rotate: -40deg;
 }
 
 @media (min-width: 768px) {
