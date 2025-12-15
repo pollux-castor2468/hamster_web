@@ -2,6 +2,10 @@
     background-image: url('https://rodentscare.org/wp-content/uploads/2024/06/basic_hamster_240626_08-1024x576.jpg');
 }
 
+.grid {
+    row-gap: 0px;
+    column-gap: 10px;
+}
 
 .main-article {
     padding: 1rem 2rem;
