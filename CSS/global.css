@@ -301,6 +301,11 @@ footer {
   height: 100%;
 }
 
+.mobile-br {
+  display: inline;
+}
+
+
 
 /* --- 平板 --- */
 @media screen and (min-width: 768px) {
@@ -311,6 +316,9 @@ footer {
 
   body {
     padding-top: 100px;
+  }
+  .mobile-br {
+    display: none;
   }
 }
 
