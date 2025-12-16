@@ -18,7 +18,42 @@
 .article-title{
     font-size: 2rem;
     text-align: center;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 56px;
 }
+
+
+
+/* 左手：靠近文字左邊 */
+.article-title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;       
+  width: 32px;       
+  height: 32px;
+  background: url("../../img/hand.png") no-repeat center / contain;
+  transform: rotate(-25deg);
+  pointer-events: none;
+}
+
+.article-title::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  width: 32px;
+  height: 32px;
+  background: url("../../img/hand.png") no-repeat center / contain;
+  transform: rotate(25deg) scaleX(-1);
+  pointer-events: none;
+}
+
+
+
 
 .article-subtitle{
     text-align: center;
