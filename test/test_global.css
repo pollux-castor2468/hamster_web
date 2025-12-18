@@ -234,13 +234,6 @@ a.top-nav-site {
 
 /* 上面的標題區 - 每一頁也都差不多 */
 .header {
-  /* height: 40vh; */
-  /* background-color: var(--color-secondary); */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* text-align: center; */
   padding: 2rem;
   position: relative;
   overflow: hidden;
@@ -263,17 +256,13 @@ a.top-nav-site {
 }
 
 .header-title {
-  /* font-family: "Noto Sans TC", sans-serif; */
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  /* color: var(--color-text); */
 }
 
 .header-subtitle {
-  /* font-size: 1.2rem; */
   font-weight: 500;
   line-height: 2;
-  /* color: var(--color-text); */
 }
 
 /* 網頁內容 */
@@ -283,28 +272,6 @@ a.top-nav-site {
   padding: 0;
 }
 
-  /* 總共有四大區的內容 */
-/* .main-info {
-
-  margin-bottom: 3rem;
-  padding: 2rem 1rem;
-  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
-  border-radius: var(--radius-large);
-}
-
-.main-info-nav {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  width: 100%;
-}
-
-.main-info-nav-li {
-  grid-column: 1 / -1;
-  width: 100%;
-  min-width: 0; 
-  box-sizing: border-box;
-} */
 
 /* 頁腳 - 每一頁的頁腳都要長一樣 */
 footer {
@@ -351,8 +318,11 @@ footer {
     padding-top: 100px;
   }
 
+  .header {
+    height: 50vh;
+  }
   .header::before {
-    background-size: 100%;
+    background-size: 120%;
   }
   .no-br {
     display: none;
@@ -476,7 +446,14 @@ footer {
 
   /* 上面的標題區 */
   .header {
-    height: 50vh;
+    height: 70vh;
+    padding: 3rem;
+  }
+  .hesder-title {
+    font-size: 3rem;
+  }
+  .header-subtitle {
+    font-size: 1.2rem;
   }
 }
 /* --- 桌機 --- */
