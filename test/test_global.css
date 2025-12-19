@@ -263,6 +263,7 @@ a.top-nav-site {
 .header-subtitle {
   font-weight: 500;
   line-height: 2;
+  background-color: rgb(255, 255, 255, 0.3);
 }
 
 /* 網頁內容 */

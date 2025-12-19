@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="test_global.css">
     <link rel="stylesheet" href="test.css">       <!-- 記得這裡用的是測試的css -->
+    <!-- 引入animations.css和wow.js -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
+     <script href="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <!-- favicon -->
     <link rel="shortcut icon" href="./img/favicon.ico" />
     <link rel="bookmark" href="./img/favicon.ico" />
@@ -53,8 +56,8 @@
     </nav>
 
     <header class="header">
-        <h1 class="header-title">小小身影，<br class="no-br">大大世界</h1>
-        <p class="header-subtitle">這裡是一座為倉鼠而生的溫暖小屋，收藏牠們的模樣、習性與故事，也希望讓更多人看見「陪伴」的溫度。</p>
+        <h1 class="header-title animated bounce">小小身影，<br class="no-br">大大世界</h1>
+        <p class="header-subtitle animated bounce">這裡是一座為倉鼠而生的溫暖小屋，收藏牠們的模樣、習性與故事，也希望讓更多人看見「陪伴」的溫度。</p>
     </header>
 
     <main class="main">
@@ -237,7 +240,7 @@
         <section id="organizations" class="main-info">
             <div class="main-info-header">
                 <p class="main-info-header-accent">Organization</p>
-                <h2 class="main-info-header-title">動物友善團體及機構</h2>
+                <h2 class="main-info-header-title wow animated rubberBand">動物友善團體及機構</h2>
             </div>
             <div class="info grid">
                 <div class="organizations-info g-col-xs-12 g-col-mx-9">
@@ -334,6 +337,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/jquery.js"></script>
     <script src="../js/turnleft.js"></script>
+    <script src="./try.js"></script>
 </body>
 
 </html>
