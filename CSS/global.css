@@ -237,6 +237,7 @@ a.top-nav-site {
   padding: 2rem;
   position: relative;
   overflow: hidden;
+  vertical-align: bottom;
 }
 
 .header::before {
@@ -318,11 +319,11 @@ footer {
     padding: 2rem;
   }
   body {
-    padding-top: 100px;
+    padding-top: 75px;
   }
 
   .header {
-    height: 50vh;
+    height: 40vh;
   }
   .header::before {
     background-size: 120%;
@@ -341,7 +342,7 @@ footer {
 /* --- 筆電 --- */
 @media screen and (min-width: 1024px) {
   body {
-    padding-top: 100px;
+    padding-top: 95px;
   }
   .site-title {
     font-size: 1.75rem;
@@ -452,7 +453,7 @@ footer {
 
   /* 上面的標題區 */
   .header {
-    height: 70vh;
+    height: 45vh;
     padding: 3rem;
   }
   .hesder-title {
@@ -465,7 +466,7 @@ footer {
 /* --- 桌機 --- */
 @media screen and (min-width: 1200px) {
   body {
-    padding-top: 120px;
+    padding-top: 100px;
   }
   .header-title {
     font-size: 3rem;
