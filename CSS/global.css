@@ -307,7 +307,9 @@ footer {
 .footer-source-link img {
   height: 100%;
 }
-
+.mobile-br {
+  display: inline;
+}
 
 /* --- 平板 --- */
 @media screen and (min-width: 768px) {
@@ -330,6 +332,9 @@ footer {
   }
   .header-subtitle {
     width: 40%;
+  }
+  .mobile-br {
+  display: none;
   }
 }
 
