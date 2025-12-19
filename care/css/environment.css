@@ -81,3 +81,10 @@
     margin: 0 auto;
     margin-bottom: 1rem;
 }
+
+@media screen and (min-width: 1024px) {
+    .article-nav-li{
+        padding: 1rem 3rem;
+        margin: 0.5rem 0.2rem;
+    }
+}
