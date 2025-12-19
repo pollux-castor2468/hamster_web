@@ -5,6 +5,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+*::selection {
+  color: var(--color-primary);
+  background-color: var(--color-wood);
+}
 
 :root {
   --color-primary: #fbf1ea;
@@ -18,6 +22,39 @@
   --radius-large: 24px;
   --nav-height: 72px;
 }
+
+/* 如果加上綜合rwd */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+}
+.g-col-xs-2 { grid-column: span 2; }
+.g-col-xs-3 { grid-column: span 3; }
+.g-col-xs-4 { grid-column: span 4; }
+.g-col-xs-5 { grid-column: span 5; }
+.g-col-xs-6 { grid-column: span 6; }
+.g-col-xs-7 { grid-column: span 7; }
+.g-col-xs-8 { grid-column: span 8; }
+.g-col-xs-12 { grid-column: span 12; }
+@media (min-width: 768px) {
+    .g-col-m-2 { grid-column: span 2; }
+    .g-col-m-3 { grid-column: span 3; }
+    .g-col-m-4 { grid-column: span 4; }
+    .g-col-m-6 { grid-column: span 6; }
+    .g-col-m-8 { grid-column: span 8; }
+    .g-col-m-12 { grid-column: span 12; }
+}
+@media (min-width: 1024px) {
+    .g-col-mx-2 { grid-column: span 2; }
+    .g-col-mx-3 { grid-column: span 3; }
+    .g-col-mx-4 { grid-column: span 4; }
+    .g-col-mx-6 { grid-column: span 6; }
+    .g-col-mx-8 { grid-column: span 8; }
+    .g-col-mx-9 { grid-column: span 9; }
+    .g-col-mx-12 { grid-column: span 12; }
+}
+
 
 /* 平滑滾動 */
 html {
@@ -194,15 +231,9 @@ a.top-nav-site {
   background-color: rgba(0, 0, 0, 0.04);
 }
 
+
 /* 上面的標題區 - 每一頁也都差不多 */
 .header {
-  height: 40vh;
-  background-color: var(--color-secondary);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   padding: 2rem;
   position: relative;
   overflow: hidden;
@@ -213,8 +244,8 @@ a.top-nav-site {
   position: absolute;
   inset: 0;
   background-repeat: no-repeat;
-  background-size: 120%;
-  background-position: left;
+  background-size: 160%;
+  background-position: center;
   opacity: 0.5;
   z-index: 0;
 }
@@ -225,17 +256,14 @@ a.top-nav-site {
 }
 
 .header-title {
-  font-family: "Noto Sans TC", sans-serif;
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: var(--color-text);
 }
 
 .header-subtitle {
-  font-size: 1.2rem;
   font-weight: 500;
   line-height: 2;
-  color: var(--color-text);
+  background-color: rgb(255, 255, 255, 0.3);
 }
 
 /* 網頁內容 */
@@ -245,27 +273,6 @@ a.top-nav-site {
   padding: 0;
 }
 
-.main-info {
-  /* 總共有四大區的內容 */
-  margin-bottom: 3rem;
-  padding: 2rem 1rem;
-  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
-  border-radius: var(--radius-large);
-}
-
-.main-info-nav {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  width: 100%;
-}
-
-.main-info-nav-li {
-  grid-column: 1 / -1;
-  width: 100%;
-  min-width: 0; 
-  box-sizing: border-box;
-}
 
 /* 頁腳 - 每一頁的頁腳都要長一樣 */
 footer {
@@ -301,11 +308,6 @@ footer {
   height: 100%;
 }
 
-.mobile-br {
-  display: inline;
-}
-
-
 
 /* --- 平板 --- */
 @media screen and (min-width: 768px) {
@@ -313,12 +315,21 @@ footer {
   .main {
     padding: 2rem;
   }
-
   body {
     padding-top: 100px;
   }
-  .mobile-br {
+
+  .header {
+    height: 50vh;
+  }
+  .header::before {
+    background-size: 120%;
+  }
+  .no-br {
     display: none;
+  }
+  .header-subtitle {
+    width: 40%;
   }
 }
 
@@ -399,7 +410,7 @@ footer {
   }
 
 
-.nav-dropdown {
+  .nav-dropdown {
     position: absolute;
     top: calc(100%);
     left: 0;
@@ -433,35 +444,29 @@ footer {
   .nav-dropdown li a:hover {
     background: rgba(193, 162, 110, 0.06);
   }
+
+  /* 上面的標題區 */
+  .header {
+    height: 70vh;
+    padding: 3rem;
+  }
+  .hesder-title {
+    font-size: 3rem;
+  }
+  .header-subtitle {
+    font-size: 1.2rem;
+  }
 }
 /* --- 桌機 --- */
 @media screen and (min-width: 1200px) {
   body {
     padding-top: 120px;
   }
-
-  
-
-  /* 上面的標題區 */
-  .header {
-    height: 70vh;
+  .header-title {
+    font-size: 3rem;
   }
-
-
-
-  .main-info {
-    margin-bottom: 5rem;
-    padding: 3rem 2rem;
-  }
-  
-  .main-info-nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .main-info-nav-li {
-    grid-column: auto;
+  .header-subtitle {
+    font-size: 1.2rem;
   }
 
   .footer-p {
@@ -469,33 +474,22 @@ footer {
   }
 }
 
-/* 如果加上綜合rwd */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 10px;
+
+/* 加入 hover-hand 就可以獲得倉鼠手掌啦 */
+.hover-hand {
+  position: relative;
 }
-.g-col-xs-2 { grid-column: span 2; }
-.g-col-xs-3 { grid-column: span 3; }
-.g-col-xs-4 { grid-column: span 4; }
-.g-col-xs-5 { grid-column: span 5; }
-.g-col-xs-6 { grid-column: span 6; }
-.g-col-xs-7 { grid-column: span 7; }
-.g-col-xs-8 { grid-column: span 8; }
-.g-col-xs-12 { grid-column: span 12; }
-@media (min-width: 768px) {
-    .g-col-m-2 { grid-column: span 2; }
-    .g-col-m-3 { grid-column: span 3; }
-    .g-col-m-4 { grid-column: span 4; }
-    .g-col-m-6 { grid-column: span 6; }
-    .g-col-m-8 { grid-column: span 8; }
-    .g-col-m-12 { grid-column: span 12; }
+.hover-hand::after {
+  content: url(../img/hand.png);
+  position: absolute;
+  right: -25px;
+  rotate: 30deg;
+  opacity: 0;
+  transition-duration: 0.5s;
 }
-@media (min-width: 1024px) {
-    .g-col-mx-2 { grid-column: span 2; }
-    .g-col-mx-3 { grid-column: span 3; }
-    .g-col-mx-4 { grid-column: span 4; }
-    .g-col-mx-6 { grid-column: span 6; }
-    .g-col-mx-8 { grid-column: span 8; }
-    .g-col-mx-12 { grid-column: span 12; }
+.hover-hand:hover::after {
+  opacity: 1;
+  right: 10px;
+  rotate: -45deg;
 }
+/* 手掌結束 */

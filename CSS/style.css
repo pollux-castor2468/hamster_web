@@ -8,68 +8,16 @@ section[id] {
   scroll-margin-top: calc(var(--nav-height) + 16px);
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 10px;
-}
-.g-col-xs-2 { grid-column: span 2; }
-.g-col-xs-3 { grid-column: span 3; }
-.g-col-xs-4 { grid-column: span 4; }
-.g-col-xs-6 { grid-column: span 6; }
-.g-col-xs-8 { grid-column: span 8; }
-.g-col-xs-12 { grid-column: span 12; }
-@media (min-width: 768px) {
-    .g-col-m-2 { grid-column: span 2; }
-    .g-col-m-3 { grid-column: span 3; }
-    .g-col-m-4 { grid-column: span 4; }
-    .g-col-m-6 { grid-column: span 6; }
-    .g-col-m-8 { grid-column: span 8; }
-    .g-col-m-12 { grid-column: span 12; }
-}
-@media (min-width: 1024px) {
-    .g-col-mx-2 { grid-column: span 2; }
-    .g-col-mx-3 { grid-column: span 3; }
-    .g-col-mx-4 { grid-column: span 4; }
-    .g-col-mx-6 { grid-column: span 6; }
-    .g-col-mx-8 { grid-column: span 8; }
-    .g-col-mx-9 { grid-column: span 9; }
-    .g-col-mx-12 { grid-column: span 12; }
-}
-
 /* 練習用程式碼 */
-/* 選取顏色會變 */
-*::selection {
-  color: var(--color-primary);
-  background-color: var(--color-wood);
-}
 /* 這個可以更換滑鼠的樣式耶 */
 /* * {
   cursor: url("/img/favicon.ico"), auto;
 } */
 
-/* 加入 hover-hand 就可以獲得倉鼠手掌啦 */
-.hover-hand {
-  position: relative;
-}
-.hover-hand::after {
-  content: url(../img/hand.png);
-  position: absolute;
-  right: -25px;
-  rotate: 30deg;
-  opacity: 0;
-  transition-duration: 0.5s;
-}
-.hover-hand:hover::after {
-  opacity: 1;
-  right: 10px;
-  rotate: -45deg;
-}
-/* 手掌結束 */
 
 /* header圖片 */
 .header::before {
-  background-image: url("../img/header.jpeg");
+    background-image: url("../img/header.jpeg");
 }
 
 /* 網頁內容 */
@@ -92,24 +40,18 @@ section[id] {
   margin-bottom: 4rem;
   position: relative;
 }
-
 .main-info-header-accent {
-  font-family: "Noto Sans TC", sans-serif;
   color: var(--color-wood);
   font-size: 1.1rem;
   letter-spacing: 0.2em;
   margin-bottom: 0.5rem;
   opacity: 0.8;
 }
-
 .main-info-header-title {
-  font-family: "Noto Sans TC", sans-serif;
   /* 手機字體大小 */
   font-size: 2rem;
-  color: var(--color-text);
   position: relative;
 }
-
 .main-info-header-title::after {
   content: "";
   display: block;
@@ -120,13 +62,12 @@ section[id] {
   border-radius: 2px;
 }
 
+
 /* 第一區-倉鼠飼養前須知 */
 .main-info-content {
   max-width: 960px;
   margin: 0 auto 3rem;
-  text-align: center;
   line-height: 2;
-  color: var(--color-text);
   background-color: rgba(255, 255, 255, 0.7);
   /* 手機填充 */
   padding: 1.5rem;
@@ -134,7 +75,6 @@ section[id] {
   box-shadow: var(--shadow-soft);
   position: relative;
 }
-
 .main-info-content::after {
   content: "❤";
   position: absolute;
@@ -149,39 +89,14 @@ section[id] {
 
 .main-info-grid {
   /* 包含四個小區塊 */
-  display: grid;
-  /* 手機版單欄 */
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
   list-style: none;
   padding: 0;
 }
-
-.main-info-grid-li {
-  /* 手機版佔滿一整欄 */
-  grid-column: span 1;
-  background-color: #fff;
-  padding: 2rem 2rem 2.5rem 2rem;
-  border-radius: var(--radius-medium);
-  box-shadow: 0 8px 24px rgba(91, 70, 54, 0.08);
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
 .mag-card {
-  /* 手機版佔滿一整欄 */
-  grid-column: span 1;
   background-color: #fff;
   border-radius: var(--radius-medium);
   padding: 1.75rem;
   box-shadow: var(--shadow-soft);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.mag-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(91, 70, 54, 0.12);
 }
 
 .mag-head {
@@ -190,7 +105,6 @@ section[id] {
   gap: 0.75rem;
   margin-bottom: 0.5rem;
 }
-
 .mag-kicker {
   font-size: 0.8rem;
   letter-spacing: 0.2em;
@@ -200,22 +114,19 @@ section[id] {
   border-radius: 999px;
   white-space: nowrap;
 }
-
 .main-info-grid-title {
-  font-family: "Noto Sans TC", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 700;
   line-height: 1.3;
   border-bottom: 3px solid var(--color-wood);
-  color: var(--color-text);
 }
 
 .main-info-grid-content {
   font-size: 1.05rem;
   line-height: 2;
-  color: var(--color-text);
   margin-top: 0.25rem;
 }
+
 
 /* 第二區-推薦的倉鼠飼養基本指南書籍 */
 .container {
@@ -238,14 +149,29 @@ section[id] {
   /* 手機版直向排列 */
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  /* gap: 3rem; */
   align-items: center;
   text-align: left;
+  padding: 1rem;
+  border: 1px solid var(--color-text);
+  border-radius: 5% / 3%;
+  box-shadow: 2px 2px 5px 1px var(--color-text);
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.5s;
 }
-
+.book-item:hover {
+  rotate: 1deg;
+}
 .book-item:nth-child(even) {
   /* 偶數項在手機版維持直向 */
   flex-direction: column;
+}
+.book-item-link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
 }
 
 .book-media {
@@ -254,16 +180,15 @@ section[id] {
   width: 100%;
   margin-bottom: 1.5rem;
 }
-
 .book-cover {
   background: linear-gradient(45deg, var(--color-wood), var(--color-tertiary));
-  height: 400px;
+  /* height: 400px; */
   border-radius: 20px;
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: white;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* color: white; */
   position: relative;
   overflow: hidden;
 }
@@ -271,45 +196,30 @@ section[id] {
 .book-image {
   /* 手機版置中，縮小圖片 */
   width: 80%;
-  height: auto;
   margin: 0 auto;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(91, 70, 54, 0.15);
   display: block;
 }
 
-.book-tag {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-}
-
-
 .book-info {
   flex: 1;
   width: 100%;
 }
-
 .book-meta {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
-  font-family: "Noto Sans TC", sans-serif;
 }
-
 .book-pages,
 .book-year {
   color: var(--color-wood);
   font-size: 0.9rem;
 }
-
 .book-info h4 {
   font-size: 1.5rem;
-  font-family: "Noto Sans TC", sans-serif;
   margin-bottom: 1rem;
 }
-
 .book-info p {
   font-size: 1rem;
   line-height: 1.8;
@@ -321,25 +231,23 @@ section[id] {
   gap: 0.5rem;
   flex-wrap: wrap;
 }
-
 .topic-tag {
   background: var(--color-secondary);
-  color: var(--color-text);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
+  box-shadow: inset 0 0 5px 1px var(--color-wood);
 }
 
 /* 第三區-倉鼠的介紹與飼養相關影片 */
-
-.video-wrapper {
-  /* 包裝影片的，總共有四塊影片 */
-  /* 手機版單欄 */
+/* 包裝影片的，總共有四塊影片 */
+/* 手機版單欄 */
+/* .video-wrapper {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
   align-items: start;
-}
+} */
 
 .video-main {
   /* 第一區塊大影片 */
@@ -362,7 +270,6 @@ section[id] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--color-text);
   overflow: hidden;
   position: relative;
   text-decoration: none;
@@ -409,7 +316,6 @@ section[id] {
   color: inherit;
   align-items: center;
 }
-
 .video-item:hover {
   transform: translateX(10px);
   box-shadow: 0 10px 20px rgba(91, 70, 54, 0.12);
@@ -423,14 +329,12 @@ section[id] {
   position: relative;
   flex-shrink: 0;
 }
-
 .thumb-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-
 .duration {
   position: absolute;
   bottom: 8px;
@@ -446,12 +350,10 @@ section[id] {
 .video-info {
   flex: 1;
 }
-
 .video-info h4 {
   font-size: 1.1rem;
   margin-bottom: 0.1rem;
 }
-
 .video-info p {
   font-size: 0.9rem;
   opacity: 0.8;
@@ -466,7 +368,6 @@ section[id] {
   background-color: #fff;
   border: 2px solid var(--color-text);
   border-radius: 5% 5% 0 0 / 7%;
-  /* outline: 2px outset var(--color-wood); */
   white-space: nowrap;
   overflow: hidden;
 }
@@ -499,7 +400,7 @@ section[id] {
 }
 
 .organizations-info-header {
-  display: flex;
+  /* display: flex; */
   margin-bottom: 1rem;
 }
 .organizations-img {
@@ -562,10 +463,8 @@ section[id] {
   border-radius: 50%;
   transition-duration: 0.2s;
   box-shadow: 3px 3px 5px black;
-  /* outline: 1px outset var(--color-text); */
 }
 .organizations-bottom:hover {
-  /* border-width: 4px; */
   box-shadow: 1px 1px 1px black;
 }
 .bottom-left {
@@ -596,6 +495,9 @@ section[id] {
   .organizations-link {
     padding: 2rem 4rem;
   }
+  .organizations-info-header {
+    display: flex;
+}
   .organizations-underinfo {
     border-radius: 0 0 5% 5% / 40%;
   }
@@ -653,52 +555,23 @@ section[id] {
     padding: 3rem 2rem;
   }
   .book-item {
-    display: flex;
+    /* display: flex; */
+    gap: 1.5rem;
     flex-direction: row;
     align-items: flex-start; /* 不給內容造成擠壓 */
+    border-radius: 5% / 8%;
   }
-
   .book-item:nth-child(even) {
     flex-direction: row-reverse; /* 偶數書反向排列 */
   }
 
   .book-media {
     flex-shrink: 0;          /* ❗ 不允許它被壓縮 */
-    width: 280px;            /* ❗ 固定寬度（妳可以調） */
+    width: 250px;            /* ❗ 固定寬度（妳可以調） */
     height: auto;
   }
-
   .book-image {
     width: 100%;
-    height: auto;
-    display: block;
-  }
-
-    /* 第四區-動物友善團體及機構 */
-  .main-info-nav {
-    /* 雙欄佈局 */
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1.5rem;
-  }
-  .main-info-nav-div {
-    display: block;
-  }
-
-  .main-info-nav-li {
-    /* 雙欄佈局 */
-    grid-column: span 6;
-    width: auto;
-    min-width: auto;
-  }
-
-  .main-info-nav-content {
-    border-top: 2px solid var(--color-wood);
-    border-left: none;
-  }
-
-  .main-info-nav-img {
-    width: 95%;
-    max-height: 150px;
   }
 }
 
@@ -706,43 +579,35 @@ section[id] {
 @media screen and (min-width: 1024px) {
     .main-info {
     margin-bottom: 5rem;
-    padding: 3rem 2rem;
+    /* padding: 3rem 2rem; */
   }
-
   .main-info-header-title {
     font-size: 2.5rem;
   }
-
   .main-info-content {
     /* 筆電填充 */
     padding: 2rem;
   }
-
   .main-info-content::after {
-    content: "❤";
-    position: absolute;
-    top: 50%;
     right: 12px;
-    transform: translateY(-50%) rotate(-12deg);
+    /* transform: translateY(-50%) rotate(-12deg); */
     font-size: 72px; /* 筆電調整字體 */
   }
 
-  .main-info-grid {
     /* 包含四個小區塊 */
     /* 筆電版自訂欄位 */
-    grid-template-columns: repeat(12, 1fr);
+  .main-info-grid {
+    /* grid-template-columns: repeat(12, 1fr); */
     gap: 1.5rem 2rem;
   }
-
-  .main-info-grid-li {
     /* 筆電版佔 7 欄 */
+  /* .main-info-grid-li {
     grid-column: span 7;
-  }
-
-  .mag-card {
+  } */
     /* 筆電版佔 6 欄 */
+  /* .mag-card {
     grid-column: span 6;
-  }
+  } */
 
   /* 第二區-推薦的倉鼠飼養基本指南書籍 */
   .container {
@@ -750,67 +615,51 @@ section[id] {
     width: 80%;
     padding: 20px;
   }
-
   .book-item {
     /* 筆電版橫向排列 */
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
+    padding: 2rem;
   }
-
   .book-item:nth-child(even) {
     /* 偶數項在筆電版反向排列 */
     flex-direction: row-reverse;
   }
-
   .book-media {
     flex: 0 0 300px;
     width: auto;
     margin-bottom: 0;
   }
-
   .book-image {
     width: 100%;
     margin: 0;
   }
-
   .book-info h4 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
-
   .book-info p {
     font-size: 1.1rem;
   }
 
   /* 第三區-倉鼠的介紹與飼養相關影片 */
-
-  .video-wrapper {
-    /* 筆電版雙欄佈局 */
+  /* .video-wrapper {
     grid-template-columns: 2.4fr 1.5fr;
     gap: 1.5rem;
-  }
+  } */
 
   .video-main {
     /* 筆電版移除 order 屬性 */
     order: 0;
   }
-
   .video-list {
     gap: 1.5rem;
   }
-
   .video-item {
     padding: 0.8rem 1rem;
   }
-
   .video-thumbnail {
     width: 135px;
     height: 75px;
-  }
-  .main-info-nav-li {
-    /* 四欄佈局 */
-    grid-column: span 3;
-    width: auto;
-    min-width: auto;
   }
 
 }
