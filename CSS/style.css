@@ -40,6 +40,11 @@ section[id] {
   margin-bottom: 4rem;
   position: relative;
 }
+.main-info:hover .main-info-header {
+  animation-name: weee;
+  animation-duration: 0.5s;
+  /* animation-iteration-count: infinite; */
+}
 .main-info-header-accent {
   color: var(--color-wood);
   font-size: 1.1rem;
@@ -80,11 +85,26 @@ section[id] {
   position: absolute;
   top: 50%;
   right: 8px; /* 手機調整位移 */
-  transform: translateY(-50%) rotate(-12deg);
+  /* transform: translateY(-50%) rotate(-12deg); */
+  transform: translateX(-20%) translateY(-50%);
   font-size: 52px; /* 手機調整字體 */
   line-height: 1;
   color: rgba(238, 106, 124, 0.18);
   pointer-events: none;
+  animation-name: jumping;
+  animation-duration: 2S;
+  animation-iteration-count: infinite;
+}
+@keyframes jumping {
+  25% {
+    rotate: -12deg;
+  }
+  50% {
+    rotate: 0deg;
+  }
+  75% {
+    rotate: 20deg;
+  }
 }
 
 .main-info-grid {
@@ -407,6 +427,15 @@ section[id] {
   height: 2rem;
   margin-right: 1rem;
 }
+.organizations-info-title {
+  padding-bottom: 5px;
+  transition-duration: 0.5s;
+  transition-behavior: allow-discrete;
+}
+.organizations-link:hover .organizations-info-title {
+  padding-bottom: 0;
+  border-bottom: 5px solid var(--color-wood);
+}
 
 .organizations-info-content {
   white-space: normal;
@@ -436,6 +465,7 @@ section[id] {
   border-radius: 10%;
   overflow: hidden;
   align-content: center;
+  cursor: pointer;
 }
 .organizations-underimg img {
   width: 90%;
@@ -463,6 +493,7 @@ section[id] {
   border-radius: 50%;
   transition-duration: 0.2s;
   box-shadow: 3px 3px 5px black;
+  cursor: pointer;
 }
 .organizations-bottom:hover {
   box-shadow: 1px 1px 1px black;
@@ -642,11 +673,6 @@ section[id] {
   }
 
   /* 第三區-倉鼠的介紹與飼養相關影片 */
-  /* .video-wrapper {
-    grid-template-columns: 2.4fr 1.5fr;
-    gap: 1.5rem;
-  } */
-
   .video-main {
     /* 筆電版移除 order 屬性 */
     order: 0;
@@ -672,3 +698,4 @@ section[id] {
     padding: 4rem 3rem;
   }
 }
+
