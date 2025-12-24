@@ -7,14 +7,7 @@
     column-gap: 10px;
 }
 
-/* .main-article {
-    padding: 1rem 1rem;
-    margin: 2rem 1rem;
-    border-radius: 8px;
-    background-color: var(--color-tertiary);
-    border-color: var(--color-wood);
-    border: dotted 2px;
-} */
+
 .article-title{
     font-size: 2rem;
     text-align: center;
@@ -32,33 +25,6 @@
     padding: 0;
     margin: 3rem 0;
 }
-
-
-/* 左手：靠近文字左邊 */
-/* .article-title::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;       
-  width: 32px;       
-  height: 32px;
-  background: url("../../img/hand.png") no-repeat center / contain;
-  transform: rotate(-25deg);
-  pointer-events: none;
-}
-
-.article-title::after{
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: -6px;
-  width: 32px;
-  height: 32px;
-  background: url("../../img/hand.png") no-repeat center / contain;
-  transform: rotate(25deg) scaleX(-1);
-  pointer-events: none;
-} */
-
 
 
 
@@ -202,83 +168,6 @@
     margin-top: 0.75rem;
     font-size: 0.9rem;
     line-height: 1.7;
-}
-
-/* 整區 */
-.supplies {
-    margin-top: 2rem;
-}
-
-/* 物件排列 */
-.supplies-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-}
-
-/* 單一用品 */
-.supply-item {
-    padding: 1.5rem 1.75rem;
-    background: #f7f2ea;
-    border-radius: 1.25rem;
-
-    color: #5a4a3f;
-
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-/* 名稱 */
-.supply-name {
-    font-size: 1.15rem;
-    font-weight: 600;
-}
-
-/* 一句話用途（入口） */
-.supply-brief {
-    font-size: 0.9rem;
-    opacity: 0.85;
-}
-
-/* 詳細說明 */
-.supply-detail {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    opacity: 0.75;
-}
-
-.interaction {
-    margin-top: 2rem;
-}
-
-.interaction-notes {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-}
-
-/* 單張提醒 */
-.interaction-note {
-    padding: 1.5rem 1.75rem;
-    background: #f6f1e8; /* 與木屑世界一致 */
-    border-radius: 1.25rem;
-
-    color: #5a4a3f;
-}
-
-/* 提醒標題 */
-.note-title {
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-}
-
-/* 內文 */
-.note-text {
-    font-size: 0.9rem;
-    line-height: 1.7;
-    opacity: 0.85;
 }
 
 
