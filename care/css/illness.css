@@ -1,3 +1,37 @@
 .header::before {
     background-image: url('https://megapx-assets.dcard.tw/images/a601eb59-45d3-4c36-bb25-4ca583c7e690/full.jpeg');
 }
+
+.main-article {
+    padding: 1rem 1rem;
+    margin: 2rem 1rem;
+    border-radius: 8px;
+    background-color: var(--color-tertiary);
+    border-color: var(--color-wood);
+    border: dotted 2px;
+}
+
+/* 左手：靠近文字左邊 */
+.article-title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;       
+  width: 32px;       
+  height: 32px;
+  background: url("../../img/hand.png") no-repeat center / contain;
+  transform: rotate(-25deg);
+  pointer-events: none;
+}
+
+.article-title::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  width: 32px;
+  height: 32px;
+  background: url("../../img/hand.png") no-repeat center / contain;
+  transform: rotate(25deg) scaleX(-1);
+  pointer-events: none;
+}

@@ -43,6 +43,7 @@
     .g-col-m-4 { grid-column: span 4; }
     .g-col-m-6 { grid-column: span 6; }
     .g-col-m-8 { grid-column: span 8; }
+    .g-col-m-9 { grid-column: span 9; }
     .g-col-m-12 { grid-column: span 12; }
 }
 @media (min-width: 1024px) {

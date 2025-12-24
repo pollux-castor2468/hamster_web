@@ -7,14 +7,7 @@
     column-gap: 10px;
 }
 
-.main-article {
-    padding: 1rem 1rem;
-    margin: 2rem 1rem;
-    border-radius: 8px;
-    background-color: var(--color-tertiary);
-    border-color: var(--color-wood);
-    border: dotted 2px;
-}
+
 .article-title{
     font-size: 2rem;
     text-align: center;
@@ -25,33 +18,13 @@
     padding: 0 56px;
 }
 
-
-
-/* 左手：靠近文字左邊 */
-.article-title::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;       
-  width: 32px;       
-  height: 32px;
-  background: url("../../img/hand.png") no-repeat center / contain;
-  transform: rotate(-25deg);
-  pointer-events: none;
+/* 關於環境頁：關閉卡片裝飾語言 */
+.main-surrounding .main-article {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 3rem 0;
 }
-
-.article-title::after{
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: -6px;
-  width: 32px;
-  height: 32px;
-  background: url("../../img/hand.png") no-repeat center / contain;
-  transform: rotate(25deg) scaleX(-1);
-  pointer-events: none;
-}
-
 
 
 
@@ -81,6 +54,138 @@
     margin: 0 auto;
     margin-bottom: 1rem;
 }
+
+.value {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.main-surrounding .main-article ul,
+.main-surrounding .article-nav-li {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+}
+
+
+.env-temp {
+    padding: 1.75rem 2rem;
+    border-radius: 1.25rem;
+    background: #f5efe6; /* 木屑色 */
+    color: #5a4a3f;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+
+.env-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    opacity: 0.6;
+}
+
+
+.env-heading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: -0.25rem;
+}
+
+.env-intro {
+    max-width: 32rem;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.env-scenarios {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.env-scenario {
+    padding-left: 0.75rem;
+    border-left: 3px solid rgba(90, 74, 63, 0.2);
+}
+
+.env-title {
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+}
+
+.env-text {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.env-warning {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+.hamster-home {
+    padding: 2rem 2.25rem;
+    background: #f6f1e8;
+    border-radius: 1.5rem;
+    color: #5a4a3f;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.hamster-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    opacity: 0.6;
+}
+
+.hamster-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.hamster-voice {
+    max-width: 28rem;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* 展開區 */
+.hamster-details {
+    margin-top: 0.75rem;
+}
+
+.hamster-details summary {
+    cursor: pointer;
+    font-size: 0.9rem;
+    opacity: 0.75;
+}
+
+.hamster-info {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+
+
+/* 平板以上可變兩欄 */
+@media (min-width: 768px) {
+    .supplies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+        .interaction-notes {
+        flex-direction: row;
+    }
+
+    .interaction-note {
+        flex: 1;
+    }
+}
+
 
 @media screen and (min-width: 1024px) {
     .article-nav-li{

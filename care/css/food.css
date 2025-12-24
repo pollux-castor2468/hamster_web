@@ -2,3 +2,79 @@
     background-image: url('https://resize-image.vocus.cc/resize?norotation=true&quality=80&url=https%3A%2F%2Fimages.vocus.cc%2F9c5616a1-1a2b-4eab-93de-fc253fcb3050.jpg&width=800&sign=RjGrE5JkS0PI9lqLgKN-42Afe5LYSLNTRPRzX9kY6CA');
 }
 
+.main-article {
+    padding: 1rem 1rem;
+    margin: 2rem 1rem;
+    border-radius: 8px;
+    background-color: var(--color-tertiary);
+    border-color: var(--color-wood);
+    border: dotted 2px;
+}
+
+.grid {
+    row-gap: 0px;
+    column-gap: 10px;
+}
+
+
+.article-title{
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 56px;
+}
+
+.article-subtitle{
+    text-align: center;
+    font-weight: 500;
+}
+
+.article-nav-li {
+    background-color: var(--color-secondary);
+    border-radius: 30px;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+}
+.article-nav-title{
+    font-weight: bold;
+}
+
+.article-nav{
+    list-style: none;
+    padding-top: 0.2rem;
+}
+.main-underline {
+    width: 5em;
+    position: relative;
+    border-bottom: 3px solid var(--color-wood);
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+/* 左手：靠近文字左邊 */
+.article-title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;       
+  width: 32px;       
+  height: 32px;
+  background: url("../../img/hand.png") no-repeat center / contain;
+  transform: rotate(-25deg);
+  pointer-events: none;
+}
+
+.article-title::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  width: 32px;
+  height: 32px;
+  background: url("../../img/hand.png") no-repeat center / contain;
+  transform: rotate(25deg) scaleX(-1);
+  pointer-events: none;
+}
