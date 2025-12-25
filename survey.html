@@ -48,6 +48,7 @@
             </li>
             <li><a href="encyclopedia.html">鼠鼠百科</a></li>
             <li><a href="setup.html">小窩佈置</a></li>
+            <li><a href="survey.html">愛鼠濃度</a></li>
         </ul>
         <div class="hamburger" id="hamburger">
             <span></span> <!-- 三條線漢堡選單 -->
@@ -66,20 +67,34 @@
         <!-- 上面會有跑動的鼠鼠 -->
         <section class="main-info">
             <p class="main-info-p">
-                倉鼠是多種雜食性的夜行性鼠類的統稱<br>
-                倉鼠有24個不同的種類，在寵物市場上常見的倉鼠有四種：黃金鼠、三線鼠、一線鼠和老公公鼠<br>
-                除了黃金鼠外，後三種統稱為侏儒倉鼠
+                看完了這四種倉鼠的介紹，你最喜緩哪種倉鼠呢<br>
+                在這裡可以選擇你最喜歡的倉鼠，並寫下你有多愛它<br>
+                還可以去看看其他人都有多愛倉鼠喔
             </p>
+            <div class="main-info-imgbar">
+                <div class="main-info-intro">
+                    <p class="intro-p">黃金鼠</p>
+                    <p class="intro-p">三線鼠</p>
+                    <p class="intro-p">一線鼠</p>
+                    <p class="intro-p">老公公鼠</p>
+                </div>
+                <div class="main-info-img">
+                    <img src="./img/runningHamster1.gif" alt="黃金鼠" class="running-hamster">
+                    <img src="./img/runningHamster2.gif" alt="三線鼠" class="running-hamster">
+                    <img src="./img/runningHamster3.gif" alt="一線鼠" class="running-hamster">
+                    <img src="./img/runningHamster4.gif" alt="老公公鼠" class="running-hamster">
+                </div>
+            </div>
         </section>
 
         <!-- 切換表單&數據區按鈕 -->
         <nav class="main-nav" id="main-nav">
             <ul>
                 <li class="main-nav-bottom present-nav-bottom" id="surveyForm">
-                    <a href="#">表單</a>
+                    <p>表單</p>
                 </li>
                 <li class="main-nav-bottom" id="surveyData">
-                    <a href="#">數據</a>
+                    <p>數據</p>
                 </li>
             </ul>
         </nav>
@@ -88,24 +103,24 @@
             <h2 class="survey-title">選擇一隻你最愛的倉鼠</h2>
             <div class="survey-form grid">
                 <div class="form-hamster-type g-col-xs-6 g-col-m-3" id="surveyHamster1">
-                    <div class="form-hamster-img"></div>
+                    <div class="form-hamster-img"><img src="./img/runningHamster1.gif" alt="黃金鼠" class="form-running-hamster"></div>
                     <p class="form-hamster-name">黃金鼠</p>
                 </div>
                 <div class="form-hamster-type g-col-xs-6 g-col-m-3" id="surveyHamster2">
-                    <div class="form-hamster-img"></div>
+                    <div class="form-hamster-img"><img src="./img/runningHamster1.gif" alt="黃金鼠" class="form-running-hamster"></div>
                     <p class="form-hamster-name">三線鼠</p>
                 </div>
                 <div class="form-hamster-type g-col-xs-6 g-col-m-3" id="surveyHamster3">
-                    <div class="form-hamster-img"></div>
+                    <div class="form-hamster-img"><img src="./img/runningHamster1.gif" alt="黃金鼠" class="form-running-hamster"></div>
                     <p class="form-hamster-name">一線鼠</p>
                 </div>
                 <div class="form-hamster-type g-col-xs-6 g-col-m-3" id="surveyHamster4">
-                    <div class="form-hamster-img"></div>
+                    <div class="form-hamster-img"><img src="./img/runningHamster1.gif" alt="黃金鼠" class="form-running-hamster"></div>
                     <p class="form-hamster-name">老公公鼠</p>
                 </div>
             </div>
             <h2 class="survey-title">那麼你有多愛它呢</h2>
-            <input id="surveyNumber" type="number" step="10" max="300" min="0" value="100">
+            <input id="surveyNumber" type="number" step="10" max="400" min="0" value="100">
         </articles>
         <div class="bottom" id="formBottom">
             <a href="#" class="form-bottom" id="finishBottom">完成</a>

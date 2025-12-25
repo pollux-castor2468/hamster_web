@@ -42,15 +42,65 @@
 /* 第一區-倉鼠簡介 */
 .main-info {
     /* position: relative; */
-    height: 50vh;
+    height: 40vh;
     text-align: center;
     background-color: var(--color-secondary);
     padding: 1rem;
+    /* border-radius: 10% / 20%; */
     /* margin-bottom: 2rem; */
+}
+.main-info-p {
+    /* font-size: 1.2rem; */
+    font-weight: 500;
 }
 .main-info:hover .main-info-p {
   animation-name: weee;
   animation-duration: 0.5s;
+}
+
+.main-info-imgbar {
+    position: relative;
+    height: 150px;
+}
+.main-info-intro {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem 0 0 2rem;
+}
+.intro-p {
+    position: relative;
+    padding: 0.5rem;
+    background-color: #fff;
+    border-radius: 20%;
+}
+.intro-p::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: -8px;
+    left: 20px;
+    border-width: 5px;
+    border-color: rgb(255, 255, 255) #fff0 #fff0 rgb(255, 255, 255);
+    border-style: solid;
+}
+.main-info-img {
+    position: absolute;
+    bottom: 0;
+}
+.running-hamster {
+    width: 20%;
+    border-radius: 10%;
+}
+
+@media (min-width: 768px) {
+    .main-info {
+        height: 50vh;
+    }
+    .main-info-imgbar {
+        height: 200px;
+    }
 }
 
 /* 切換表單&數據區按鈕 */
@@ -62,6 +112,7 @@
     background-color: #fff;
     /* opacity: 75%; */
     padding: 0 0.5rem;
+    border-top: 10px solid #fff;
     border-bottom: 5px solid var(--color-text);
     /* border-radius: 20% 20% 0 0 / 10%; */
     /* margin: auto; */
@@ -98,7 +149,7 @@
     width: 100%;
     background-color: #fff;
     text-align: center;
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
 }
 .survey-form {
     padding: 1rem;
@@ -134,8 +185,18 @@
     background-color: #fff;
     border-radius: 10% / 20%;
 }
+.form-running-hamster {
+    width: 80%;
+}
 
-
+/* 輸入框 */
+input {
+    /* width: 100px; */
+    /* height: 40px; */
+    font-size: 1.5rem;
+    text-align: center;
+    border: 5px inset var(--color-wood);
+}
 
 /* 完成按鈕 */
 .bottom {
