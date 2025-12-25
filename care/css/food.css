@@ -1,3 +1,6 @@
+/* ==========================================================================
+   1. 基礎與通用樣式
+   ========================================================================== */
 .header::before {
   background-image: url("https://resize-image.vocus.cc/resize?norotation=true&quality=80&url=https%3A%2F%2Fimages.vocus.cc%2F9c5616a1-1a2b-4eab-93de-fc253fcb3050.jpg&width=800&sign=RjGrE5JkS0PI9lqLgKN-42Afe5LYSLNTRPRzX9kY6CA");
 }
@@ -40,7 +43,15 @@
   border-radius: 30px;
   padding: 0.5rem 1rem;
   margin: 0.5rem 0;
+  transition: all 0.3s ease;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
+
 .article-nav-title {
   font-weight: bold;
 }
@@ -49,6 +60,11 @@
   list-style: none;
   padding-top: 0.2rem;
 }
+
+.content{
+    text-align: left;
+}
+
 .main-underline {
   width: 5em;
   position: relative;
@@ -57,7 +73,6 @@
   margin-bottom: 1rem;
 }
 
-/* 左手：靠近文字左邊 */
 .article-title::before {
   content: "";
   position: absolute;
@@ -87,6 +102,9 @@
   font-size: 3rem;
 }
 
+/* ==========================================================================
+   2. 翻牌邏輯樣式
+   ========================================================================== */
 .article-nav-li .hamster-info {
   display: none;
   margin-top: 1rem;
@@ -105,26 +123,13 @@
   transition: opacity 0.2s;
 }
 
-.flip-trigger:hover {
-  opacity: 0.8;
-}
-
 .is-flipped .food-title,
-.is-flipped .flip-trigger {
+.is-flipped .flip-trigger:not(.back-btn) {
   display: none !important;
 }
 
 .is-flipped .hamster-info {
   display: block !important;
-}
-
-.is-flipped .flip-trigger:not(.back-btn) {
-  display: none !important;
-}
-
-.is-flipped .back-btn {
-  display: inline-block !important;
-  margin-top: 1rem;
 }
 
 .back-btn {
@@ -134,18 +139,17 @@
   border-radius: 20px;
   cursor: pointer;
   font-size: 0.9rem;
+  display: none; /* 預設隱藏，翻牌後顯示 */
 }
 
-.article-nav-li {
-  transition: all 0.3s ease;
-  min-height: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.is-flipped .back-btn {
+  display: inline-block !important;
+  margin-top: 1rem;
 }
 
+/* ==========================================================================
+   3. 滑動器基礎 (Slider/Track)
+   ========================================================================== */
 .slider-container {
   display: flex;
   align-items: center;
@@ -160,13 +164,16 @@
 
 .info-track {
   display: flex;
+  align-items: stretch;
   transition: transform 0.5s ease;
 }
 
 .info-slide {
   min-width: 100%;
   box-sizing: border-box;
+  display: flex;
 }
+
 .nav-btn {
   background: none;
   border: none;
@@ -182,39 +189,46 @@
   justify-content: center;
 }
 
-.hamster-info {
-  display: none;
-}
-
 .nav-btn:hover {
   color: #5a4a3f;
   transform: scale(1.1);
 }
 
+/* ==========================================================================
+   4. 手機版專屬樣式 (預設樣式)
+   ========================================================================== */
+.slider-container.is-mobile-slider {
+  flex-direction: column; /* 強制小圓點排在下方 */
+  align-items: center;
+}
+
 .is-mobile-slider .info-window {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  width: 100%;
   -webkit-overflow-scrolling: touch;
 }
 
+/* 修正：手機版必須是 flex 且不換行才能滑動 */
 .is-mobile-slider .info-track {
-  display: flex !important; /* 橫向排列 */
-  gap: 10px;
-  padding-bottom: 20px;
+  display: flex !important;
+  flex-wrap: nowrap;
+  width: max-content;
 }
 
 .is-mobile-slider .article-nav-li {
-  min-width: calc(100% - 40px); /* 讓每一格幾乎佔滿，露出邊緣提醒還有內容 */
+  min-width: calc(100vw - 80px); /* 寬度稍微縮小讓邊緣露出 */
   scroll-snap-align: center;
   flex-shrink: 0;
+  margin: 0 10px;
 }
 
-/* 分頁點樣式 */
 .slider-dots {
   display: flex;
+  width: 100%;
   justify-content: center;
   gap: 8px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .dot {
@@ -230,57 +244,56 @@
   transform: scale(1.2);
 }
 
-/* --- 平板以上 (768px 以上) --- */
-/* --- 平板以上 (768px 以上) --- */
+/* ==========================================================================
+   5. 平板以上樣式 (min-width: 768px)
+   ========================================================================== */
 @media (min-width: 768px) {
-    .slider-dots {
-        display: none !important; /* 修正：移除原本錯誤的斜線註解 */
-    }
-    
-    .is-mobile-slider .info-track {
-        display: grid !important; 
-        grid-template-columns: repeat(4, 1fr); 
-        width: 100%;
-        transform: none !important;
-        gap: 15px; /* 確保 grid 有間距 */
-    }
-
-    .is-mobile-slider .article-nav-li {
-        min-width: 0 !important; /* 移除手機版的寬度限制 */
-    }
-
-    /* 確保圓點容器在 slider-container 內正確排列 */
-    .slider-container.is-mobile-slider {
-        flex-direction: column; /* 讓圓點排在 slider 下方而非右邊 */
-    }
-
-    .slider-container:not(.is-always-slider) .info-track {
-      transform: none !important; /* 強制重置位移 */
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      width: 100%;
-    }
-
-    .slider-container:not(.is-always-slider) .info-slide {
-      min-width: 0;
-    }
-
-    .slider-container:not(.is-always-slider) .nav-btn {
-      display: none; /* 平板雙欄不需要按鈕 */
-    }
-
-    .is-always-slider .info-track {
-        display: flex !important;
-        transform: translateX(0); /* 平板預設顯示第一頁 */
-    }
-
-    .is-always-slider .info-slide {
-      min-width: 100%; /* 維持一頁一個 */
-    }
-
-    .is-always-slider .nav-btn {
-      display: flex; /* 確保按鈕在平板上也出現 */
-    }
+  /* 隱藏小圓點 */
+  .slider-dots {
+    display: none !important;
   }
 
+  /* 針對「禁食項目」：在桌機版展開為四欄 Grid */
+  .is-mobile-slider .info-window {
+    overflow: visible; /* 關閉滾動視窗 */
+  }
+
+  .is-mobile-slider .info-track {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    width: 100% !important;
+    transform: none !important;
+    gap: 15px;
+  }
+
+  .is-mobile-slider .article-nav-li {
+    min-width: 0 !important;
+    width: 100% !important;
+    margin: 0;
+  }
+
+  /* 針對「飼料」區塊：改為二欄 Grid */
+  .slider-container:not(.is-always-slider):not(.is-mobile-slider) .info-track {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    width: 100% !important;
+    gap: 20px;
+  }
+
+  .slider-container:not(.is-always-slider) .nav-btn {
+    display: none; /* 展開後不需要切換按鈕 */
+  }
+
+  /* 針對「餵食注意事項」：維持 Slider 模式 */
+  .is-always-slider .info-track {
+    display: flex !important;
+  }
+
+  .is-always-slider .info-slide {
+    min-width: 100%;
+  }
+
+  .is-always-slider .nav-btn {
+    display: flex;
+  }
+}

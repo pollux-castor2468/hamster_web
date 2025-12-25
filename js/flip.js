@@ -53,16 +53,19 @@ $(function () {
     $track.css("transform", `translateX(-${currentIndex * 100}%)`);
     $track.data("index", currentIndex);
   });
-  // 偵測禁食項目滑動
+    // 偵測禁食項目滑動
     $(".is-mobile-slider .info-window").on("scroll", function() {
-        const scrollLeft = $(this).scrollLeft();
-        const width = $(this).width();
+        const $window = $(this);
+        const scrollLeft = $window.scrollLeft();
         
-        // 計算當前滑到第幾個 (0 到 6)
-        const index = Math.round(scrollLeft / width);
+        // 取得第一個項目的寬度（含間距）
+        const itemWidth = $window.find(".article-nav-li").outerWidth(true);
         
-        // 更新小圓點狀態
-        const $dots = $(this).closest(".is-mobile-slider").find(".dot");
-        $dots.removeClass("active").eq(index).addClass("active");
+        // 計算目前滑動到第幾個感應點
+        const index = Math.round(scrollLeft / itemWidth);
+        
+        // 更新對應的小圓點狀態
+        const $container = $window.closest(".is-mobile-slider");
+        $container.find(".dot").removeClass("active").eq(index).addClass("active");
     });
 });
