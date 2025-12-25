@@ -35,3 +35,96 @@
   transform: rotate(25deg) scaleX(-1);
   pointer-events: none;
 }
+.article-nav-li {
+    background-color: var(--color-secondary);
+    border-radius: 30px;
+    padding: 1.5rem;
+    margin: 0.5rem;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.article-nav-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+/* 修正文字靠左，避免置中太醜 */
+.article-nav.content {
+    text-align: left;
+    line-height: 1.6;
+    width: 100%;
+}
+.slider-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+}
+
+.info-window {
+    overflow: hidden; /* 隱藏沒看到的內容 */
+    width: 100%;
+}
+
+.info-track {
+    display: flex;
+    transition: transform 0.5s ease; /* 移動動畫 */
+}
+
+.info-slide {
+    min-width: 100%; /* 每一格佔滿寬度 */
+    box-sizing: border-box;
+}
+
+.nav-btn {
+    background: none; 
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+
+    font-size: 1.5rem; 
+    color: rgba(90, 74, 63, 0.5); 
+    padding: 10px;
+    user-select: none;
+    transition: color 0.3s, transform 0.2s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    color: #5a4a3f; /* 滑鼠移上去變深色 */
+    transform: scale(1.1); /* 輕微放大效果 */
+}
+
+.nav-btn:active {
+    transform: scale(0.9); /* 點擊時縮小的回饋 */
+}
+
+@media (min-width: 768px) {
+
+  .slider-container:not(.is-always-slider) .nav-btn {
+    display: none; /* 展開後不需要切換按鈕 */
+  }
+
+  /*維持 Slider 模式 */
+  .is-always-slider .info-track {
+    display: flex !important;
+  }
+
+  .is-always-slider .info-slide {
+    min-width: 100%;
+  }
+
+  .is-always-slider .nav-btn {
+    display: flex;
+  }
+}
