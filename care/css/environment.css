@@ -1,14 +1,16 @@
+/* Header 圖片 */
 .header::before {
     background-image: url('https://rodentscare.org/wp-content/uploads/2024/06/basic_hamster_240626_08-1024x576.jpg');
 }
 
+/* Grid 基礎 */
 .grid {
-    row-gap: 0px;
+    row-gap: 0;
     column-gap: 10px;
 }
 
-
-.article-title{
+/* 章節標題 */
+.article-title {
     font-size: 2rem;
     text-align: center;
     position: relative;
@@ -18,7 +20,22 @@
     padding: 0 56px;
 }
 
-/* 關於環境頁：關閉卡片裝飾語言 */
+.article-subtitle {
+    text-align: center;
+    font-weight: 500;
+}
+
+/* 標題底線 */
+.main-underline {
+    width: 5em;
+    border-bottom: 3px solid var(--color-wood);
+    margin: 0 auto 1rem;
+}
+
+/* =========================
+   環境頁：關閉卡片 UI 語言
+   ========================= */
+
 .main-surrounding .main-article {
     background: transparent;
     border: none;
@@ -26,51 +43,65 @@
     margin: 3rem 0;
 }
 
-
-
-.article-subtitle{
-    text-align: center;
-    font-weight: 500;
-}
-
-.article-nav-li {
-    background-color: var(--color-secondary);
-    border-radius: 30px;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem 0;
-}
-.article-nav-title{
-    font-weight: bold;
-}
-
-.article-nav{
-    list-style: none;
-    padding-top: 0.2rem;
-}
-.main-underline {
-    width: 5em;
-    position: relative;
-    border-bottom: 3px solid var(--color-wood);
-    margin: 0 auto;
-    margin-bottom: 1rem;
-}
-
-.value {
-    font-size: 1.8rem;
-    font-weight: 600;
-}
 .main-surrounding .main-article ul,
-.main-surrounding .article-nav-li {
-    background: transparent;
-    border-radius: 0;
+.main-surrounding .main-article li {
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
+/* =========================
+   溫濕度：輔助資訊模組
+   ========================= */
 
-.env-temp {
-    padding: 1.75rem 2rem;
-    border-radius: 1.25rem;
-    background: #f5efe6; /* 木屑色 */
+.main-surrounding .main-article.g-col-xs-4.g-col-m-4 {
+    padding: 1.25rem 1.5rem;
+}
+
+.main-surrounding .main-article.g-col-xs-4.g-col-m-4 .article-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    text-align: left;
+    transform: none;
+}
+
+.main-surrounding .main-article.g-col-xs-4.g-col-m-4 .article-nav.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.main-surrounding .main-article.g-col-xs-4.g-col-m-4 b {
+    font-size: 0.8rem;
+    font-weight: 500;
+    opacity: 0.65;
+    letter-spacing: 0.1em;
+}
+
+.main-surrounding .main-article.g-col-xs-4.g-col-m-4 .value {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-text);
+}
+
+@media (min-width: 768px) {
+    .main-surrounding .main-article.g-col-xs-4.g-col-m-4 {
+        padding-left: 2rem;
+        border-left: 2px solid rgba(90, 74, 63, 0.12);
+    }
+}
+
+/* =========================
+   敘事容器（溫度 / 生活空間）
+   ========================= */
+
+.env-temp,
+.hamster-home {
+    padding: 1.75rem 2.25rem;
+    border-radius: 1.5rem;
+    background: #f6f1e8;
     color: #5a4a3f;
 
     display: flex;
@@ -78,18 +109,17 @@
     gap: 0.75rem;
 }
 
-
-.env-eyebrow {
+.env-eyebrow,
+.hamster-eyebrow {
     font-size: 0.75rem;
     letter-spacing: 0.15em;
     opacity: 0.6;
 }
 
-
-.env-heading {
+.env-heading,
+.hamster-title {
     font-size: 1.4rem;
     font-weight: 600;
-    margin-top: -0.25rem;
 }
 
 .env-intro {
@@ -102,7 +132,6 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    margin-top: 0.5rem;
 }
 
 .env-scenario {
@@ -110,86 +139,98 @@
     border-left: 3px solid rgba(90, 74, 63, 0.2);
 }
 
-.env-title {
-    font-weight: 600;
-    margin-bottom: 0.1rem;
-}
-
-.env-text {
-    font-size: 0.95rem;
-    opacity: 0.9;
-}
-
 .env-warning {
-    margin-top: 0.75rem;
     font-size: 0.85rem;
     opacity: 0.75;
 }
-.hamster-home {
-    padding: 2rem 2.25rem;
-    background: #f6f1e8;
-    border-radius: 1.5rem;
-    color: #5a4a3f;
+
+/* =========================
+   hamster card flip (CSS)
+   ========================= */
+
+
+.hamster-home .hamster-info {
+    display: none;
+    padding: 10px;
+}
+
+
+
+.hamster-home.is-flipped .hamster-info {
+    display: block;
+}
+
+
+
+.hamster-home.is-flipped 
+.hamster-eyebrow,
+.hamster-home.is-flipped img,
+.hamster-home.is-flipped .hamster-title,
+.hamster-home.is-flipped .hamster-voice {
+    display: none;
+}
+
+.flip-trigger {
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--color-wood, #5a4a3f);
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+}
+
+.flip-trigger:hover {
+    opacity: 0.8;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+}
+
+.info-window {
+    overflow: hidden; /* 隱藏沒看到的內容 */
+    width: 100%;
+}
+
+.info-track {
+    display: flex;
+    transition: transform 0.5s ease; /* 移動動畫 */
+}
+
+.info-slide {
+    min-width: 100%; /* 每一格佔滿寬度 */
+    box-sizing: border-box;
+}
+
+.nav-btn {
+    background: none; 
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+
+    font-size: 1.5rem; 
+    color: rgba(90, 74, 63, 0.5); 
+    padding: 10px;
+    user-select: none;
+    transition: color 0.3s, transform 0.2s;
 
     display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
 }
 
-.hamster-eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    opacity: 0.6;
+.nav-btn:hover {
+    color: #5a4a3f; /* 滑鼠移上去變深色 */
+    transform: scale(1.1); /* 輕微放大效果 */
 }
 
-.hamster-title {
-    font-size: 1.35rem;
-    font-weight: 600;
-}
-
-.hamster-voice {
-    max-width: 28rem;
-    line-height: 1.8;
-    font-size: 0.95rem;
-}
-
-/* 展開區 */
-.hamster-details {
-    margin-top: 0.75rem;
-}
-
-.hamster-details summary {
-    cursor: pointer;
-    font-size: 0.9rem;
-    opacity: 0.75;
-}
-
-.hamster-info {
-    margin-top: 0.75rem;
-    font-size: 0.9rem;
-    line-height: 1.7;
-}
-
-
-
-/* 平板以上可變兩欄 */
-@media (min-width: 768px) {
-    .supplies-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-        .interaction-notes {
-        flex-direction: row;
-    }
-
-    .interaction-note {
-        flex: 1;
-    }
-}
-
-
-@media screen and (min-width: 1024px) {
-    .article-nav-li{
-        padding: 1rem 3rem;
-        margin: 0.5rem 0.2rem;
-    }
+.nav-btn:active {
+    transform: scale(0.9); /* 點擊時縮小的回饋 */
 }

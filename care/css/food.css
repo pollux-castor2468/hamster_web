@@ -1,73 +1,76 @@
 .header::before {
-    background-image: url('https://resize-image.vocus.cc/resize?norotation=true&quality=80&url=https%3A%2F%2Fimages.vocus.cc%2F9c5616a1-1a2b-4eab-93de-fc253fcb3050.jpg&width=800&sign=RjGrE5JkS0PI9lqLgKN-42Afe5LYSLNTRPRzX9kY6CA');
+  background-image: url("https://resize-image.vocus.cc/resize?norotation=true&quality=80&url=https%3A%2F%2Fimages.vocus.cc%2F9c5616a1-1a2b-4eab-93de-fc253fcb3050.jpg&width=800&sign=RjGrE5JkS0PI9lqLgKN-42Afe5LYSLNTRPRzX9kY6CA");
 }
 
 .main-article {
-    padding: 1rem 1rem;
-    margin: 2rem 1rem;
-    border-radius: 8px;
-    background-color: var(--color-tertiary);
-    border-color: var(--color-wood);
-    border: dotted 2px;
+  padding: 1rem 1rem;
+  margin: 2rem 1rem;
+  border-radius: 8px;
+  background-color: var(--color-tertiary);
+  border-color: var(--color-wood);
+  border: dotted 2px;
 }
 
 .grid {
-    row-gap: 0px;
-    column-gap: 10px;
+  row-gap: 0px;
+  column-gap: 10px;
 }
 
-
-.article-title{
-    font-size: 2rem;
-    text-align: center;
-    position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0 56px;
+.article-title {
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 56px;
 }
 
-.article-subtitle{
-    text-align: center;
-    font-weight: 500;
+.article-subtitle {
+  text-align: center;
+  font-weight: 500;
+}
+
+.forbidden-food-image {
+  width: 150px;
 }
 
 .article-nav-li {
-    background-color: var(--color-secondary);
-    border-radius: 30px;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem 0;
+  background-color: var(--color-secondary);
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
 }
-.article-nav-title{
-    font-weight: bold;
+.article-nav-title {
+  font-weight: bold;
 }
 
-.article-nav{
-    list-style: none;
-    padding-top: 0.2rem;
+.article-nav {
+  list-style: none;
+  padding-top: 0.2rem;
 }
 .main-underline {
-    width: 5em;
-    position: relative;
-    border-bottom: 3px solid var(--color-wood);
-    margin: 0 auto;
-    margin-bottom: 1rem;
+  width: 5em;
+  position: relative;
+  border-bottom: 3px solid var(--color-wood);
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }
 
 /* 左手：靠近文字左邊 */
-.article-title::before{
+.article-title::before {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -6px;       
-  width: 32px;       
+  bottom: -6px;
+  width: 32px;
   height: 32px;
   background: url("../../img/hand.png") no-repeat center / contain;
   transform: rotate(-25deg);
   pointer-events: none;
 }
 
-.article-title::after{
+.article-title::after {
   content: "";
   position: absolute;
   right: 0;
@@ -78,3 +81,206 @@
   transform: rotate(25deg) scaleX(-1);
   pointer-events: none;
 }
+
+.food-title {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.article-nav-li .hamster-info {
+  display: none;
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.flip-trigger {
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-wood, #5a4a3f);
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+
+.flip-trigger:hover {
+  opacity: 0.8;
+}
+
+.is-flipped .food-title,
+.is-flipped .flip-trigger {
+  display: none !important;
+}
+
+.is-flipped .hamster-info {
+  display: block !important;
+}
+
+.is-flipped .flip-trigger:not(.back-btn) {
+  display: none !important;
+}
+
+.is-flipped .back-btn {
+  display: inline-block !important;
+  margin-top: 1rem;
+}
+
+.back-btn {
+  background-color: var(--color-wood, #5a4a3f);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.article-nav-li {
+  transition: all 0.3s ease;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+}
+
+.info-window {
+  overflow: hidden;
+  width: 100%;
+}
+
+.info-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.info-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+.nav-btn {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: rgba(90, 74, 63, 0.5);
+  padding: 10px;
+  user-select: none;
+  transition: color 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamster-info {
+  display: none;
+}
+
+.nav-btn:hover {
+  color: #5a4a3f;
+  transform: scale(1.1);
+}
+
+.is-mobile-slider .info-window {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.is-mobile-slider .info-track {
+  display: flex !important; /* 橫向排列 */
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.is-mobile-slider .article-nav-li {
+  min-width: calc(100% - 40px); /* 讓每一格幾乎佔滿，露出邊緣提醒還有內容 */
+  scroll-snap-align: center;
+  flex-shrink: 0;
+}
+
+/* 分頁點樣式 */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(90, 74, 63, 0.3);
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.dot.active {
+  background: var(--color-wood, #5a4a3f);
+  transform: scale(1.2);
+}
+
+/* --- 平板以上 (768px 以上) --- */
+/* --- 平板以上 (768px 以上) --- */
+@media (min-width: 768px) {
+    .slider-dots {
+        display: none !important; /* 修正：移除原本錯誤的斜線註解 */
+    }
+    
+    .is-mobile-slider .info-track {
+        display: grid !important; 
+        grid-template-columns: repeat(4, 1fr); 
+        width: 100%;
+        transform: none !important;
+        gap: 15px; /* 確保 grid 有間距 */
+    }
+
+    .is-mobile-slider .article-nav-li {
+        min-width: 0 !important; /* 移除手機版的寬度限制 */
+    }
+
+    /* 確保圓點容器在 slider-container 內正確排列 */
+    .slider-container.is-mobile-slider {
+        flex-direction: column; /* 讓圓點排在 slider 下方而非右邊 */
+    }
+
+    .slider-container:not(.is-always-slider) .info-track {
+      transform: none !important; /* 強制重置位移 */
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .slider-container:not(.is-always-slider) .info-slide {
+      min-width: 0;
+    }
+
+    .slider-container:not(.is-always-slider) .nav-btn {
+      display: none; /* 平板雙欄不需要按鈕 */
+    }
+
+    .is-always-slider .info-track {
+        display: flex !important;
+        transform: translateX(0); /* 平板預設顯示第一頁 */
+    }
+
+    .is-always-slider .info-slide {
+      min-width: 100%; /* 維持一頁一個 */
+    }
+
+    .is-always-slider .nav-btn {
+      display: flex; /* 確保按鈕在平板上也出現 */
+    }
+  }
+
