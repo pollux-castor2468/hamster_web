@@ -54,9 +54,7 @@
     margin-bottom: 0.8rem;
 }
 
-/* 修正文字靠左，避免置中太醜 */
 .article-nav.content {
-    text-align: left;
     line-height: 1.6;
     width: 100%;
 }

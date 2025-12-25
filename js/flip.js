@@ -68,4 +68,44 @@ $(function () {
         const $container = $window.closest(".is-mobile-slider");
         $container.find(".dot").removeClass("active").eq(index).addClass("active");
     });
+    function updateDots($container, index) {
+    $container.find(".dot").removeClass("active").eq(index).addClass("active");
+  }
+
+  // 1. 左右按鈕點擊邏輯
+  $(".next-btn, .prev-btn").on("click", function () {
+    const $btn = $(this);
+    const $container = $btn.closest(".slider-container, .main-article");
+    const $window = $container.find(".info-window");
+    const $track = $window.find(".info-track");
+    const slideCount = $track.find(".info-slide").length;
+
+    if (slideCount <= 1) return;
+
+    let currentIndex = $track.data("index") || 0;
+
+    if ($btn.hasClass("next-btn")) {
+      currentIndex = (currentIndex + 1) % slideCount;
+    } else {
+      currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+    }
+
+    // 執行位移
+    $track.css("transform", `translateX(-${currentIndex * 100}%)`);
+    $track.data("index", currentIndex);
+
+    // 同步更新點點
+    updateDots($container, currentIndex);
+  });
+
+  // 2. 偵測手勢/捲動同步點點 (針對手機版或電腦版手動捲動)
+  $(".info-window").on("scroll", function () {
+    const $window = $(this);
+    const scrollLeft = $window.scrollLeft();
+    const itemWidth = $window.width(); // 取得視窗寬度
+    const index = Math.round(scrollLeft / itemWidth);
+
+    const $container = $window.closest(".slider-container, .main-article");
+    updateDots($container, index);
+  });
 });

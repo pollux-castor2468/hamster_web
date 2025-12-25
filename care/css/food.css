@@ -48,6 +48,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: -webkit-fill-available;
 }
 
 .article-nav-title {
@@ -57,10 +58,6 @@
 .article-nav {
   list-style: none;
   padding-top: 0.2rem;
-}
-
-.content{
-    text-align: left;
 }
 
 .main-underline {
@@ -238,10 +235,34 @@
   transform: scale(1.2);
 }
 
-@media (min-width: 768px) {
-  .slider-dots {
-    display: none !important;
+  .is-always-slider.slider-container {
+    flex-direction: column;
+    align-items: center;
   }
+
+  .is-always-slider .slider-dots {
+    display: flex !important;
+    order: 2;          
+    margin-top: 15px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .is-always-slider .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  
+  .is-always-slider .prev-btn { left: 0; }
+  .is-always-slider .next-btn { right: 0; }
+
+  .is-always-slider .info-window {
+    width: calc(100% - 100px); 
+  }
+
+@media (min-width: 768px) {
 
   .is-mobile-slider .info-window {
     overflow: visible;
@@ -259,6 +280,17 @@
     min-width: 0 !important;
     width: 100% !important;
     margin: 0;
+  }
+  .is-mobile-slider + .slider-dots {
+    display: none !important;
+  }
+
+  /* 確保 is-always-slider 的點點在電腦版依然顯示 */
+  .is-always-slider + .slider-dots,
+  .slider-container.is-always-slider .slider-dots {
+    display: flex !important;
+    justify-content: center;
+    margin-top: 15px;
   }
 
   .slider-container:not(.is-always-slider):not(.is-mobile-slider) .info-track {
@@ -283,4 +315,6 @@
   .is-always-slider .nav-btn {
     display: flex;
   }
+
+
 }

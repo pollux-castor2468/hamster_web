@@ -35,8 +35,7 @@
   transform: rotate(25deg) scaleX(-1);
   pointer-events: none;
 }
-/* ===== 臨終關懷：知識型內容排版 ===== */
-/* === Knowledge Article 共用 === */
+
 
 .article-knowledge {
   max-width: 42rem;
@@ -45,7 +44,6 @@
   color: #5a4a3f;
 }
 
-/* 小標題（取代純 <b> 的突兀感） */
 .article-knowledge > b {
   display: block;
   margin-top: 2.2rem;
@@ -59,7 +57,6 @@
   padding-left: 0.75rem;
 }
 
-/* 左側知識線（environment 那套語言） */
 .article-knowledge > b::before {
   content: "";
   position: absolute;
@@ -71,7 +68,6 @@
   opacity: 0.6;
 }
 
-/* 內文 */
 .article-knowledge p {
   margin: 0;
   font-size: 0.95rem;
@@ -83,35 +79,8 @@
   margin-top: 2.5rem;
 }
 
-.main-article {
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin: 3rem 0;
-}
 
-/* 主標題 */
-.main-article .article-title {
-    font-size: 1.8rem;
-    text-align: center;
-    position: relative;
-    padding: 0 2.5rem;
-}
 
-/* 底線 */
-.main-article .main-underline {
-    width: 4em;
-    margin: 0.5rem auto 0.75rem;
-    border-bottom: 3px solid var(--color-wood);
-}
-
-/* 副標題 */
-.main-article .article-subtitle {
-    text-align: center;
-    font-size: 0.9rem;
-    opacity: 0.65;
-    margin-bottom: 2.5rem;
-}
 
 
 .slider-container {
