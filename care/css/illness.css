@@ -80,6 +80,18 @@
     box-sizing: border-box;
 }
 
+.info-slide, .is-mobile-slider .article-nav-li {
+    flex: 0 0 100%;
+    min-width: 100%;
+    scroll-snap-align: center;
+    box-sizing: border-box;
+}
+
+.slider-container.is-mobile-slider {
+  flex-direction: column;
+  align-items: center;
+}
+
 .nav-btn {
     background: none; 
     border: none;

@@ -1,3 +1,6 @@
+/* ==========================================================================
+   基礎樣式與卡片設計
+   ========================================================================== */
 .header::before {
   background-image: url("https://resize-image.vocus.cc/resize?norotation=true&quality=80&url=https%3A%2F%2Fimages.vocus.cc%2F9c5616a1-1a2b-4eab-93de-fc253fcb3050.jpg&width=800&sign=RjGrE5JkS0PI9lqLgKN-42Afe5LYSLNTRPRzX9kY6CA");
 }
@@ -9,11 +12,6 @@
   background-color: var(--color-tertiary);
   border-color: var(--color-wood);
   border: dotted 2px;
-}
-
-.grid {
-  row-gap: 0px;
-  column-gap: 10px;
 }
 
 .article-title {
@@ -30,66 +28,51 @@
   text-align: center;
   font-weight: 500;
 }
-
-.forbidden-food-image {
-  height: 150px;
-  width:150px;
+.main-underline {
+  width: 5em;
+  border-bottom: 3px solid var(--color-wood);
+  margin: 0 auto 1rem;
 }
 
+/* 裝飾手部圖案 */
+.article-title::before,
+.article-title::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  width: 32px;
+  height: 32px;
+  background: url("../../img/hand.png") no-repeat center / contain;
+  pointer-events: none;
+}
+.article-title::before {
+  left: 0;
+  transform: rotate(-25deg);
+}
+.article-title::after {
+  right: 0;
+  transform: rotate(25deg) scaleX(-1);
+}
+
+/* 卡片基礎 */
 .article-nav-li {
   background-color: var(--color-secondary);
   border-radius: 30px;
-  padding: 0.5rem 1rem;
-  margin: 0.5rem 0;
+  padding: 1.5rem;
   transition: all 0.3s ease;
-  min-height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: -webkit-fill-available;
+  width: 100%;
+  height: -webkit-fill-available;
 }
 
-.article-nav-title {
-  font-weight: bold;
-}
-
-.article-nav {
-  list-style: none;
-  padding-top: 0.2rem;
-}
-
-.main-underline {
-  width: 5em;
-  position: relative;
-  border-bottom: 3px solid var(--color-wood);
-  margin: 0 auto;
-  margin-bottom: 1rem;
-}
-
-.article-title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 32px;
-  height: 32px;
-  background: url("../../img/hand.png") no-repeat center / contain;
-  transform: rotate(-25deg);
-  pointer-events: none;
-}
-
-.article-title::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: -6px;
-  width: 32px;
-  height: 32px;
-  background: url("../../img/hand.png") no-repeat center / contain;
-  transform: rotate(25deg) scaleX(-1);
-  pointer-events: none;
+.forbidden-food-image {
+  height: 150px;
+  width: 150px;
+  object-fit: contain;
 }
 
 .food-title {
@@ -97,12 +80,144 @@
   font-size: 3rem;
 }
 
+/* ==========================================================================
+   手機版滑動器 (預設)
+   ========================================================================== */
+.slider-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+.slider-container .nav-btn {
+    display: none;
+}
+
+.info-window {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.info-track {
+  display: flex;
+  width: auto;
+  align-items: stretch;
+  transition: transform 0.5s ease;
+}
+
+.info-slide,
+.is-mobile-slider .article-nav-li {
+  flex: 0 0 100% ;
+  min-width: 100% ;
+  scroll-snap-align: center;
+  box-sizing: border-box;
+}
+
+/* 圓點與按鈕 */
+.slider-dots {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(90, 74, 63, 0.3);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.dot.active {
+  background: var(--color-wood, #5a4a3f);
+  transform: scale(1.2);
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: rgba(90, 74, 63, 0.5);
+  padding: 10px;
+  z-index: 10;
+}
+
+.slider-container.is-mobile-slider {
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==========================================================================
+   電腦版 (768px 以上)
+   ========================================================================== */
+@media (min-width: 768px) {
+  /* 1. 非 Always Slider (飼料、禁食項目) 展開為 Grid */
+  .slider-container:not(.is-always-slider) .info-window {
+    overflow: visible;
+  }
+  .slider-container:not(.is-always-slider) .slider-dots,
+  .slider-container:not(.is-always-slider) .nav-btn {
+    display: none !important;
+  }
+
+  .slider-container:not(.is-always-slider) .info-track {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* 飼料預設二欄 */
+    gap: 20px;
+    width: 100% !important;
+    transform: none !important;
+  }
+
+  /* 禁食項目特殊設定四欄 */
+  article:has(h3:contains("禁食項目")) .info-track {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .slider-container:not(.is-always-slider) .info-slide,
+  .slider-container:not(.is-always-slider) .article-nav-li {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  /* 2. Always Slider (餵食注意事項) 保留滑桿與點點 */
+  .is-always-slider.slider-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .is-always-slider .info-window {
+    overflow: hidden; /* 電腦版關閉原生捲動，靠 JS transform */
+    width: calc(100% - 100px);
+  }
+
+  .is-always-slider .nav-btn {
+    display: flex !important;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .is-always-slider .prev-btn {
+    left: 0;
+  }
+  .is-always-slider .next-btn {
+    right: 0;
+  }
+
+  .is-always-slider .slider-dots {
+    display: flex !important;
+  }
+}
+
+/* ==========================================================================
+   翻牌與額外細節
+   ========================================================================== */
 .article-nav-li .hamster-info {
   display: none;
   margin-top: 1rem;
   line-height: 1.6;
 }
-
 .flip-trigger {
   cursor: pointer;
   display: inline-block;
@@ -112,209 +227,21 @@
   color: #fff;
   border-radius: 20px;
   font-size: 0.9rem;
-  transition: opacity 0.2s;
 }
-
 .is-flipped .food-title,
 .is-flipped .flip-trigger:not(.back-btn) {
   display: none !important;
 }
-
 .is-flipped .hamster-info {
   display: block !important;
 }
-
 .back-btn {
-  background-color: var(--color-wood, #5a4a3f);
+  background: var(--color-wood);
   color: white;
   padding: 5px 15px;
   border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  display: none; 
+  display: none;
 }
-
 .is-flipped .back-btn {
   display: inline-block !important;
-  margin-top: 1rem;
-}
-
-
-.slider-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-  gap: 10px;
-}
-
-.info-window {
-  overflow: hidden;
-  width: 100%;
-}
-
-.info-track {
-  display: flex;
-  align-items: stretch;
-  transition: transform 0.5s ease;
-  width: 100%;
-}
-
-.info-slide {
-    flex: 0 0 100%;
-  min-width: 100%;
-  box-sizing: border-box;
-  display: flex;
-}
-
-.nav-btn {
-  background: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  color: rgba(90, 74, 63, 0.5);
-  padding: 10px;
-  user-select: none;
-  transition: color 0.3s, transform 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-btn:hover {
-  color: #5a4a3f;
-  transform: scale(1.1);
-}
-
-
-.slider-container.is-mobile-slider {
-  flex-direction: column; 
-  align-items: center;
-}
-
-.is-mobile-slider .info-window {
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  width: 100%;
-  -webkit-overflow-scrolling: touch;
-}
-
-.is-mobile-slider .info-track {
-  display: flex !important;
-  flex-wrap: nowrap;
-  width: max-content;
-}
-
-.is-mobile-slider .article-nav-li {
-  min-width: calc(100vw - 80px);
-  scroll-snap-align: center;
-  flex-shrink: 0;
-  margin: 0 10px;
-  flex: 1;
-  min-height: 200px;
-}
-
-.slider-dots {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 15px;
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  background: rgba(90, 74, 63, 0.3);
-  border-radius: 50%;
-  transition: all 0.3s;
-}
-
-.dot.active {
-  background: var(--color-wood, #5a4a3f);
-  transform: scale(1.2);
-}
-
-  .is-always-slider.slider-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .is-always-slider .slider-dots {
-    display: flex !important;
-    order: 2;          
-    margin-top: 15px;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .is-always-slider .nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-  }
-  
-  .is-always-slider .prev-btn { left: 0; }
-  .is-always-slider .next-btn { right: 0; }
-
-  .is-always-slider .info-window {
-    width: calc(100% - 100px); 
-  }
-
-@media (min-width: 768px) {
-
-  .is-mobile-slider .info-window {
-    overflow: visible;
-  }
-
-  .is-mobile-slider .info-track {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    width: 100% !important;
-    transform: none !important;
-    gap: 15px;
-  }
-
-  .is-mobile-slider .article-nav-li {
-    min-width: 0 !important;
-    width: 100% !important;
-    margin: 0;
-  }
-  .is-mobile-slider + .slider-dots {
-    display: none !important;
-  }
-
-  /* 確保 is-always-slider 的點點在電腦版依然顯示 */
-  .is-always-slider + .slider-dots,
-  .slider-container.is-always-slider .slider-dots {
-    display: flex !important;
-    justify-content: center;
-    margin-top: 15px;
-  }
-
-  .slider-container:not(.is-always-slider):not(.is-mobile-slider) .info-track {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    width: 100% !important;
-    gap: 20px;
-  }
-
-  .slider-container:not(.is-always-slider) .nav-btn {
-    display: none;
-  }
-
-  .is-always-slider .info-track {
-    display: flex !important;
-  }
-
-  .is-always-slider .info-slide {
-    min-width: 100%;
-  }
-
-  .is-always-slider .nav-btn {
-    display: flex;
-  }
-
-
 }

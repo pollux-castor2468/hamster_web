@@ -166,7 +166,8 @@
 .hamster-eyebrow,
 .hamster-home.is-flipped img,
 .hamster-home.is-flipped .hamster-title,
-.hamster-home.is-flipped .hamster-voice {
+.hamster-home.is-flipped .hamster-voice,
+.hamster-home.is-flipped .flip-trigger:not(.back-btn) {
     display: none;
 }
 
