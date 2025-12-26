@@ -195,17 +195,17 @@
 }
 
 .info-window {
-    overflow: hidden; /* 隱藏沒看到的內容 */
+    overflow: hidden; 
     width: 100%;
 }
 
 .info-track {
     display: flex;
-    transition: transform 0.5s ease; /* 移動動畫 */
+    transition: transform 0.5s ease; 
 }
 
 .info-slide {
-    min-width: 100%; /* 每一格佔滿寬度 */
+    min-width: 100%; 
     box-sizing: border-box;
 }
 
@@ -228,10 +228,10 @@
 }
 
 .nav-btn:hover {
-    color: #5a4a3f; /* 滑鼠移上去變深色 */
-    transform: scale(1.1); /* 輕微放大效果 */
+    color: #5a4a3f; 
+    transform: scale(1.1); 
 }
 
 .nav-btn:active {
-    transform: scale(0.9); /* 點擊時縮小的回饋 */
+    transform: scale(0.9); 
 }

@@ -1,6 +1,3 @@
-/* ==========================================================================
-   基礎樣式與卡片設計
-   ========================================================================== */
 .header::before {
   background-image: url("https://resize-image.vocus.cc/resize?norotation=true&quality=80&url=https%3A%2F%2Fimages.vocus.cc%2F9c5616a1-1a2b-4eab-93de-fc253fcb3050.jpg&width=800&sign=RjGrE5JkS0PI9lqLgKN-42Afe5LYSLNTRPRzX9kY6CA");
 }
@@ -80,8 +77,51 @@
   font-size: 3rem;
 }
 
+.article-knowledge {
+  max-width: 42rem;
+  margin: 0 auto;
+  line-height: 1.9;
+  color: #5a4a3f;
+}
+
+.article-knowledge > b {
+  display: block;
+  margin-top: 2.2rem;
+  margin-bottom: 0.4rem;
+
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  position: relative;
+  padding-left: 0.75rem;
+}
+
+.article-knowledge > b::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 3px;
+  height: 1em;
+  background-color: var(--color-wood);
+  opacity: 0.6;
+}
+
+.article-knowledge p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* 小標與下一段拉開距離 */
+.article-knowledge p + b {
+  margin-top: 2.5rem;
+}
+
+
 /* ==========================================================================
-   手機版滑動器 (預設)
+   滑動器 
    ========================================================================== */
 .slider-container {
   display: flex;
@@ -135,13 +175,30 @@
 }
 
 .nav-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  color: rgba(90, 74, 63, 0.5);
-  padding: 10px;
-  z-index: 10;
+    background: none; 
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+
+    font-size: 1.5rem; 
+    color: rgba(90, 74, 63, 0.5); 
+    padding: 10px;
+    user-select: none;
+    transition: color 0.3s, transform 0.2s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    color: #5a4a3f; 
+    transform: scale(1.1); 
+}
+
+.nav-btn:active {
+    transform: scale(0.9); 
 }
 
 .slider-container.is-mobile-slider {
@@ -150,50 +207,47 @@
 }
 
 /* ==========================================================================
-   電腦版 (768px 以上)
+   平板
    ========================================================================== */
 @media (min-width: 768px) {
-  /* 1. 非 Always Slider (飼料、禁食項目) 展開為 Grid */
   .slider-container:not(.is-always-slider) .info-window {
     overflow: visible;
   }
   .slider-container:not(.is-always-slider) .slider-dots,
   .slider-container:not(.is-always-slider) .nav-btn {
-    display: none !important;
+    display: none;
   }
 
   .slider-container:not(.is-always-slider) .info-track {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important; /* 飼料預設二欄 */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
     gap: 20px;
-    width: 100% !important;
-    transform: none !important;
+    width: 100%;
+    transform: none;
   }
 
-  /* 禁食項目特殊設定四欄 */
   article:has(h3:contains("禁食項目")) .info-track {
-    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .slider-container:not(.is-always-slider) .info-slide,
   .slider-container:not(.is-always-slider) .article-nav-li {
-    min-width: 0 !important;
-    width: 100% !important;
+    min-width: 0;
+    width: 100%;
   }
 
-  /* 2. Always Slider (餵食注意事項) 保留滑桿與點點 */
   .is-always-slider.slider-container {
     flex-direction: column;
     align-items: center;
   }
 
   .is-always-slider .info-window {
-    overflow: hidden; /* 電腦版關閉原生捲動，靠 JS transform */
+    overflow: hidden;
     width: calc(100% - 100px);
   }
 
   .is-always-slider .nav-btn {
-    display: flex !important;
+    display: flex;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -206,12 +260,12 @@
   }
 
   .is-always-slider .slider-dots {
-    display: flex !important;
+    display: flex;
   }
 }
 
 /* ==========================================================================
-   翻牌與額外細節
+   翻牌
    ========================================================================== */
 .article-nav-li .hamster-info {
   display: none;
@@ -230,10 +284,10 @@
 }
 .is-flipped .food-title,
 .is-flipped .flip-trigger:not(.back-btn) {
-  display: none !important;
+  display: none ;
 }
 .is-flipped .hamster-info {
-  display: block !important;
+  display: block;
 }
 .back-btn {
   background: var(--color-wood);
@@ -243,5 +297,5 @@
   display: none;
 }
 .is-flipped .back-btn {
-  display: inline-block !important;
+  display: inline-block;
 }
