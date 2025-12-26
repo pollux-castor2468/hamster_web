@@ -157,6 +157,7 @@
     border-bottom: 0;
     margin: 0 0.5rem;
     transition-duration: 0.3s;
+    cursor: pointer;
 }
 .species-nav-bottom a {
     text-decoration: none;
@@ -233,6 +234,7 @@
     padding: 0 0.5rem;
     border: 2px solid var(--color-text);
     border-radius: 50%;
+    cursor: pointer;
 }
 .close-bottom:hover {
     background-color: var(--color-text);
@@ -259,6 +261,7 @@
     transition-duration: 0.5s;
     filter: invert(0.1);
     /* filter: sepia(0); */
+    cursor: pointer;
 }
 .img-bottom:hover {
     overflow: hidden;
