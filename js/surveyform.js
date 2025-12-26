@@ -56,32 +56,6 @@ $(function(){
         $("#surveyHamster1").removeClass("now-hamster-type"); $("#surveyHamster2").removeClass("now-hamster-type"); $("#surveyHamster3").removeClass("now-hamster-type");
     })
 
-// 愛鼠濃度區切換按鈕
-    // $("#dataNumber1").click(function(){
-    //     $("#dataNumber1").addClass("present-nav-bottom");
-    //     $("#dataNumber2").removeClass("present-nav-bottom"); $("#dataNumber3").removeClass("present-nav-bottom"); $("#dataNumber4").removeClass("present-nav-bottom");
-    //     $("#surveyData2").addClass("hide"); $("#surveyData3").addClass("hide"); $("#surveyData4").addClass("hide");
-    //     $("#surveyData1").removeClass("hide");
-    // })
-    // $("#dataNumber2").click(function(){
-    //     $("#dataNumber2").addClass("present-nav-bottom");
-    //     $("#dataNumber1").removeClass("present-nav-bottom"); $("#dataNumber3").removeClass("present-nav-bottom"); $("#dataNumber4").removeClass("present-nav-bottom");
-    //     $("#surveyData1").addClass("hide"); $("#surveyData3").addClass("hide"); $("#surveyData4").addClass("hide");
-    //     $("#surveyData2").removeClass("hide");
-    // })
-    // $("#dataNumber3").click(function(){
-    //     $("#dataNumber3").addClass("present-nav-bottom");
-    //     $("#dataNumber1").removeClass("present-nav-bottom"); $("#dataNumber2").removeClass("present-nav-bottom"); $("#dataNumber4").removeClass("present-nav-bottom");
-    //     $("#surveyData1").addClass("hide"); $("#surveyData2").addClass("hide"); $("#surveyData4").addClass("hide");
-    //     $("#surveyData3").removeClass("hide");
-    // })
-    // $("#dataNumber4").click(function(){
-    //     $("#dataNumber4").addClass("present-nav-bottom");
-    //     $("#dataNumber1").removeClass("present-nav-bottom"); $("#dataNumber2").removeClass("present-nav-bottom"); $("#dataNumber3").removeClass("present-nav-bottom");
-    //     $("#surveyData1").addClass("hide"); $("#surveyData2").addClass("hide"); $("#surveyData3").addClass("hide");
-    //     $("#surveyData4").removeClass("hide");
-    // })
-
 
 // firebase初始化!!!
     firebase.initializeApp({
@@ -123,6 +97,7 @@ $(function(){
         $("#dataLine4").css('height', Math.floor((hamster4 / tot1) * 190 + 10)+'px')
 // 愛鼠濃度區
         // 黃金鼠
+        $("#datatot1").html(`愛鼠人數： ${hamster1} 人`);
         $("#hamster1Data1").html(`${Math.floor((love1[0] / hamster1) * 100)} %`);
         $("#hamster1Data2").html(`${Math.floor((love1[1] / hamster1) * 100)} %`);
         $("#hamster1Data3").html(`${Math.floor((love1[2] / hamster1) * 100)} %`);
@@ -132,6 +107,7 @@ $(function(){
         $("#hamster1Line3").css('height', Math.floor((love1[2] / hamster1) * 190 + 10)+'px')
         $("#hamster1Line4").css('height', Math.floor((love1[3] / hamster1) * 190 + 10)+'px')
         // 三線鼠
+        $("#datatot2").html(`愛鼠人數： ${hamster2} 人`);
         $("#hamster2Data1").html(`${Math.floor((love2[0] / hamster2) * 100)} %`);
         $("#hamster2Data2").html(`${Math.floor((love2[1] / hamster2) * 100)} %`);
         $("#hamster2Data3").html(`${Math.floor((love2[2] / hamster2) * 100)} %`);
@@ -141,6 +117,7 @@ $(function(){
         $("#hamster2Line3").css('height', Math.floor((love2[2] / hamster2) * 190 + 10)+'px')
         $("#hamster2Line4").css('height', Math.floor((love2[3] / hamster2) * 190 + 10)+'px')
         // 1線鼠
+        $("#datatot3").html(`愛鼠人數： ${hamster3} 人`);
         $("#hamster3Data1").html(`${Math.floor((love3[0] / hamster3) * 100)} %`);
         $("#hamster3Data2").html(`${Math.floor((love3[1] / hamster3) * 100)} %`);
         $("#hamster3Data3").html(`${Math.floor((love3[2] / hamster3) * 100)} %`);
@@ -150,6 +127,7 @@ $(function(){
         $("#hamster3Line3").css('height', Math.floor((love3[2] / hamster3) * 190 + 10)+'px')
         $("#hamster3Line4").css('height', Math.floor((love3[3] / hamster3) * 190 + 10)+'px')
         // 老公公鼠
+        $("#datatot4").html(`愛鼠人數： ${hamster4} 人`);
         $("#hamster4Data1").html(`${Math.floor((love4[0] / hamster4) * 100)} %`);
         $("#hamster4Data2").html(`${Math.floor((love4[1] / hamster4) * 100)} %`);
         $("#hamster4Data3").html(`${Math.floor((love4[2] / hamster4) * 100)} %`);
@@ -170,7 +148,7 @@ $(function(){
         if(number < 100) { numberrange = [love1[0]+1, love1[1], love1[2], love1[3]]; }
         else if(number < 200 && number >= 100) { numberrange = [love1[0], love1[1]+1, love1[2], love1[3]]; }
         else if(number < 300 && number >= 200) { numberrange = [love1[0], love1[1], love1[2]+1, love1[3]]; }
-        else if(number <= 300) { numberrange = [love1[0], love1[1], love1[2], love1[3]+1]; }
+        else if(number >= 300) { numberrange = [love1[0], love1[1], love1[2], love1[3]+1]; }
         // console.log(numberrange[1]);
         surveyform.update({
             "favorite":  [ counter, hamster2, hamster3, hamster4 ],
@@ -183,7 +161,7 @@ $(function(){
         if(number < 100) { numberrange = [love2[0]+1, love2[1], love2[2], love2[3]]; }
         else if(number < 200 && number >= 100) { numberrange = [love2[0], love2[1]+1, love2[2], love2[3]]; }
         else if(number < 300 && number >= 200) { numberrange = [love2[0], love2[1], love2[2]+1, love2[3]]; }
-        else if(number <= 300) { numberrange = [love2[0], love2[1], love2[2], love2[3]+1]; }
+        else if(number >= 300) { numberrange = [love2[0], love2[1], love2[2], love2[3]+1]; }
         // console.log(numberrange[1]);
         surveyform.update({
             "favorite":  [ hamster1, counter, hamster3, hamster4 ],
@@ -196,7 +174,7 @@ $(function(){
         if(number < 100) { numberrange = [love3[0]+1, love3[1], love3[2], love3[3]]; }
         else if(number < 200 && number >= 100) { numberrange = [love3[0], love3[1]+1, love3[2], love3[3]]; }
         else if(number < 300 && number >= 200) { numberrange = [love3[0], love3[1], love3[2]+1, love3[3]]; }
-        else if(number <= 300) { numberrange = [love3[0], love3[1], love3[2], love3[3]+1]; }
+        else if(number >= 300) { numberrange = [love3[0], love3[1], love3[2], love3[3]+1]; }
         // console.log(numberrange[1]);
         surveyform.update({
             "favorite":  [ hamster1, hamster2, counter, hamster4 ],
@@ -209,7 +187,7 @@ $(function(){
         if(number < 100) { numberrange = [love4[0]+1, love4[1], love4[2], love4[3]]; }
         else if(number < 200 && number >= 100) { numberrange = [love4[0], love4[1]+1, love4[2], love4[3]]; }
         else if(number < 300 && number >= 200) { numberrange = [love4[0], love4[1], love4[2]+1, love4[3]]; }
-        else if(number <= 300) { numberrange = [love4[0], love4[1], love4[2], love4[3]+1]; }
+        else if(number >= 300) { numberrange = [love4[0], love4[1], love4[2], love4[3]+1]; }
         // console.log(numberrange[1]);
         surveyform.update({
             "favorite":  [ hamster1, hamster2, hamster3, counter ],

@@ -67,7 +67,7 @@
         <!-- 上面會有跑動的鼠鼠 -->
         <section class="main-info">
             <p class="main-info-p">
-                看完了這四種倉鼠的介紹，你最喜緩哪種倉鼠呢<br>
+                看完了這四種倉鼠的介紹，你最喜歡哪種倉鼠呢<br>
                 在這裡可以選擇你最喜歡的倉鼠，並寫下你有多愛它<br>
                 還可以去看看其他人都有多愛倉鼠喔
             </p>
@@ -107,20 +107,24 @@
                     <p class="form-hamster-name">黃金鼠</p>
                 </div>
                 <div class="form-hamster-type g-col-xs-6 g-col-m-3" id="surveyHamster2">
-                    <div class="form-hamster-img"><img src="./img/runningHamster1.gif" alt="黃金鼠" class="form-running-hamster"></div>
+                    <div class="form-hamster-img"><img src="./img/runningHamster2.gif" alt="三線鼠" class="form-running-hamster"></div>
                     <p class="form-hamster-name">三線鼠</p>
                 </div>
                 <div class="form-hamster-type g-col-xs-6 g-col-m-3" id="surveyHamster3">
-                    <div class="form-hamster-img"><img src="./img/runningHamster1.gif" alt="黃金鼠" class="form-running-hamster"></div>
+                    <div class="form-hamster-img"><img src="./img/runningHamster3.gif" alt="一線鼠" class="form-running-hamster"></div>
                     <p class="form-hamster-name">一線鼠</p>
                 </div>
                 <div class="form-hamster-type g-col-xs-6 g-col-m-3" id="surveyHamster4">
-                    <div class="form-hamster-img"><img src="./img/runningHamster1.gif" alt="黃金鼠" class="form-running-hamster"></div>
+                    <div class="form-hamster-img"><img src="./img/runningHamster4.gif" alt="老公公鼠" class="form-running-hamster"></div>
                     <p class="form-hamster-name">老公公鼠</p>
                 </div>
             </div>
             <h2 class="survey-title">那麼你有多愛它呢</h2>
-            <input id="surveyNumber" type="number" step="10" max="400" min="0" value="100">
+            <div class="survey-intput">
+                <img src="./img/form_hamster.png" alt="倉鼠愛心" class="survey-intput-img">
+                <input id="surveyNumber" type="number" step="10" max="400" min="0" value="0">
+                <p class="per">%</p>
+            </div>
         </articles>
         <div class="bottom" id="formBottom">
             <a href="#" class="form-bottom" id="finishBottom">完成</a>
@@ -153,140 +157,131 @@
             </div>
             <!-- 愛鼠濃度區 -->
             <h2 class="survey-title">愛鼠濃度</h2>
-            <!-- <nav class="main-nav" id="main-nav">
-                <ul>
-                    <li class="main-nav-bottom present-nav-bottom" id="dataNumber1">
-                        <a>黃金鼠</a>
-                    </li>
-                    <li class="main-nav-bottom" id="dataNumber2">
-                        <a href="#">三線鼠</a>
-                    </li>
-                    <li class="main-nav-bottom" id="dataNumber3">
-                        <a href="#">一線鼠</a>
-                    </li>
-                    <li class="main-nav-bottom" id="dataNumber4">
-                        <a href="#">老公公鼠</a>
-                    </li>
-                </ul>
-            </nav> -->
-            <!-- 黃金鼠的 -->
             <div class="survey-data grid" id="surveyData1">
-                <div class="data-hamster-img">
+                <div class="data-hamster-img g-col-m-3">
                     <div class="hamster-img-header">
                         <h3 class="hamster-img-title">黃金鼠</h3>
-                        <p class="hamster-img-p">愛鼠人數： 1 人</p>
+                        <p class="hamster-img-p" id="datatot1">愛鼠人數： 1 人</p>
                     </div>
-                    <div class="hamster-img"></div>
+                    <div class="hamster-img"><img src="./img/runningHamster1.gif" alt="黃金鼠" class="survey-hamster-img"></div>
                 </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster1Data1">0%</p>
-                    <div class="data-line" id="hamster1Line1"></div>
-                    <p class="hamster-data-p">0%</p>
-                </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster1Data2">0%</p>
-                    <div class="data-line" id="hamster1Line2"></div>
-                    <p class="hamster-data-p">100%</p>
-                </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster1Data3">0%</p>
-                    <div class="data-line" id="hamster1Line3"></div>
-                    <p class="hamster-data-p">200%</p>
-                </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster1Data4">0%</p>
-                    <div class="data-line" id="hamster1Line4"></div>
-                    <p class="hamster-data-p">300%</p>
+                <div class="grid g-col-xs-12 g-col-m-9">
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster1Data1">0%</p>
+                        <div class="data-line" id="hamster1Line1"></div>
+                        <p class="hamster-data-p">0~100%</p>
+                    </div>
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster1Data2">0%</p>
+                        <div class="data-line" id="hamster1Line2"></div>
+                        <p class="hamster-data-p">100~200%</p>
+                    </div>
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster1Data3">0%</p>
+                        <div class="data-line" id="hamster1Line3"></div>
+                        <p class="hamster-data-p">200~300%</p>
+                    </div>
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster1Data4">0%</p>
+                        <div class="data-line" id="hamster1Line4"></div>
+                        <p class="hamster-data-p">300~%</p>
+                    </div>
                 </div>
             </div>
             <!-- 三線鼠的 -->
             <div class="survey-data grid" id="surveyData2">
-                <div class="data-hamster-img">
+                <div class="data-hamster-img g-col-m-3">
                     <div class="hamster-img-header">
                         <h3 class="hamster-img-title">三線鼠</h3>
-                        <p class="hamster-img-p">愛鼠人數： 1 人</p>
+                        <p class="hamster-img-p" id="datatot2">愛鼠人數： 1 人</p>
                     </div>
-                    <div class="hamster-img"></div>
+                    <div class="hamster-img"><img src="./img/runningHamster2.gif" alt="三線鼠" class="survey-hamster-img"></div>
                 </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster2Data1">0%</p>
-                    <div class="data-line" id="hamster2Line1"></div>
-                    <p class="hamster-data-p">0%</p>
-                </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster2Data2">0%</p>
-                    <div class="data-line" id="hamster2Line2"></div>
-                    <p class="hamster-data-p">100%</p>
-                </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster2Data3">0%</p>
-                    <div class="data-line" id="hamster2Line3"></div>
-                    <p class="hamster-data-p">200%</p>
-                </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster2Data4">0%</p>
-                    <div class="data-line" id="hamster2Line4"></div>
-                    <p class="hamster-data-p">300%</p>
+                <div class="grid g-col-xs-12 g-col-m-9">
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster2Data1">0%</p>
+                        <div class="data-line" id="hamster2Line1"></div>
+                        <p class="hamster-data-p">0~100%</p>
+                    </div>
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster2Data2">0%</p>
+                        <div class="data-line" id="hamster2Line2"></div>
+                        <p class="hamster-data-p">100~200%</p>
+                    </div>
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster2Data3">0%</p>
+                        <div class="data-line" id="hamster2Line3"></div>
+                        <p class="hamster-data-p">200~300%</p>
+                    </div>
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster2Data4">0%</p>
+                        <div class="data-line" id="hamster2Line4"></div>
+                        <p class="hamster-data-p">300~%</p>
+                    </div>
                 </div>
             </div>
             <!-- 一線鼠的 -->
             <div class="survey-data grid" id="surveyData3">
-                <div class="data-hamster-img">
+                <div class="data-hamster-img g-col-m-3">
                     <div class="hamster-img-header">
                         <h3 class="hamster-img-title">一線鼠</h3>
-                        <p class="hamster-img-p">愛鼠人數： 1 人</p>
+                        <p class="hamster-img-p" id="datatot3">愛鼠人數： 1 人</p>
                     </div>
-                    <div class="hamster-img"></div>
+                    <div class="hamster-img"><img src="./img/runningHamster3.gif" alt="一線鼠" class="survey-hamster-img"></div>
                 </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster3Data1">0%</p>
-                    <div class="data-line" id="hamster3Line1"></div>
-                    <p class="hamster-data-p">0%</p>
-                </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster3Data2">0%</p>
-                    <div class="data-line" id="hamster3Line2"></div>
-                    <p class="hamster-data-p">100%</p>
-                </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster3Data3">0%</p>
-                    <div class="data-line" id="hamster3Line3"></div>
-                    <p class="hamster-data-p">200%</p>
-                </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster3Data4">0%</p>
-                    <div class="data-line" id="hamster3Line4"></div>
-                    <p class="hamster-data-p">300%</p>
+                <div class="grid g-col-xs-12 g-col-m-9">
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster3Data1">0%</p>
+                        <div class="data-line" id="hamster3Line1"></div>
+                        <p class="hamster-data-p">0~100%</p>
+                    </div>
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster3Data2">0%</p>
+                        <div class="data-line" id="hamster3Line2"></div>
+                        <p class="hamster-data-p">100~200%</p>
+                    </div>
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster3Data3">0%</p>
+                        <div class="data-line" id="hamster3Line3"></div>
+                        <p class="hamster-data-p">200~300%</p>
+                    </div>
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster3Data4">0%</p>
+                        <div class="data-line" id="hamster3Line4"></div>
+                        <p class="hamster-data-p">300~%</p>
+                    </div>
                 </div>
             </div>
             <!-- 老公公鼠的 -->
             <div class="survey-data grid" id="surveyData4">
-                <div class="data-hamster-img">
+                <div class="data-hamster-img g-col-m-3">
                     <div class="hamster-img-header">
                         <h3 class="hamster-img-title">老公公鼠</h3>
-                        <p class="hamster-img-p">愛鼠人數： 1 人</p>
+                        <p class="hamster-img-p" id="datatot4">愛鼠人數： 1 人</p>
                     </div>
-                    <div class="hamster-img"></div>
+                    <div class="hamster-img"><img src="./img/runningHamster4.gif" alt="老公公鼠" class="survey-hamster-img"></div>
                 </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster4Data1">0%</p>
-                    <div class="data-line" id="hamster4Line1"></div>
-                    <p class="hamster-data-p">0%</p>
-                </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster4Data2">0%</p>
-                    <div class="data-line" id="hamster4Line2"></div>
-                    <p class="hamster-data-p">100%</p>
-                </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster4Data3">0%</p>
-                    <div class="data-line" id="hamster4Line3"></div>
-                    <p class="hamster-data-p">200%</p>
-                </div>
-                <div class="hamster-data g-col-xs-3">
-                    <p class="data" id="hamster4Data4">0%</p>
-                    <div class="data-line" id="hamster4Line4"></div>
-                    <p class="hamster-data-p">300%</p>
+                <div class="grid g-col-xs-12 g-col-m-9">
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster4Data1">0%</p>
+                        <div class="data-line" id="hamster4Line1"></div>
+                        <p class="hamster-data-p">0~100%</p>
+                    </div>
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster4Data2">0%</p>
+                        <div class="data-line" id="hamster4Line2"></div>
+                        <p class="hamster-data-p">100~200%</p>
+                    </div>
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster4Data3">0%</p>
+                        <div class="data-line" id="hamster4Line3"></div>
+                        <p class="hamster-data-p">200~300%</p>
+                    </div>
+                    <div class="hamster-data g-col-xs-3">
+                        <p class="data" id="hamster4Data4">0%</p>
+                        <div class="data-line" id="hamster4Line4"></div>
+                        <p class="hamster-data-p">300~%</p>
+                    </div>
                 </div>
             </div>
         </articles>

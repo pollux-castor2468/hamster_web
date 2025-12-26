@@ -1,6 +1,6 @@
 /* header圖片 */
 .header::before {
-    background-image: url('../img/hamster9.jpg');
+    background-image: url('../img/hamster7.jpg');
 }
 
 
@@ -9,29 +9,36 @@
     margin-bottom: 6rem;
     position: relative;
 }
-
-.section-title {
-    font-family: 'Noto Sans TC', sans-serif;
-    font-size: 2.5rem;
-    color: var(--color-text);
-    text-align: left;
-    margin-bottom: 1rem;
-    position: relative;
+.section-header {
     padding-left: 2rem;
-    display: flex;
-    align-items: center;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+}
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-wood);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
 }
 
 
 .items-flow {
     display: flex;
     flex-direction: column;
-    gap: 6rem;
+    gap: 5rem;
     padding: 2rem;
-    position: relative;
+    /* position: relative; */
 }
 
-.items-flow::before {
+/* .items-flow::before {
     content: '';
     position: absolute;
     left: 50%;
@@ -40,25 +47,25 @@
     width: 2px;
     background: linear-gradient(to bottom, transparent 0%, var(--color-wood) 10%, var(--color-wood) 90%, transparent 100%);
     opacity: 0.2;
-}
+} */
 
 /* 每一個用品介紹區塊 */
 .item-block {
     display: flex;
     align-items: center;
     gap: 4rem;
-    position: relative;
+    /* position: relative; */
     padding: 2rem;
 }
 
 .item-block:nth-child(even) {
     flex-direction: row-reverse;
-    margin-left: auto;
+    /* margin-left: auto; */
 }
 
 /* 內容前面的圖片 */
 .item-media {
-    flex: 0 0 300px;
+    /* flex: 0 0 300px; */
     position: relative;
 }
 
@@ -69,19 +76,13 @@
     border-radius: 50%;
     overflow: hidden;
     position: relative;
-    background: var(--color-primary);
+    /* background: var(--color-primary); */
     transition: transform 0.5s ease;
 }
 
 .image-placeholder {
-    position: absolute;
-    width: auto;
+    /* position: absolute; */
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text);
-    font-size: 1.1rem;
     opacity: 0.8;
 }
 /* 圖片下的框框? */
@@ -107,10 +108,10 @@
 }
 
 /* 資訊內容 */
-.item-info {
+/* .item-info {
     flex: 1;
     position: relative;
-}
+} */
 
 .info-header {
     display: flex;
@@ -120,14 +121,11 @@
 }
 
 .info-header h4 {
-    font-family: 'Noto Sans TC', sans-serif;
     font-size: 2rem;
-    color: var(--color-text);
     margin: 0;
 }
 
 .item-number {
-    font-family: 'Noto Sans TC', sans-serif;
     font-size: 3.5rem;
     color: var(--color-wood);
     opacity: 0.2;
