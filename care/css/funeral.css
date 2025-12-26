@@ -91,8 +91,8 @@
 }
 
 .info-window {
-    /* overflow-x: auto;
-    scroll-snap-type: x mandatory; */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     width: 100%;
 }
